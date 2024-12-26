@@ -142,7 +142,6 @@ header div {
     color: var(--primary-color);
     text-decoration: none;
     font-size: 1rem; /* Responsive font size */
-   
 }
 
 .card a:hover {
@@ -185,19 +184,6 @@ a:hover {
 .view-more:hover, .view-less:hover {
     background-color: #6a1b9a;
 }
-
-
-article{
-    
-    border-top:1px solid var(--primary-color);
-    padding-top: 20px;
-}
-
-article:last-child{
-    border-bottom:1px solid var(--primary-color);
-    padding-bottom: 20px;
-}
-
 footer {
     background: var(--solo-theme);
     color: white;

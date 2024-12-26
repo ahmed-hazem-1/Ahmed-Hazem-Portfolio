@@ -42,48 +42,96 @@ window.addEventListener('DOMContentLoaded', (event) => {
     fetchContent();
 });
 
-// Fetch content from localStorage
-function fetchContent() {
-    const data = JSON.parse(localStorage.getItem('data')) || {
-        bio: '',
-        summary: '',
-        experiences: [],
-        projects: [],
-        education: [],
-        certifications: [],
-        skills: [],
-        involvement: []
-    };
+// GitHub API configuration
+const GITHUB_API_URL = 'https://api.github.com/repos/ahmed-hazem-1/Ahmed-Hazem-Portfolio/contents/data.json';
+const GITHUB_TOKEN = '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'; // Ensure this token is securely handled
 
-    // Display bio
-    const bioContent = document.getElementById('bio-content');
-    if (bioContent) {
-        bioContent.value = data.bio;
+// Function to fetch data from GitHub
+async function fetchContent() {
+    try {
+        const response = await fetch(GITHUB_API_URL, {
+            headers: {
+                'Authorization': `token ${GITHUB_TOKEN}`,
+                'Accept': 'application/vnd.github.v3.raw'
+            }
+        });
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        // Display bio
+        const bioContent = document.getElementById('bio-content');
+        if (bioContent) {
+            bioContent.value = data.bio;
+        }
+
+        // Display summary
+        const summaryContent = document.getElementById('summary-content');
+        if (summaryContent) {
+            summaryContent.value = data.summary;
+        }
+
+        // Display experiences
+        displayExperiences();
+
+        // Display projects
+        displayProjects();
+
+        // Display education
+        displayEducation();
+
+        // Display certifications
+        displayCertifications();
+
+        // Display skills
+        displaySkills();
+
+        // Display involvement
+        displayInvolvement();
+    } catch (error) {
+        console.error('Failed to fetch data from GitHub:', error);
     }
+}
 
-    // Display summary
-    const summaryContent = document.getElementById('summary-content');
-    if (summaryContent) {
-        summaryContent.value = data.summary;
+// Function to save data to GitHub
+async function saveContent(content) {
+    try {
+        // Get the current file SHA
+        const getResponse = await fetch(GITHUB_API_URL, {
+            headers: {
+                'Authorization': `token ${GITHUB_TOKEN}`,
+                'Accept': 'application/vnd.github.v3.raw'
+            }
+        });
+        const fileData = await getResponse.json();
+        const sha = fileData.sha;
+
+        // Prepare the updated content
+        const updatedContent = btoa(JSON.stringify(content, null, 2));
+
+        // Commit the changes to GitHub
+        const commitResponse = await fetch(GITHUB_API_URL, {
+            method: 'PUT',
+            headers: {
+                'Authorization': `token ${GITHUB_TOKEN}`,
+                'Accept': 'application/vnd.github.v3+json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                message: 'Update data.json',
+                content: updatedContent,
+                sha: sha
+            })
+        });
+
+        if (!commitResponse.ok) {
+            throw new Error('Failed to commit changes to GitHub');
+        }
+
+        alert("Content saved to GitHub successfully!");
+    } catch (error) {
+        console.error('Error saving content to GitHub:', error);
     }
-
-    // Display experiences
-    displayExperiences();
-
-    // Display projects
-    displayProjects();
-
-    // Display education
-    displayEducation();
-
-    // Display certifications
-    displayCertifications();
-
-    // Display skills
-    displaySkills();
-
-    // Display involvement
-    displayInvolvement();
 }
 
 // Function to display the BIO content
@@ -125,7 +173,7 @@ document.getElementById('bio-form').addEventListener('submit', function(e) {
    data.bio = bioData;
 
    // Save back to localStorage
-   localStorage.setItem('data', JSON.stringify(data));
+   saveContent(data);
 
    // Display updated bio information
    displayBio(bioData);
@@ -209,7 +257,7 @@ if (document.getElementById('summary-form')) {
         if (summaryContent) {
          console.log("Saved Summary:", summaryContent); // You can replace this with an actual save functionality
         data.summary = summaryContent;
-         localStorage.setItem('data', JSON.stringify(data));  
+         saveContent(data);  
         alert("Summary saved successfully!");
         } else {
             alert("Please provide a summary before saving.");
@@ -246,7 +294,7 @@ document.getElementById('experience-form').addEventListener('submit', function(e
     }
 
     data.experiences.push(experience);
-    localStorage.setItem('data', JSON.stringify(data));
+    saveContent(data);
 
     displayExperiences();
     this.reset();
@@ -294,7 +342,7 @@ document.getElementById('projects-form').addEventListener('submit', function(e) 
     console.log('Updated data:', data);
 
     // Save updated data back to localStorage
-    localStorage.setItem('data', JSON.stringify(data));
+    saveContent(data);
 
     // Display updated projects list
     displayProjects();
@@ -329,7 +377,7 @@ function displayExperiences() {
 function deleteExperience(index) {
     let data = JSON.parse(localStorage.getItem('data')) || { experiences: [], projects: [] };
     data.experiences.splice(index, 1);
-    localStorage.setItem('data', JSON.stringify(data));
+    saveContent(data);
     displayExperiences();
 }
 
@@ -357,7 +405,7 @@ function displayProjects() {
 function deleteProject(index) {
     let data = JSON.parse(localStorage.getItem('data')) || { experiences: [], projects: [] };
     data.projects.splice(index, 1);
-    localStorage.setItem('data', JSON.stringify(data));
+    saveContent(data);
     displayProjects();
 }
 
@@ -389,7 +437,7 @@ function deleteEducation(index) {
 
     // Remove the specified entry
     data.education.splice(index, 1);
-    localStorage.setItem('data', JSON.stringify(data));
+    saveContent(data);
 
     // Refresh the education list
     displayEducation();
@@ -421,7 +469,7 @@ function displayCertifications() {
 function deleteCertification(index) {
     let data = JSON.parse(localStorage.getItem('data')) || { certifications: [] };
     data.certifications.splice(index, 1);
-    localStorage.setItem('data', JSON.stringify(data));
+    saveContent(data);
     displayCertifications();
 }
 
@@ -457,7 +505,7 @@ function deleteSkill(index) {
     // Ensure skills array exists
     if (Array.isArray(data.skills) && data.skills.length > index) {
         data.skills.splice(index, 1); // Remove the selected skill
-        localStorage.setItem('data', JSON.stringify(data)); // Save updated data
+        saveContent(data); // Save updated data
         displaySkills(); // Refresh the displayed skills
     } else {
         console.error("Skill index out of bounds or data missing.");
@@ -490,7 +538,7 @@ function displayInvolvement() {
 function deleteInvolvement(index) {
     let data = JSON.parse(localStorage.getItem('data')) || { involvement: [] };
     data.involvement.splice(index, 1);
-    localStorage.setItem('data', JSON.stringify(data));
+    saveContent(data);
     displayInvolvement();
 }
 
@@ -532,7 +580,7 @@ document.getElementById('education-form').addEventListener('submit', function(e)
     console.log('Updated data:', data);
 
     // Save updated data back to localStorage
-    localStorage.setItem('data', JSON.stringify(data));
+    saveContent(data);
 
     // Display updated education list
     displayEducation();
@@ -564,7 +612,7 @@ document.getElementById('certifications-form').addEventListener('submit', functi
     }
     data.certifications.push(certification);
 
-    localStorage.setItem('data', JSON.stringify(data));
+    saveContent(data);
 
     // Refresh the list and reset the form
     displayCertifications();
@@ -599,7 +647,7 @@ document.getElementById('skills-form').addEventListener('submit', function(e) {
     data.skills.push(skill);
 
     // Save updated data back to localStorage
-    localStorage.setItem('data', JSON.stringify(data));
+    saveContent(data);
 
     // Display updated list of skills
     displaySkills();
@@ -642,7 +690,7 @@ document.getElementById('involvement-form').addEventListener('submit', function(
     data.involvement.push(involvement);
 
     // Save the updated data back to localStorage
-    localStorage.setItem('data', JSON.stringify(data));
+    saveContent(data);
 
     // Display updated involvement list
     displayInvolvement();

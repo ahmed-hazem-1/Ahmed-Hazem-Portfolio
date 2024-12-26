@@ -1,5 +1,3 @@
-
-
 const themeToggle = document.getElementById('theme-toggle');
 const root = document.documentElement;
 
@@ -41,58 +39,89 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// GitHub API configuration
+const GITHUB_API_URL = 'https://api.github.com/repos/ahmed-hazem-1/Ahmed-Hazem-Portfolio/contents/data.json';
+const GITHUB_TOKEN = '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'; // Ensure this token is securely handled
 
+// Function to fetch data from GitHub
+async function fetchContent() {
+    try {
+        const response = await fetch(GITHUB_API_URL, {
+            headers: {
+                'Authorization': `token ${GITHUB_TOKEN}`,
+                'Accept': 'application/vnd.github.v3.raw'
+            }
+        });
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        // Display bio
+        displayBio(data.bio);
+      
+        // Display summary
+        displaySummary(data.summary)
+        // Display experiences
+        displayExperiences(data.experiences);
+    
+        // Display projects
+        displayProjects(data.projects);
+    
+        // Display education
+        displayEducation(data.education);
+    
+        // Display certifications
+        displayCertifications(data.certifications);
+    
+        // Display skills
+        displaySkills(data.skills);
+    
+        // Display involvement
+        displayInvolvement(data.involvement);
+    } catch (error) {
+        console.error('Failed to fetch data from GitHub:', error);
+    }
+}
 
-// Fetch content from localStorage
-function fetchContent() {
-    const data = JSON.parse(localStorage.getItem('data')) || {
-        bio: {
-            name: 'Ahmed Hazem',
-            description: 'Data Scientist | Machine Learning Engineer',
-            email: 'ahmed453189@fci.bu.edu.eg',
-            phone: '201275012177',
-            linkedin: 'http://www.linkedin.com/in/ahmed-hazem-elabady-9a904924b',
-            github: 'https://github.com/ahmed-hazem-1',
-            kaggle: 'https://www.kaggle.com/ahmedhazemelabady',
-        },
-        summary: 'Data Scientist and Machine Learning Engineer with a strong background in mathematics, statistics, and computer science. Skilled in developing end-to-end machine learning solutions, including data preprocessing, feature engineering, model building, and deployment. Proficient in Python, SQL, and various machine learning libraries.',
-        experiences: [],
-        projects: [],
-        education: [],
-        certifications: [],
-        skills: [],
-        involvement: []
-    };
+// Function to save data to GitHub
+async function saveContent(content) {
+    try {
+        // Get the current file SHA
+        const getResponse = await fetch(GITHUB_API_URL, {
+            headers: {
+                'Authorization': `token ${GITHUB_TOKEN}`,
+                'Accept': 'application/vnd.github.v3.raw'
+            }
+        });
+        const fileData = await getResponse.json();
+        const sha = fileData.sha;
 
+        // Prepare the updated content
+        const updatedContent = btoa(JSON.stringify(content, null, 2));
 
+        // Commit the changes to GitHub
+        const commitResponse = await fetch(GITHUB_API_URL, {
+            method: 'PUT',
+            headers: {
+                'Authorization': `token ${GITHUB_TOKEN}`,
+                'Accept': 'application/vnd.github.v3+json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                message: 'Update data.json',
+                content: updatedContent,
+                sha: sha
+            })
+        });
 
-    // Display bio
-    displayBio(data.bio);
-  
-    // // Display summary
-    // const summaryContent = document.getElementById('summary-content');
-    // if (document.getElementById('summary-content')) {
-    //     document.getElementById('summary-content').textContent = data.summary;
-    // }
+        if (!commitResponse.ok) {
+            throw new Error('Failed to commit changes to GitHub');
+        }
 
-    displaySummary(data.summary)
-    // Display experiences
-    displayExperiences(data.experiences);
-
-    // Display projects
-    displayProjects(data.projects);
-
-    // Display education
-    displayEducation(data.education);
-
-    // Display certifications
-    displayCertifications(data.certifications);
-
-    // Display skills
-    displaySkills(data.skills);
-
-    // Display involvement
-    displayInvolvement(data.involvement);
+        alert("Content saved to GitHub successfully!");
+    } catch (error) {
+        console.error('Error saving content to GitHub:', error);
+    }
 }
 
 function displayBio(bioData) {
@@ -172,7 +201,7 @@ function displaySummary(summaryData) {
     }
 }
 
-function displayExperiences(experiences) {
+function displayExperiences(experiences = []) {
     const experienceSection = document.getElementById('experience');
     if (experienceSection) {
         experienceSection.innerHTML = '<h2>Experience</h2>';
@@ -180,10 +209,10 @@ function displayExperiences(experiences) {
             const experienceDiv = document.createElement('div');
             experienceDiv.className = 'content-item';
             experienceDiv.innerHTML = `
-                <h3>${experience.title}</h3>
-                <p><strong>${experience.subtitle}</strong></p>
+                <h3>${experience.title || ''}</h3>
+                <p><strong>${experience.subtitle || ''}</strong></p>
                 <ul>
-                    ${experience.bullets.map(bullet => `<li>${bullet}</li>`).join('')}
+                    ${(experience.bullets || []).map(bullet => `<li>${bullet}</li>`).join('')}
                 </ul>
             `;
             experienceSection.appendChild(experienceDiv);
@@ -289,7 +318,7 @@ function displayInvolvement() {
         console.error("Element with id 'involvement-list' not found in the DOM");
         return;
     }
-    involvementList.innerHTML = '';  // Clear the list before appending new items
+    involvementList.innerHTML = '<h2>Involvement</h2>';  // Clear the list before appending new items
 
     data.involvement.forEach((involve, index) => {
         const involvementDiv = document.createElement('div');
