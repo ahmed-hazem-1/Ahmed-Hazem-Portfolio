@@ -118,12 +118,18 @@ document.getElementById('bio-form').addEventListener('submit', function(e) {
         photo
     };
 
-    // Save to localStorage
-    localStorage.setItem('bioData', JSON.stringify(bioData));
+   // Fetch existing data or initialize
+   let data = JSON.parse(localStorage.getItem('data')) || {};
 
-    // Display updated bio information
-    displayBio(bioData);
-    alert("Bio updated successfully!");
+   // Update bio
+   data.bio = bioData;
+
+   // Save back to localStorage
+   localStorage.setItem('data', JSON.stringify(data));
+
+   // Display updated bio information
+   displayBio(bioData);
+   alert("Bio updated successfully!");
 });
 
 function displayBio(bioData) {
@@ -137,25 +143,47 @@ function displayBio(bioData) {
     const bioPhoto = document.getElementById('bio-photo');
     const bioPhotoDisplay = document.getElementById('bio-photo-display');
 
-    // Check that all required elements are available before accessing
-    // This ensures that the elements exist in the DOM and prevents errors when trying to access or modify them
-    if (bioName && bioDescription && bioEmail && bioPhone && bioLinkedin && bioGithub && bioKaggle && bioPhoto && bioPhotoDisplay) {
-        // Display the profile data in the form
-        bioName.value = bioData.name;
-        bioDescription.value = bioData.description;
-        bioEmail.value = bioData.email;
-        bioPhone.value = bioData.phone;
-        bioLinkedin.value = bioData.linkedin;
-        bioGithub.value = bioData.github;
-        bioKaggle.value = bioData.kaggle;
-        bioPhoto.value = bioData.photo;
+    // Elements for hyperlink display
+    const bioLinkedinLink = document.getElementById('bio-linkedin-link');
+    const bioGithubLink = document.getElementById('bio-github-link');
+    const bioKaggleLink = document.getElementById('bio-kaggle-link');
 
-        // Update the displayed photo
-        bioPhotoDisplay.src = bioData.photo;
+    if (
+        bioName && bioDescription && bioEmail && bioPhone &&
+        bioLinkedin && bioGithub && bioKaggle && bioPhoto &&
+        bioPhotoDisplay
+    ) {
+        bioName.value = bioData.name || '';
+        bioDescription.value = bioData.description || '';
+        bioEmail.value = bioData.email || '';
+        bioPhone.value = bioData.phone || '';
+        bioLinkedin.value = bioData.linkedin || '';
+        bioGithub.value = bioData.github || '';
+        bioKaggle.value = bioData.kaggle || '';
+        bioPhoto.value = bioData.photo || '';
+        bioPhotoDisplay.src = bioData.photo || '';
     } else {
         console.error("One or more elements are missing in the DOM.");
     }
+
+    // Render links as hyperlinks only if they exist
+    if (bioLinkedinLink) {
+        bioLinkedinLink.innerHTML = bioData.linkedin
+            ? `<a href="${encodeURI(bioData.linkedin)}" target="_blank" rel="noopener noreferrer">LinkedIn</a>`
+            : 'No LinkedIn Profile';
+    }
+    if (bioGithubLink) {
+        bioGithubLink.innerHTML = bioData.github
+            ? `<a href="${encodeURI(bioData.github)}" target="_blank" rel="noopener noreferrer">GitHub</a>`
+            : 'No GitHub Profile';
+    }
+    if (bioKaggleLink) {
+        bioKaggleLink.innerHTML = bioData.kaggle
+            ? `<a href="${encodeURI(bioData.kaggle)}" target="_blank" rel="noopener noreferrer">Kaggle</a>`
+            : 'No Kaggle Profile';
+    }
 }
+
 
 // Load bio data on page load
 window.onload = function() {
@@ -165,12 +193,31 @@ window.onload = function() {
     }
 };
 
-document.getElementById('summary-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const summary = document.getElementById('summary-content').value;
-    saveContent({ summary });
-    alert('Summary saved!');
-});
+// Save Summary Handler
+if (document.getElementById('summary-form')) {
+    document.getElementById('summary-form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent form submission
+   let data = JSON.parse(localStorage.getItem('data')) || {};
+        
+        const summaryField = document.getElementById('summary-content');
+        if (!summaryField) {
+            console.error("The summary-content element is missing in the DOM.");
+            return;
+        }
+        
+        const summaryContent = summaryField.value.trim();
+        if (summaryContent) {
+         console.log("Saved Summary:", summaryContent); // You can replace this with an actual save functionality
+        data.summary = summaryContent;
+         localStorage.setItem('data', JSON.stringify(data));  
+        alert("Summary saved successfully!");
+        } else {
+            alert("Please provide a summary before saving.");
+        }
+    });
+} else {
+    console.error("The summary-form element is missing in the DOM.");
+}
 
 document.getElementById('experience-form').addEventListener('submit', function(e) {
     e.preventDefault();
@@ -189,7 +236,15 @@ document.getElementById('experience-form').addEventListener('submit', function(e
         bullets: bullets.map(bullet => bullet.slice(1).trim()) // Remove leading '-'
     };
 
-    let data = JSON.parse(localStorage.getItem('data')) || { experiences: [], projects: [] };
+    let data = JSON.parse(localStorage.getItem('data')) || {};
+
+    if (!Array.isArray(data.experiences)) {
+        data.experiences = [];
+    }
+    if (!Array.isArray(data.projects)) {
+        data.projects = [];
+    }
+
     data.experiences.push(experience);
     localStorage.setItem('data', JSON.stringify(data));
 
@@ -306,7 +361,7 @@ function deleteProject(index) {
     displayProjects();
 }
 
-function displayEducation() {
+function displayEducation(education=[]) {
     const data = JSON.parse(localStorage.getItem('data')) || { education: [] };
     const educationList = document.getElementById('education-list');
 
@@ -534,6 +589,11 @@ document.getElementById('skills-form').addEventListener('submit', function(e) {
 
     // Fetch existing data from localStorage or initialize empty array
     let data = JSON.parse(localStorage.getItem('data')) || { skills: [] };
+
+    // Ensure skills array exists
+    if (!data.skills) {
+        data.skills = [];
+    }
 
     // Add new skill to the array
     data.skills.push(skill);

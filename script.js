@@ -42,10 +42,71 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 
+
+// Fetch content from localStorage
+function fetchContent() {
+    const data = JSON.parse(localStorage.getItem('data')) || {
+        bio: {
+            name: 'Ahmed Hazem',
+            description: 'Data Scientist | Machine Learning Engineer',
+            email: 'ahmed453189@fci.bu.edu.eg',
+            phone: '201275012177',
+            linkedin: 'http://www.linkedin.com/in/ahmed-hazem-elabady-9a904924b',
+            github: 'https://github.com/ahmed-hazem-1',
+            kaggle: 'https://www.kaggle.com/ahmedhazemelabady',
+        },
+        summary: 'Data Scientist and Machine Learning Engineer with a strong background in mathematics, statistics, and computer science. Skilled in developing end-to-end machine learning solutions, including data preprocessing, feature engineering, model building, and deployment. Proficient in Python, SQL, and various machine learning libraries.',
+        experiences: [],
+        projects: [],
+        education: [],
+        certifications: [],
+        skills: [],
+        involvement: []
+    };
+
+
+
+    // Display bio
+    displayBio(data.bio);
+  
+    // // Display summary
+    // const summaryContent = document.getElementById('summary-content');
+    // if (document.getElementById('summary-content')) {
+    //     document.getElementById('summary-content').textContent = data.summary;
+    // }
+
+    displaySummary(data.summary)
+    // Display experiences
+    displayExperiences(data.experiences);
+
+    // Display projects
+    displayProjects(data.projects);
+
+    // Display education
+    displayEducation(data.education);
+
+    // Display certifications
+    displayCertifications(data.certifications);
+
+    // Display skills
+    displaySkills(data.skills);
+
+    // Display involvement
+    displayInvolvement(data.involvement);
+}
+
 function displayBio(bioData) {
     if (!bioData) {
-        console.error("bioData is undefined or null.");
-        return;
+        // Provide a default fallback object
+        bioData = {
+            name: 'Ahmed Hazem Elabady',
+            description: '',
+            email: '',
+            phone: '',
+            linkedin: '',
+            github: '',
+            kaggle: '',
+        };
     }
 
     const bioName = document.getElementById('bio-name');
@@ -55,37 +116,61 @@ function displayBio(bioData) {
     const bioLinkedin = document.getElementById('bio-linkedin');
     const bioGithub = document.getElementById('bio-github');
     const bioKaggle = document.getElementById('bio-kaggle');
-    const bioPhoto = document.getElementById('bio-photo');
+
+    // Elements for hyperlink display
+    const bioLinkedinLink = document.getElementById('bio-linkedin-link');
+    const bioGithubLink = document.getElementById('bio-github-link');
+    const bioKaggleLink = document.getElementById('bio-kaggle-link');
 
     // Check that all required elements are available before accessing
-    if (bioName && bioDescription && bioEmail && bioPhone && bioLinkedin && bioGithub && bioKaggle && bioPhoto) {
+    if (bioName && bioDescription && bioEmail && bioPhone && bioLinkedin && bioGithub && bioKaggle ) {
         // Display the profile data in the form
         bioName.textContent = bioData.name || '';
         bioDescription.textContent = bioData.description || '';
         bioEmail.textContent = bioData.email || '';
-        bioEmail.href = `mailto:${bioData.email || ''}`;
+        bioEmail.setAttribute('href', `mailto:${bioData.email || ''}`);
         bioPhone.textContent = bioData.phone || '';
-        bioLinkedin.textContent = 'LinkedIn';
-        bioLinkedin.href = bioData.linkedin || '';
-        bioGithub.textContent = 'GitHub';
-        bioGithub.href = bioData.github || '';
-        bioKaggle.textContent = 'Kaggle';
-        bioKaggle.href = bioData.kaggle || '';
-        bioPhoto.src = bioData.photo || '';
     } else {
         console.error("One or more elements are missing in the DOM.");
     }
-}
-// Load bio data on page load
-window.onload = function() {
-    const bioData = JSON.parse(localStorage.getItem('bioData'));
-    if (bioData) {
-        displayBio(bioData);
+     // Render links as hyperlinks only if they exist
+     if (bioLinkedinLink) {
+        bioLinkedinLink.innerHTML = bioData.linkedin
+            ? `<a href="${encodeURI(bioData.linkedin)}" target="_blank" rel="noopener noreferrer">LinkedIn</a>`
+            : 'No LinkedIn Profile';
     }
-};
+    if (bioGithubLink) {
+        bioGithubLink.innerHTML = bioData.github
+            ? `<a href="${encodeURI(bioData.github)}" target="_blank" rel="noopener noreferrer">GitHub</a>`
+            : 'No GitHub Profile';
+    }
+    if (bioKaggleLink) {
+        bioKaggleLink.innerHTML = bioData.kaggle
+            ? `<a href="${encodeURI(bioData.kaggle)}" target="_blank" rel="noopener noreferrer">Kaggle</a>`
+            : 'No Kaggle Profile';
+    }
+}
 
-// Initial call to display the BIO content if it exists
-// displayBio();   // Removed to prevent calling displayBio without a valid argument
+
+function displaySummary(summaryData) {
+    const summarySection = document.getElementById('summary');
+    if (summarySection) {
+        // Keep the h2 header and update the paragraph content
+        const existingHeader = summarySection.querySelector('h2');
+        summarySection.innerHTML = '';
+        summarySection.appendChild(existingHeader);
+
+        // Split the summary into paragraphs and add them
+        const paragraphs = summaryData.split('\n\n');
+        paragraphs.forEach(paragraph => {
+            const p = document.createElement('p');
+            p.textContent = paragraph.trim();
+            summarySection.appendChild(p);
+        });
+    } else {
+        console.error("Summary section element is missing in the DOM");
+    }
+}
 
 function displayExperiences(experiences) {
     const experienceSection = document.getElementById('experience');
@@ -199,7 +284,7 @@ function displaySkills(skills = []) {
 
 function displayInvolvement() {
     const data = JSON.parse(localStorage.getItem('data')) || { involvement: [] };
-    const involvementList = document.getElementById('involvement-list');
+    const involvementList = document.getElementById('involvement');
     if (!involvementList) {
         console.error("Element with id 'involvement-list' not found in the DOM");
         return;
@@ -214,7 +299,7 @@ function displayInvolvement() {
                 <h3>${involve.title}</h3>
                 <p><strong>${involve.subtitle}</strong></p>
                 <p>${involve.description}</p>
-                <button onclick="deleteInvolvement(${index})">Delete</button>
+               
             </article>
         `;
         involvementList.appendChild(involvementDiv);
