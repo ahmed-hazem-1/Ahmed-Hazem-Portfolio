@@ -39,90 +39,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// GitHub API configuration
-const GITHUB_API_URL = 'https://api.github.com/repos/ahmed-hazem-1/Ahmed-Hazem-Portfolio/contents/data.json';
-const GITHUB_TOKEN = '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'; // Ensure this token is securely handled
 
-// Function to fetch data from GitHub
-async function fetchContent() {
-    try {
-        const response = await fetch(GITHUB_API_URL, {
-            headers: {
-                'Authorization': `token ${GITHUB_TOKEN}`,
-                'Accept': 'application/vnd.github.v3.raw'
-            }
-        });
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        const data = await response.json();
-        // Display bio
-        displayBio(data.bio);
-      
-        // Display summary
-        displaySummary(data.summary)
-        // Display experiences
-        displayExperiences(data.experiences);
-    
-        // Display projects
-        displayProjects(data.projects);
-    
-        // Display education
-        displayEducation(data.education);
-    
-        // Display certifications
-        displayCertifications(data.certifications);
-    
-        // Display skills
-        displaySkills(data.skills);
-    
-        // Display involvement
-        displayInvolvement(data.involvement);
-    } catch (error) {
-        console.error('Failed to fetch data from GitHub:', error);
-    }
-}
-
-// Function to save data to GitHub
-async function saveContent(content) {
-    try {
-        // Get the current file SHA
-        const getResponse = await fetch(GITHUB_API_URL, {
-            headers: {
-                'Authorization': `token ${GITHUB_TOKEN}`,
-                'Accept': 'application/vnd.github.v3.raw'
-            }
-        });
-        const fileData = await getResponse.json();
-        const sha = fileData.sha;
-
-        // Prepare the updated content
-        const updatedContent = btoa(JSON.stringify(content, null, 2));
-
-        // Commit the changes to GitHub
-        const commitResponse = await fetch(GITHUB_API_URL, {
-            method: 'PUT',
-            headers: {
-                'Authorization': `token ${GITHUB_TOKEN}`,
-                'Accept': 'application/vnd.github.v3+json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                message: 'Update data.json',
-                content: updatedContent,
-                sha: sha
-            })
-        });
-
-        if (!commitResponse.ok) {
-            throw new Error('Failed to commit changes to GitHub');
-        }
-
-        alert("Content saved to GitHub successfully!");
-    } catch (error) {
-        console.error('Error saving content to GitHub:', error);
-    }
-}
 
 function displayBio(bioData) {
     if (!bioData) {
@@ -337,5 +254,14 @@ function displayInvolvement() {
 
 // Fetch content on page load
 window.addEventListener('DOMContentLoaded', (event) => {
-    fetchContent();
+    // Replace fetchContent with localStorage data retrieval
+    const data = JSON.parse(localStorage.getItem('data')) || {};
+    displayBio(data.bio);
+    displaySummary(data.summary);
+    displayExperiences(data.experiences);
+    displayProjects(data.projects);
+    displayEducation(data.education);
+    displayCertifications(data.certifications);
+    displaySkills(data.skills);
+    displayInvolvement(data.involvement);
 });
