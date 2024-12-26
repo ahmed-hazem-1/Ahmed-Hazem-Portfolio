@@ -206,6 +206,7 @@ function displayCertifications(certifications = []) {
             certificationDiv.innerHTML = `
                 <h3>${cert.title}</h3>
                 <p>${cert.subtitle}</p>
+                 <p>${cert.description}</p>
             `;
             certificationsSection.appendChild(certificationDiv);
         });
