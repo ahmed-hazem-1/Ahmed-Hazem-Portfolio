@@ -1,3 +1,5 @@
+
+
 const themeToggle = document.getElementById('theme-toggle');
 const root = document.documentElement;
 
@@ -40,19 +42,10 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
 function displayBio(bioData) {
     if (!bioData) {
-        // Provide a default fallback object
-        bioData = {
-            name: 'Ahmed Hazem Elabady',
-            description: '',
-            email: '',
-            phone: '',
-            linkedin: '',
-            github: '',
-            kaggle: '',
-        };
+        console.error("bioData is undefined or null.");
+        return;
     }
 
     const bioName = document.getElementById('bio-name');
@@ -62,63 +55,39 @@ function displayBio(bioData) {
     const bioLinkedin = document.getElementById('bio-linkedin');
     const bioGithub = document.getElementById('bio-github');
     const bioKaggle = document.getElementById('bio-kaggle');
-
-    // Elements for hyperlink display
-    const bioLinkedinLink = document.getElementById('bio-linkedin-link');
-    const bioGithubLink = document.getElementById('bio-github-link');
-    const bioKaggleLink = document.getElementById('bio-kaggle-link');
+    const bioPhoto = document.getElementById('bio-photo');
 
     // Check that all required elements are available before accessing
-    if (bioName && bioDescription && bioEmail && bioPhone && bioLinkedin && bioGithub && bioKaggle ) {
+    if (bioName && bioDescription && bioEmail && bioPhone && bioLinkedin && bioGithub && bioKaggle && bioPhoto) {
         // Display the profile data in the form
         bioName.textContent = bioData.name || '';
         bioDescription.textContent = bioData.description || '';
         bioEmail.textContent = bioData.email || '';
-        bioEmail.setAttribute('href', `mailto:${bioData.email || ''}`);
+        bioEmail.href = `mailto:${bioData.email || ''}`;
         bioPhone.textContent = bioData.phone || '';
+        bioLinkedin.textContent = 'LinkedIn';
+        bioLinkedin.href = bioData.linkedin || '';
+        bioGithub.textContent = 'GitHub';
+        bioGithub.href = bioData.github || '';
+        bioKaggle.textContent = 'Kaggle';
+        bioKaggle.href = bioData.kaggle || '';
+        bioPhoto.src = bioData.photo || '';
     } else {
         console.error("One or more elements are missing in the DOM.");
     }
-     // Render links as hyperlinks only if they exist
-     if (bioLinkedinLink) {
-        bioLinkedinLink.innerHTML = bioData.linkedin
-            ? `<a href="${encodeURI(bioData.linkedin)}" target="_blank" rel="noopener noreferrer">LinkedIn</a>`
-            : 'No LinkedIn Profile';
-    }
-    if (bioGithubLink) {
-        bioGithubLink.innerHTML = bioData.github
-            ? `<a href="${encodeURI(bioData.github)}" target="_blank" rel="noopener noreferrer">GitHub</a>`
-            : 'No GitHub Profile';
-    }
-    if (bioKaggleLink) {
-        bioKaggleLink.innerHTML = bioData.kaggle
-            ? `<a href="${encodeURI(bioData.kaggle)}" target="_blank" rel="noopener noreferrer">Kaggle</a>`
-            : 'No Kaggle Profile';
-    }
 }
-
-
-function displaySummary(summaryData) {
-    const summarySection = document.getElementById('summary');
-    if (summarySection) {
-        // Keep the h2 header and update the paragraph content
-        const existingHeader = summarySection.querySelector('h2');
-        summarySection.innerHTML = '';
-        summarySection.appendChild(existingHeader);
-
-        // Split the summary into paragraphs and add them
-        const paragraphs = summaryData.split('\n\n');
-        paragraphs.forEach(paragraph => {
-            const p = document.createElement('p');
-            p.textContent = paragraph.trim();
-            summarySection.appendChild(p);
-        });
-    } else {
-        console.error("Summary section element is missing in the DOM");
+// Load bio data on page load
+window.onload = function() {
+    const bioData = JSON.parse(localStorage.getItem('bioData'));
+    if (bioData) {
+        displayBio(bioData);
     }
-}
+};
 
-function displayExperiences(experiences = []) {
+// Initial call to display the BIO content if it exists
+// displayBio();   // Removed to prevent calling displayBio without a valid argument
+
+function displayExperiences(experiences) {
     const experienceSection = document.getElementById('experience');
     if (experienceSection) {
         experienceSection.innerHTML = '<h2>Experience</h2>';
@@ -126,10 +95,10 @@ function displayExperiences(experiences = []) {
             const experienceDiv = document.createElement('div');
             experienceDiv.className = 'content-item';
             experienceDiv.innerHTML = `
-                <h3>${experience.title || ''}</h3>
-                <p><strong>${experience.subtitle || ''}</strong></p>
+                <h3>${experience.title}</h3>
+                <p><strong>${experience.subtitle}</strong></p>
                 <ul>
-                    ${(experience.bullets || []).map(bullet => `<li>${bullet}</li>`).join('')}
+                    ${experience.bullets.map(bullet => `<li>${bullet}</li>`).join('')}
                 </ul>
             `;
             experienceSection.appendChild(experienceDiv);
@@ -206,7 +175,6 @@ function displayCertifications(certifications = []) {
             certificationDiv.innerHTML = `
                 <h3>${cert.title}</h3>
                 <p>${cert.subtitle}</p>
-                 <p>${cert.description}</p>
             `;
             certificationsSection.appendChild(certificationDiv);
         });
@@ -231,12 +199,12 @@ function displaySkills(skills = []) {
 
 function displayInvolvement() {
     const data = JSON.parse(localStorage.getItem('data')) || { involvement: [] };
-    const involvementList = document.getElementById('involvement');
+    const involvementList = document.getElementById('involvement-list');
     if (!involvementList) {
         console.error("Element with id 'involvement-list' not found in the DOM");
         return;
     }
-    involvementList.innerHTML = '<h2>Involvement</h2>';  // Clear the list before appending new items
+    involvementList.innerHTML = '';  // Clear the list before appending new items
 
     data.involvement.forEach((involve, index) => {
         const involvementDiv = document.createElement('div');
@@ -246,7 +214,7 @@ function displayInvolvement() {
                 <h3>${involve.title}</h3>
                 <p><strong>${involve.subtitle}</strong></p>
                 <p>${involve.description}</p>
-               
+                <button onclick="deleteInvolvement(${index})">Delete</button>
             </article>
         `;
         involvementList.appendChild(involvementDiv);
@@ -255,14 +223,5 @@ function displayInvolvement() {
 
 // Fetch content on page load
 window.addEventListener('DOMContentLoaded', (event) => {
-    // Replace fetchContent with localStorage data retrieval
-    const data = JSON.parse(localStorage.getItem('data')) || {};
-    displayBio(data.bio);
-    displaySummary(data.summary);
-    displayExperiences(data.experiences);
-    displayProjects(data.projects);
-    displayEducation(data.education);
-    displayCertifications(data.certifications);
-    displaySkills(data.skills);
-    displayInvolvement(data.involvement);
+    fetchContent();
 });
