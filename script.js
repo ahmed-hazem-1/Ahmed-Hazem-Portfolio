@@ -42,57 +42,6 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
-// Fetch content from localStorage
-function fetchContent() {
-    const data = JSON.parse(localStorage.getItem('data')) || {
-        bio: {
-            name: '',
-            description: '',
-            email: '',
-            phone: '',
-            linkedin: '',
-            github: '',
-            kaggle: '',
-            photo: ''
-        },
-        summary: '',
-        experiences: [],
-        projects: [],
-        education: [],
-        certifications: [],
-        skills: [],
-        involvement: []
-    };
-
-    // Display bio
-    displayBio(data.bio);
-
-    // Display summary
-    const summaryContent = document.getElementById('summary-content');
-    if (summaryContent) {
-        summaryContent.value = data.summary;
-    }
-
-    // Display experiences
-    displayExperiences(data.experiences);
-
-    // Display projects
-    displayProjects(data.projects);
-
-    // Display education
-    displayEducation(data.education);
-
-    // Display certifications
-    displayCertifications(data.certifications);
-
-    // Display skills
-    displaySkills(data.skills);
-
-    // Display involvement
-    displayInvolvement(data.involvement);
-}
-
 function displayBio(bioData) {
     if (!bioData) {
         console.error("bioData is undefined or null.");
