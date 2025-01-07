@@ -1,7 +1,24 @@
-
-
 const themeToggle = document.getElementById('theme-toggle');
 const root = document.documentElement;
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      root.style.setProperty('--background-color', '#1a1a1a');
+      root.style.setProperty('--text-color', '#e0e0e0');
+      root.style.setProperty('--card-background-color', '#2a2a2a');
+      root.style.setProperty('--card-text-color', '#e0e0e0');
+      root.style.setProperty('--shadow-color', 'rgba(255, 255, 255, 0.3)');
+      themeToggle.textContent = 'Light Mode';
+    } else {
+      root.style.setProperty('--background-color', '#ffffff');
+      root.style.setProperty('--text-color', '#000000');
+      root.style.setProperty('--card-background-color', '#e6e8fa');
+      root.style.setProperty('--card-text-color', '#000000');
+      root.style.setProperty('--shadow-color', 'rgba(0, 0, 0, 0.3)');
+      themeToggle.textContent = 'Dark Mode';
+    }
+  });
 
 themeToggle.addEventListener('click', () => {
 if (root.style.getPropertyValue('--background-color') === '#1a1a1a') {
@@ -224,4 +241,21 @@ function displayInvolvement() {
 // Fetch content on page load
 window.addEventListener('DOMContentLoaded', (event) => {
     fetchContent();
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const navbar = document.querySelector('.navbar');
+    const menuToggle = document.getElementById('menu-toggle');
+    
+    // Toggle navbar when the button is clicked
+    menuToggle.addEventListener('click', function() {
+        navbar.classList.toggle('active');
+    });
+    
+    // Close navbar when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!navbar.contains(e.target) && !menuToggle.contains(e.target) && navbar.classList.contains('active')) {
+            navbar.classList.remove('active');
+        }
+    });
 });
