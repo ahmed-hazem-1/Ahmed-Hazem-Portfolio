@@ -123,48 +123,48 @@ function displayExperiences(experiences) {
     }
 }
 
-function displayProjects(projects) {
+function setupViewMoreLess() {
+    const viewMoreButton = document.getElementById('view-more');
+    const viewLessButton = document.getElementById('view-less');
     const projectsContainer = document.getElementById('projects-container');
-    if (projectsContainer) {
-        projectsContainer.innerHTML = '';
-        projects.forEach((project, index) => {
-            const card = document.createElement('div');
-            card.className = 'card';
-            card.innerHTML = `
-                <h3>${project.title}</h3>
-                <p>${project.description}</p>
-                <a href="${project.link}" target="_blank" rel="noopener noreferrer">Link</a>
-            `;
-            if (index >= 2) {
-                card.style.display = 'none'; // Hide all cards except the first two
-            }
-            projectsContainer.appendChild(card);
-        });
 
-        const viewMoreButton = document.getElementById('view-more');
-        const viewLessButton = document.getElementById('view-less');
-
-        viewMoreButton.addEventListener('click', () => {
-            const hiddenCards = projectsContainer.querySelectorAll('.card[style*="display: none"]');
-            hiddenCards.forEach(card => {
-                card.style.display = 'block'; // Show all hidden cards
-            });
-            viewMoreButton.style.display = 'none'; // Hide the "View More" button
-            viewLessButton.style.display = 'block'; // Show the "View Less" button
-        });
-
-        viewLessButton.addEventListener('click', () => {
-            const allCards = projectsContainer.querySelectorAll('.card');
-            allCards.forEach((card, index) => {
-                if (index >= 2) {
-                    card.style.display = 'none'; // Hide all cards except the first two
-                }
-            });
-            viewMoreButton.style.display = 'block'; // Show the "View More" button
-            viewLessButton.style.display = 'none'; // Hide the "View Less" button
-        });
+    if (!viewMoreButton || !viewLessButton || !projectsContainer) {
+        console.error('Missing required elements for view more/less functionality');
+        return;
     }
+
+    const allCards = projectsContainer.querySelectorAll('.card');
+    
+    // Initial state - show only first two cards
+    allCards.forEach((card, index) => {
+        card.style.display = index < 2 ? 'block' : 'none';
+    });
+    
+    viewMoreButton.style.display = 'block';
+    viewLessButton.style.display = 'none';
+
+    viewMoreButton.addEventListener('click', () => {
+        allCards.forEach(card => card.style.display = 'block');
+        viewMoreButton.style.display = 'none';
+        viewLessButton.style.display = 'block';
+    });
+
+    viewLessButton.addEventListener('click', () => {
+        allCards.forEach((card, index) => {
+            card.style.display = index < 2 ? 'block' : 'none';
+        });
+        viewMoreButton.style.display = 'block';
+        viewLessButton.style.display = 'none';
+    });
 }
+
+// Call setupViewMoreLess when the DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    setupViewMoreLess();
+});
+
+// Remove or comment out the displayProjects function since we're using static HTML
+// function displayProjects(projects) { ... }
 
 function displayEducation(education = []) {
     const educationSection = document.getElementById('education');
