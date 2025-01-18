@@ -142,6 +142,7 @@ header div {
     display: block;
     position: relative;
     min-height: 700px;
+    overflow: hidden;
     height: auto;
 }
 .view-card{
@@ -452,7 +453,16 @@ footer {
     .project-photo {
         height: 200px;
     }
+    .prev-btn,
+.next-btn{
+    /* width: 3rem;
+    height: 3rem; */
+    text-align: center;
+    padding: 25px;
+    margin-left: 1rem;
+    font-size: 0.7rem;
     
+}
 }
 
 .prev-btn,

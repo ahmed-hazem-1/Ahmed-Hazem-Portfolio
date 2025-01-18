@@ -5,14 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
         root.style.setProperty('--background-color', '#1a1a1a');
         root.style.setProperty('--text-color', '#e0e0e0');
-        root.style.setProperty('--card-background-color', '#2a2a2a');
+        root.style.setProperty('--card-background-color', '--background-color');
         root.style.setProperty('--card-text-color', '#e0e0e0');
         root.style.setProperty('--shadow-color', 'rgba(255, 255, 255, 0.3)');
         themeToggle.textContent = 'Light Mode';
     } else {
         root.style.setProperty('--background-color', '#ffffff');
         root.style.setProperty('--text-color', '#000000');
-        root.style.setProperty('--card-background-color', '#e6e8fa');
+        root.style.setProperty('--card-background-color', '--background-color');
         root.style.setProperty('--card-text-color', '#000000');
         root.style.setProperty('--shadow-color', 'rgba(0, 0, 0, 0.3)');
         themeToggle.textContent = 'Dark Mode';
