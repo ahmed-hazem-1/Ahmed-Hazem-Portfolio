@@ -141,7 +141,7 @@ header div {
 #projects{
     display: block;
     position: relative;
-    min-height: 700px;
+    min-height: 90vh;
     overflow: hidden;
     height: auto;
 }
@@ -166,7 +166,7 @@ header div {
     align-items: center;
     text-align: center;
     border-radius: 15px;
-    width: 100%;
+    width: 80%;
     margin: 0 auto;
     padding: 1rem;
     box-sizing: border-box;
@@ -178,9 +178,8 @@ header div {
     opacity: 1; /* Change from 0 */
     pointer-events: all; /* Enable interactions */
     background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
-    height: auto; /* Set height to auto */
-    min-height: 400px; /* Minimum height */
-    max-height: none; /* Remove maximum height */
+    height: 85%; /* Set height to auto */
+    min-height: fit-content; /* Minimum height */
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -192,20 +191,16 @@ header div {
 }
 
 .project-photo {
-    width: 100% !important;
-    max-width: 500px;
+    width: 90% !important;
+    /* max-width: 500px; */
     display:-webkit-inline-box;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
     object-fit: cover;
     object-position: center;
-    margin-left: 20px;
-    height: 100%;
+    height: auto;
     width: 100%;
-    max-height: 460px; /* Account for padding */
-    height: 300px; /* Fixed height for images */
-    margin: 0 0 20px 0; /* Remove left margin, add bottom margin */
     overflow: hidden;
 }
 
@@ -230,14 +225,13 @@ header div {
 }
 
 .card p {
-    width: 100%;
+    width: 80%;
     display: flex;
     margin: 20px 0;
     background-color: var(--card-background-color);
     padding: 20px;
     border-radius: 5px;
     text-align: left;
-    width: 80%;
     margin: 0 auto;
     line-height: 2rem;
     overflow: visible;
