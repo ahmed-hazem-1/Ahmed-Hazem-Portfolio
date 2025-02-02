@@ -28,11 +28,12 @@ body {
 header {
     background: var(--solo-theme);
     color: white;
-    padding: 5% 10%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     flex-wrap: wrap;
+    height: 85vh;
+    padding: 0 20px;
 }
 .main-container {
     
@@ -40,31 +41,52 @@ header {
     background-image: var(--svg-background);
 }   
     
-
-
-    .profile-photo {
-    width: 250px;
-    height: auto;
+.profile-photo img {
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     object-fit: cover;
+    margin: 0 auto;
+    display: block;
 }
 
+.profile-photo {
+    width: 40%;
+    max-width: 500px;
+    height: 100%;
+    border-radius: 10% 10% 0 0;
+    object-fit: cover;
+    margin:0 auto;
+}
+#bio-content{
+    width: 50%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    font-family: "Itim", serif;
+  font-weight: 400;
+  font-style: normal;
+}
 header div {
     text-align: center;
 }
 
 .navbar {
     background: var(--solo-theme);
-    padding: 10px;
+    padding: 20px 10px;
     text-align: center;
+    height: 10vh;
 }
 .menu-toggle {
     display: none;}
 .navbar a {
     color: white;
-    margin: 0 10px;
+    margin:  10px;
     text-decoration: none;
-    font-size: 1rem; /* Responsive font size */
+    font-size: 1.2rem; /* Responsive font size */
 }
 
 .navbar button {
@@ -114,13 +136,11 @@ header div {
 
 .section h2 {
     color: var(--primary-color);
-    margin-bottom: 10px;
+    margin: 10px;
     font-size: 1.5rem; /* Responsive font size */
 }
 .card-container {
     position: relative;
-    height: auto; /* Set height to auto */
-    min-height: 500px; 
     margin-top: 60px; /* Space for navigation buttons */
     display: flex;
     flex-wrap: wrap;
@@ -141,7 +161,7 @@ header div {
 #projects{
     display: block;
     position: relative;
-    min-height: 90vh;
+    min-height: 110vh;
     overflow: hidden;
     height: auto;
 }
@@ -166,9 +186,8 @@ header div {
     align-items: center;
     text-align: center;
     border-radius: 15px;
-    width: 80%;
+    width: 85%;
     margin: 0 auto;
-    padding: 1rem;
     box-sizing: border-box;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     color: var(--card-text-color);
@@ -178,8 +197,8 @@ header div {
     opacity: 1; /* Change from 0 */
     pointer-events: all; /* Enable interactions */
     background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
-    height: 85%; /* Set height to auto */
-    min-height: fit-content; /* Minimum height */
+    height: 95vh; /* Set height to auto */
+    /* min-height: fit-content; Minimum height */
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -203,12 +222,16 @@ header div {
     width: 100%;
     overflow: hidden;
 }
+.project-photo{
+    width: 100% !important;
 
+}
 .project-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
+    
 }
 
 .card img {
@@ -342,22 +365,42 @@ footer {
 
 @media (max-width: 890px) {
     header {
-        flex-direction: column;
+        display: flex;
+        flex-direction: column-reverse;
         align-items: center;
         text-align: center;
+        height: 100vh;
+        margin: 0;
+        justify-content: space-between;
     }
 
     header div {
         text-align: center;
         margin-bottom: 20px;
-        order: 2;
-        font-size: smaller;
+        order: 1;
+        font-size: 1rem;
     }
 
     .profile-photo {
-        width: 10wh;
-        height: auto;
-        order: 1;
+        width: 100%;
+        height: 70%;
+        max-height: 350px;
+        order: 2;
+        border-radius:0 0 15% 15% ;
+        margin: 0;
+        padding: 0;
+    }
+    .profile-photo img{
+        height: 100%;
+        width: 100%;
+    }
+    #bio-content{
+        width: 100%;
+        font-size: 1rem;
+        order: 2;
+        height: 30%;
+        margin: auto;
+
     }
     .navbar {
         position: fixed;
@@ -423,8 +466,8 @@ footer {
         padding-top: 60px;
     }
     .card {
-       
-        margin: 0;
+       padding: 0;
+        margin: 20px 0;
         width: 100%;
         height: auto;
         box-shadow: 0 0 10px var(--shadow-color);
@@ -440,12 +483,19 @@ footer {
     #card-description {
         height: auto;
     }
+    .card h3{
+        margin: 10px;
+        padding: auto 10px;
+
+    }
     .card img {
         height: auto;
         max-height: 200px;
     }
     .project-photo {
         height: 200px;
+        width: 100% !important;
+
     }
     .prev-btn,
 .next-btn{
@@ -474,10 +524,14 @@ footer {
 
 .prev-btn {
     right: 100px;
+    margin: 10px 0;
+    display: inline;
 }
 
 .next-btn {
     right: 10px;
+    margin: 10px 0;
+
 }
 
 .view-card.active .card {

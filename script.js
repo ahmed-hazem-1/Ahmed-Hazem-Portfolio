@@ -142,7 +142,7 @@ function displayBio(bioData) {
         bioGithub.href = bioData.github || '';
         bioKaggle.textContent = 'Kaggle';
         bioKaggle.href = bioData.kaggle || '';
-        bioPhoto.src = bioData.photo || '';
+        // bioPhoto.src = bioData.photo || '';
     } else {
         console.error("One or more elements are missing in the DOM.");
     }
