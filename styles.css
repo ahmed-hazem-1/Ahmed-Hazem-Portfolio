@@ -363,6 +363,33 @@ footer {
     text-decoration: underline;
 }
 
+#quick-message-button {
+  position: fixed;
+  bottom: 20px;
+  right: 0px;
+  background-color: white;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 50% 0 0 50%;
+  text-decoration: none;
+  z-index: 999;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  background-image: url('imgs/chat.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 40px 40px;
+  color: transparent; 
+  text-indent: -9999px; 
+  width: 40px;
+  height: 50px;
+}
+
+#quick-message-button:hover {
+  background-color: var(--primary-color);
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
 @media (max-width: 890px) {
     header {
         display: flex;
@@ -498,15 +525,20 @@ footer {
 
     }
     .prev-btn,
-.next-btn{
-    /* width: 3rem;
-    height: 3rem; */
-    text-align: center;
-    padding: 25px;
-    margin-left: 1rem;
-    font-size: 0.7rem;
-    
-}
+    .next-btn{
+        /* width: 3rem;
+        height: 3rem; */
+        text-align: center;
+        padding: 25px;
+        margin-left: 1rem;
+        font-size: 0.7rem;
+        
+    }
+   #quick-message-button{
+        width: 20px;
+        height: 25px;
+        background-size: 30px 30px;
+   }
 }
 
 .prev-btn,
