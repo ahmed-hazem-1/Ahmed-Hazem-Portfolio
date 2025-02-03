@@ -578,15 +578,15 @@ footer {
     }
     .card {
        padding: 0;
-        margin: 20px 0;
-        width: 100%;
+        margin: 20px auto;
+        width: 99%;
         height: auto;
         box-shadow: 0 0 10px var(--shadow-color);
         margin-bottom: 20px;
         grid-template-columns: 1fr;
         height: auto;
         min-height: 50vh;
-        max-height: 100vh;
+        max-height: 70vh;
         max-width: 100%;
     }
     .card:hover {
@@ -594,6 +594,7 @@ footer {
     }
     #card-description {
         height: auto;
+        font-size: smaller;
     }
     .card h3{
         margin: 10px;
