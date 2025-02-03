@@ -77,7 +77,7 @@ themeToggle.addEventListener('click', () => {
     if (root.style.getPropertyValue('--background-color') === '#1a1a1a') {
         root.style.setProperty('--background-color', '#ffffff');
         root.style.setProperty('--text-color', '#000000');
-        root.style.setProperty('--card-background-color', '#e6e8fa');
+        root.style.setProperty('--card-background-color', '#ffffff');
         root.style.setProperty('--card-text-color', '#000000');
         root.style.setProperty('--shadow-color', 'rgba(0, 0, 0, 0.3)'); // Light mode shadow color
         themeToggle.textContent = 'Dark Mode';

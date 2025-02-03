@@ -258,6 +258,16 @@
         </div>
     </footer>
 
+    <script>
+        document.getElementById('theme-toggle').onclick = function() {
+          document.body.classList.toggle('light-theme');
+          if (document.body.classList.contains('light-theme')) {
+            this.textContent = 'Dark Mode';
+          } else {
+            this.textContent = 'Light Mode';
+          }
+        };
+    </script>
 
 </body>
 </html>

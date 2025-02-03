@@ -1,10 +1,10 @@
 :root {
     --primary-color: #8a2be2;
     --background:linear-gradient(155deg, #0e0666 0%, #12100e 74%, rgba(102, 0, 153, 1) 100%);
-    
+    --background-light:linear-gradient(90deg, rgb(114, 43, 54) 0.00%, rgb(238, 178, 123) 100.00%);
     --text-color: #e0e0e0;
     --solo-theme: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 51, 1) 20%, rgba(0, 0, 102, 1) 40%, rgba(51, 0, 102, 1) 60%, rgba(102, 0, 153, 1) 80%, rgba(0, 0, 0, 1));
-    --card-background-color: #2a2a2a;
+    --card-background-color: #303030;
     --card-text-color: #e0e0e0;
     --shadow-color: rgba(255, 255, 255, 0.3); /* Default shadow color for dark mode */
     --base-font-size: 1rem; /* Base font size */
@@ -22,6 +22,14 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: var(--base-font-size);
     margin: 0;
+}
+
+body.light-theme {
+    --background: var(--background-light);
+    --solo-theme: var(--background-light);
+    --primary-color: #ff6347; /* Example light theme primary color */
+    --card-background-color: #ffffff; /* Example light theme card background color */
+    --card-text-color: #000000; /* Example light theme card text color */
 }
 
 header {
@@ -116,7 +124,7 @@ header div {
 }
 
 
-#summary, #education, #skills, #certifications, #experience, #involvement {
+#summary, #education, #skills, #certifications, #experience, #involvement ,.card{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -131,7 +139,7 @@ header div {
     font-style: normal;
     border: 1px solid black;
     border-radius: 20px;
-    background: black;
+    background: var(--card-background-color);
     transition: 0.3s;
     position: relative;
     z-index:2; 
@@ -249,24 +257,7 @@ header div {
     pointer-events: all; /* Enable interactions */
 }
 .card {
-    background-color: var(--card-background-color);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    border-radius: 15px;
-    width: 85%;
-    margin: 0 auto;
-    box-sizing: border-box;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    color: var(--card-text-color);
-    transition: 0.3s ease, border 0.8s ease;
-    will-change: transform;
-    border: 1px solid var(--primary-color);
-    opacity: 1; /* Change from 0 */
-    pointer-events: all; /* Enable interactions */
-    background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
-    height: 95vh; /* Set height to auto */
+    height: 90vh; /* Set height to auto */
     /* min-height: fit-content; Minimum height */
     overflow: hidden;
     display: flex;
@@ -276,6 +267,8 @@ header div {
     max-width: 800px; /* Limit maximum width */
     margin: 0 auto;
     transition: all 0.3s ease;
+    background-color: var(--card-background-color);
+
 }
 
 .project-photo {
@@ -323,7 +316,7 @@ header div {
     padding: 20px;
     border-radius: 5px;
     text-align: left;
-    margin: 0 auto;
+    margin: 0 ;
     line-height: 2rem;
     overflow: visible;
     text-overflow: clip;
@@ -335,18 +328,21 @@ header div {
     display: block;
     line-height: 1rem;
     margin: 10px 0;
+
 }
 
 .card-content {
-    width: 100%;
+    width: 95%;
     display: flex;
-    margin: 20px 0;
+    margin: 20px auto;
     flex-direction: column;
     justify-content: space-between;
     height: auto; /* Set height to auto */
     min-height: 200px; /* Minimum height */
     position: relative;
-    padding: 0 20px; /* Add horizontal padding */
+    padding: 20px; /* Add horizontal padding */
+    border: 1px solid var(--shadow-color) ;
+    border-radius: 5px;
 }
 
 .card h3 {
