@@ -163,16 +163,16 @@ body {
     hsl(210, 60%, 30%) 50%,
     hsl(210, 65%, 35%) 75%, 
     hsl(210, 70%, 40%) 100%);
-  background-attachment: fixed;
+  /* background-attachment: fixed;
   background-size: 200% 200%;
-  animation: gradientShift 20s ease infinite;
+  animation: gradientShift 20s ease infinite; */
 }
 
-@keyframes gradientShift {
+/* @keyframes gradientShift {
   0% { background-position: 0% 0%; }
   50% { background-position: 100% 100%; }
   100% { background-position: 0% 0%; }
-}
+} */
 
 /* Also update scrollbar to match the theme better */
 ::-webkit-scrollbar-track {
@@ -1351,18 +1351,29 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 .form-btn ion-icon { font-size: 16px; }
 
-.form-btn:hover { background: var(--bg-gradient-yellow-1); }
+.form-btn:hover { background: hsl(210, 90%, 40%);
+color: white; }
 
-.form-btn:hover::before { background: var(--bg-gradient-yellow-2); }
+.form-btn:hover::before { 
+
+  background: var(--bg-gradient-yellow-2);
+  display: none;
+}
 
 .form-btn:disabled {
   opacity: 0.7;
   cursor: not-allowed;
 }
 
-.form-btn:disabled:hover { background: var(--border-gradient-onyx); }
+.form-btn:disabled:hover { background: var(--border-gradient-onyx);
+  display: none;
 
-.form-btn:disabled:hover::before { background: var(--bg-gradient-jet); }
+}
+
+.form-btn:disabled:hover::before { background: var(--bg-gradient-jet); 
+  display: none;
+
+}
 
 
 
