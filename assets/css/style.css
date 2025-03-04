@@ -25,82 +25,82 @@
 
   --bg-gradient-onyx: linear-gradient(
     to bottom right, 
-    hsl(240, 1%, 25%) 3%, 
-    hsl(0, 0%, 19%) 97%
-  );
-  --bg-gradient-jet: linear-gradient(
+    hsl(210, 70%, 95%) 3%, 
+    hsl(210, 70%, 90%) 97%
+    );
+    --bg-gradient-jet: linear-gradient(
     to bottom right, 
-    hsla(240, 1%, 18%, 0.251) 0%, 
-    hsla(240, 2%, 11%, 0) 100%
-  ), hsl(240, 2%, 13%);
-  --bg-gradient-yellow-1: linear-gradient(
+    hsla(210, 70%, 96%, 0.251) 0%, 
+    hsla(210, 70%, 98%, 0) 100%
+    ), hsl(210, 70%, 99%);
+    --bg-gradient-yellow-1: linear-gradient(
     to bottom right, 
-    hsl(45, 100%, 71%) 0%, 
-    hsla(36, 100%, 69%, 0) 50%
-  );
-  --bg-gradient-yellow-2: linear-gradient(
+    hsl(210, 90%, 40%) 0%, 
+    hsla(210, 90%, 40%, 0) 50%
+    );
+    --bg-gradient-yellow-2: linear-gradient(
     135deg, 
-    hsla(45, 100%, 71%, 0.251) 0%, 
-    hsla(35, 100%, 68%, 0) 59.86%
-  ), hsl(240, 2%, 13%);
-  --border-gradient-onyx: linear-gradient(
+    hsla(210, 90%, 40%, 0.251) 0%, 
+    hsla(210, 90%, 40%, 0) 59.86%
+    ), hsl(210, 70%, 99%);
+    --border-gradient-onyx: linear-gradient(
     to bottom right, 
-    hsl(0, 0%, 25%) 0%, 
-    hsla(0, 0%, 25%, 0) 50%
-  );
-  --text-gradient-yellow: linear-gradient(
+    hsl(210, 70%, 85%) 0%, 
+    hsla(210, 70%, 85%, 0) 50%
+    );
+    --text-gradient-yellow: linear-gradient(
     to right, 
-    hsl(45, 100%, 72%), 
-    hsl(35, 100%, 68%)
-  );
+    hsl(210, 90%, 40%), 
+    hsl(210, 70%, 50%)
+    );
 
-  /* solid */
+    /* solid */
 
-  --jet: hsl(0, 0%, 22%);
-  --onyx: hsl(240, 1%, 17%);
-  --eerie-black-1: hsl(240, 2%, 13%);
-  --eerie-black-2: hsl(240, 2%, 12%);
-  --smoky-black: hsl(0, 0%, 7%);
-  --white-1: hsl(0, 0%, 100%);
-  --white-2: hsl(0, 0%, 98%);
-  --orange-yellow-crayola: hsl(45, 100%, 72%);
-  --vegas-gold: hsl(45, 54%, 58%);
-  --light-gray: hsl(0, 0%, 84%);
-  --light-gray-70: hsla(0, 0%, 84%, 0.7);
-  --bittersweet-shimmer: hsl(0, 43%, 51%);
+    --jet: hsl(210, 40%, 80%);
+    --onyx: hsl(210, 40%, 90%);
+    --eerie-black-1: hsl(210, 40%, 95%);
+    --eerie-black-2: hsl(210, 40%, 93%);
+    --smoky-black: hsl(0, 0%, 100%);
+    --white-1: hsl(210, 70%, 15%);
+    --white-2: hsl(210, 70%, 20%);
+    --orange-yellow-crayola: hsl(210, 90%, 40%); /* LinkedIn blue */
+    --vegas-gold: hsl(210, 70%, 50%); /* Lighter LinkedIn blue */
+    --light-gray: hsl(210, 70%, 30%);
+    --light-gray-70: hsla(210, 70%, 30%, 0.7);
+    --bittersweet-shimmer: hsl(0, 60%, 50%);
 
-  /**
-   * typography
-   */
+    /**
+     * typography
+     */
 
-  /* font-family */
-  --ff-poppins: 'Poppins', sans-serif;
+    /* font-family */
+    --ff-poppins: 'Poppins', sans-serif;
 
-  /* font-size */
-  --fs-1: 24px;
-  --fs-2: 18px;
-  --fs-3: 17px;
-  --fs-4: 16px;
-  --fs-5: 15px;
-  --fs-6: 14px;
-  --fs-7: 13px;
-  --fs-8: 11px;
+    /* font-size */
+    --fs-1: 24px;
+    --fs-2: 18px;
+    --fs-3: 17px;
+    --fs-4: 16px;
+    --fs-5: 15px;
+    --fs-6: 14px;
+    --fs-7: 13px;
+    --fs-8: 11px;
 
-  /* font-weight */
-  --fw-300: 300;
-  --fw-400: 400;
-  --fw-500: 500;
-  --fw-600: 600;
+    /* font-weight */
+    --fw-300: 300;
+    --fw-400: 400;
+    --fw-500: 500;
+    --fw-600: 600;
 
-  /**
-   * shadow
-   */
-  
-  --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
-  --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
-  --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.25);
-  --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.15);
-  --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.25);
+    /**
+     * shadow
+     */
+    
+    --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.1);
+    --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.1);
+    --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.1);
+    --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.06);
+    --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.09);
 
   /**
    * transition
@@ -155,7 +155,29 @@ input, textarea {
 
 html { font-family: var(--ff-poppins); }
 
-body { background: var(--smoky-black); }
+/* Update body with a professional LinkedIn-themed gradient background */
+body {
+  background: linear-gradient(135deg, 
+    hsl(210, 50%, 20%) 0%, 
+    hsl(210, 55%, 25%) 25%, 
+    hsl(210, 60%, 30%) 50%,
+    hsl(210, 65%, 35%) 75%, 
+    hsl(210, 70%, 40%) 100%);
+  background-attachment: fixed;
+  background-size: 200% 200%;
+  animation: gradientShift 20s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+/* Also update scrollbar to match the theme better */
+::-webkit-scrollbar-track {
+  background: hsl(210, 40%, 95%);
+}
 
 
 
@@ -224,8 +246,7 @@ article.active {
 .h3,
 .h4,
 .h5 {
-  color: var(--white-2);
-  text-transform: capitalize;
+  color: var(--white-1);  /* Darker color for better contrast on light theme */
 }
 
 .h2 { font-size: var(--fs-1); }
@@ -308,7 +329,7 @@ article.active {
   margin-bottom: 1px; /* Reduce the vertical spacing between items */
   font-size: 14px;
   font-weight: 600; /* Increase font-weight for extra boldness */
-  color: #FFFFFF; /* White text */
+  color: var(--white-1); /* Change from #FFFFFF (white) to dark color */
 }
 
 .skills-item:nth-child(odd) {
@@ -319,7 +340,7 @@ article.active {
   margin-bottom: 15px;
   font-size: 24px;
   font-weight: 700; /* Bold title */
-  color: #FFFFFF; /* White title text */
+  color: var(--white-1); /* Change from #FFFFFF (white) to dark color */
 }
 
 
@@ -330,7 +351,7 @@ article.active {
 }
 
 .testimonials-job-title {
-  color: white;
+  color: var(--white-1); /* Change from white to dark color */
 }
 
 .testimonials-linkedin {
@@ -344,8 +365,8 @@ article.active {
 
 
 .custom-info-btn {
-  background-color: gold; /* Sets the button background to gold */
-  color: black; /* Sets the text color to black for contrast */
+  background-color: #0A66C2; /* LinkedIn blue instead of gold */
+  color: white; /* Change from black to white for better contrast on blue */
   border: 2px solid black; /* Adds a black border */
   padding: 0.5px 1px; /* Reduces padding for a smaller button */
   border-radius: 1px; /* Rounds the button corners */
@@ -360,11 +381,11 @@ article.active {
 
 .custom-info-btn ion-icon {
   margin-left: 1px; /* Reduces space between text and icon */
-  color: black; /* Sets the icon color to black */
+  color: white; /* Change from black to white */
 }
 
 .custom-info-btn:hover {
-  background-color: #f0e5a1; /* Changes background to a lighter gold on hover */
+  background-color: #0073b1; /* Slightly lighter LinkedIn blue on hover */
 }
 
 
@@ -417,21 +438,14 @@ main {
 }
 
 .info-content .name {
-  color: var(--white-2);
-  font-size: var(--fs-3);
-  font-weight: var(--fw-500);
-  letter-spacing: -0.25px;
-  margin-bottom: 10px;
+  color: var(--white-1);  /* Darker color for better contrast on light background */
+  font-size:  1.2rem;
 }
 
 .info-content .title {
   color: var(--white-1);
-  background: var(--onyx);
-  font-size: var(--fs-8);
-  font-weight: var(--fw-300);
-  width: max-content;
-  padding: 3px 12px;
-  border-radius: 8px;
+  background: var(--jet);  /* Slightly darker background for better visibility */
+  border-radius: 7px;
 }
 
 .info_more-btn {
@@ -440,8 +454,8 @@ main {
   right: -15px;
   border-radius: 0 25px;
   font-size: 23px;
-  color: var(--orange-yellow-crayola);
-  background: #f7e07c; /* Brightened background color */
+  color: white;
+  background: #0A66C2; /* LinkedIn blue */
   padding: 10px;
   box-shadow: var(--shadow-2);
   transition: var(--transition-1);
@@ -453,17 +467,19 @@ main {
   position: absolute;
   inset: 1px;
   border-radius: inherit;
-  background: #816c2e; /* Brightened background color */
+  background:var(--bg-gradient-yellow-1); /* LinkedIn blue */
   transition: var(--transition-1);
   z-index: -1;
 }
 
-
+/* 
 .info_more-btn:hover,
-.info_more-btn:focus { background: var(--bg-gradient-yellow-1); }
+.info_more-btn:focus {  
+    background-color: white; 
+    color: var(--orange-yellow-crayola); }
 
 .info_more-btn:hover::before,
-.info_more-btn:focus::before { background: var(--bg-gradient-yellow-2); }
+.info_more-btn:focus::before { background-color: white; } */
 
 .info_more-btn span { display: none; }
 
@@ -497,15 +513,11 @@ main {
 }
 
 .contact-title {
-  color: var(--light-gray-70);
-  font-size: var(--fs-8);
-  text-transform: uppercase;
-  margin-bottom: 2px;
+  color: var(--white-1);  /* Darker color for better visibility on light theme */
 }
 
 .contact-info :is(.contact-link, time, address) {
-  color: var(--white-2);
-  font-size: var(--fs-7);
+  color: var(--light-gray);  /* Darker shade for better readability */
 }
 
 .contact-info address { font-style: normal; }
@@ -520,12 +532,12 @@ main {
 }
 
 .social-item .social-link {
-  color: var(--light-gray-70);
-  font-size: 18px;
+  color: var(--white-1);  /* Darker color for social links */
 }
 
-
-.social-item .social-link:hover { color: var(--light-gray); }
+.social-item .social-link:hover { 
+  color: var(--orange-yellow-crayola);  /* More vibrant hover color */
+}
 
 
   .timeline-list {
@@ -538,26 +550,40 @@ main {
 
   .timeline-item-title {
     margin-bottom: 1px; /* Reduce space between title and other elements */
-    color: white; /* Set certificate name to white */
+    color: var(--white-1); /* Change from white to dark color */
   }
 
   .timeline-item span {
     margin: 2px 0; /* Reduce vertical spacing within each item */
-    color: inherit;
+    color: var(--vegas-gold);
   }
 
   .timeline-item p {
     margin: 2px 0; /* Reduce vertical spacing within each item */
-    color: rgb(208, 200, 200); /* Set description text to white */
+    color: var(--light-gray); /* Change from rgb(208, 200, 200) to darker color */
   }
 
   .timeline-item a {
     text-decoration: none;
-    color: white; /* Set link color to white */
+    color: var(--orange-yellow-crayola); /* Change from white to LinkedIn blue */
   }
 
   .timeline-item a:hover {
     text-decoration: underline; /* Optional: underline link on hover */
+  }
+
+  .timeline-item::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: -33px;
+    height: 6px;
+    width: 6px;
+    /* background: var (--text-gradient-yellow); */
+    background-color: var(--orange-yellow-crayola); /* Change from gradient to LinkedIn blue */
+
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px var(--jet);
   }
 
 
@@ -570,11 +596,11 @@ main {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: hsla(240, 1%, 17%, 0.75);
+  background: rgba(200, 200, 200, 0.85);  /* Lighter, semi-transparent background */
   backdrop-filter: blur(10px);
-  border: 1px solid var(--jet);
+  border: 1px solid var(--onyx);
   border-radius: 12px 12px 0 0;
-  box-shadow: var(--shadow-2);
+  box-shadow: var (--shadow-2);
   z-index: 5;
 }
 
@@ -587,16 +613,21 @@ main {
 }
 
 .navbar-link {
-  color: var(--light-gray);
+  color: var(--white-1);  /* Darker color for better contrast */
   font-size: var(--fs-8);
   padding: 20px 7px;
   transition: color var(--transition-1);
 }
 
 .navbar-link:hover,
-.navbar-link:focus { color: var(--light-gray-70); }
+.navbar-link:focus { 
+  color: var(--vegas-gold);  /* More vibrant hover state */
+}
 
-.navbar-link.active { color: var(--orange-yellow-crayola); }
+.navbar-link.active { 
+  color: var(--orange-yellow-crayola); 
+  font-weight: var(--fw-500); /* Add slightly bolder font weight for better visibility */
+}
 
 
 
@@ -609,7 +640,7 @@ main {
 .about .article-title { margin-bottom: 15px; }
 
 .about-text {
-  color: var(--light-gray);
+  color: var(--white-1);  /* Darker text for better readability on light background */
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
   line-height: 1.6;
@@ -660,7 +691,7 @@ main {
 .service-item-title { margin-bottom: 7px; }
 
 .service-item-text {
-  color: var(--light-gray);
+  color: var(--white-1);
   font-size: var(--fs-6);
   font-weight: var(--fw-3);
   line-height: 1.6;
@@ -707,7 +738,7 @@ main {
 .testimonials-item-title { margin-bottom: 7px; }
 
 .testimonials-text {
-  color: var(--light-gray);
+  color: var(--white-1);
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
   line-height: 1.6;
@@ -796,7 +827,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--white-2);
+  color: var(--white-1); /* Change from var(--white-2) to darker color */
   font-size: 18px;
   opacity: 0.7;
 }
@@ -826,7 +857,7 @@ main {
 }
 
 .modal-content p {
-  color: var(--light-gray);
+  color: var(--white-1);
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
   line-height: 1.6;
@@ -904,6 +935,7 @@ main {
   font-size: var(--fs-6);
   line-height: 1.3;
   margin-bottom: 7px;
+  color: var(--white-1); /* Ensure all titles are dark */
 }
 
 .timeline-list span {
@@ -929,13 +961,13 @@ main {
   left: -33px;
   height: 6px;
   width: 6px;
-  background: var(--text-gradient-yellow);
+  background: var (--text-gradient-yellow);
   border-radius: 50%;
   box-shadow: 0 0 0 4px var(--jet);
 }
 
 .timeline-text {
-  color: #585555; /* Replace with any color code, e.g., #ffffff for white */
+  color: var(--white-1);  /* Darker text instead of #585555 */
   font-weight: var(--fw-300);
   line-height: 1.6;
 }
@@ -1033,8 +1065,8 @@ main {
 .select-item button {
   background: var(--eerie-black-2);
   color: var(--light-gray);
-  font-size: var(--fs-6);
-  font-weight: var(--fw-300);
+  font-size: var (--fs-6);
+  font-weight: var (--fw-300);
   text-transform: capitalize;
   width: 100%;
   padding: 8px 10px;
@@ -1124,7 +1156,7 @@ main {
 .project-category { margin-left: 10px; }
 
 .project-title {
-  color: var(--white-2);
+  color: var(--white-1); /* Changed from var(--white-2) to darker color */
   font-size: var(--fs-5);
   font-weight: var(--fw-400);
   text-transform: capitalize;
@@ -1219,7 +1251,7 @@ main {
 .blog-post-item > a:hover .blog-item-title { color: var(--orange-yellow-crayola); }
 
 .blog-text {
-  color: var(--light-gray);
+  color: var(--white-1);
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
   line-height: 1.6;
@@ -1264,7 +1296,7 @@ main {
 }
 
 .form-input {
-  color: var(--white-2);
+  color: var(--white-1);  /* Darker text for better visibility */
   font-size: var(--fs-6);
   font-weight: var(--fw-400);
   padding: 13px 20px;
