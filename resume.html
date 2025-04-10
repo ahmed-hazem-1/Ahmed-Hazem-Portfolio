@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume | Ahmed Hazem</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.4.120/build/pdf.min.js"></script>
+  <style>
+    .resume-container {
+      max-width: 800px;
+      margin: 60px auto;
+      background: var(--eerie-black-2);
+      border: 1px solid var(--jet);
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: var(--shadow-2);
+    }
+    
+    .pdf-canvas-container {
+      width: 100%;
+      overflow: hidden;
+      margin-bottom: 20px;
+      background: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    
+    #pdf-canvas {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .resume-actions {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .resume-button {
+      background-color: var(--orange-yellow-crayola);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: var(--fs-6);
+      font-weight: var(--fw-500);
+      text-decoration: none;
+      border: none;
+      transition: background-color 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .resume-button:hover {
+      background-color: hsl(210, 90%, 35%);
+    }
+    
+    .resume-title {
+      color: var(--white-1);
+      margin-bottom: 25px;
+    }
+    
+    @media (max-width: 768px) {
+      .resume-container {
+        margin: 30px 15px;
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="resume-container">
+    <h1 class="resume-title">Ahmed Hazem's Resume</h1>
+    
+    <div class="pdf-canvas-container">
+      <canvas id="pdf-canvas"></canvas>
+    </div>
+    
+    <div class="resume-actions">
+      <a href="assets/pdf/resume.pdf" class="resume-button" download>
+        <ion-icon name="download-outline"></ion-icon>
+        Download PDF
+      </a>
+      <a href="assets/pdf/resume.pdf" class="resume-button" target="_blank">
+        <ion-icon name="document-text-outline"></ion-icon>
+        View Full PDF
+      </a>
+      <a href="index.html" class="resume-button">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+        Back to Portfolio
+      </a>
+    </div>
+  </div>
+
+  <script>
+    // The PDF.js library needs to know where the worker is located
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.4.120/build/pdf.worker.min.js';
+    
+    // Render the first page of the PDF with improved quality
+    const renderPDF = async () => {
+      try {
+        // Load the PDF document
+        const loadingTask = pdfjsLib.getDocument('assets/pdf/resume.pdf');
+        const pdf = await loadingTask.promise;
+        
+        // Get the first page
+        const page = await pdf.getPage(1);
+        
+        // Set the scale based on parent container width with higher DPI
+        const containerWidth = document.querySelector('.pdf-canvas-container').clientWidth;
+        const viewport = page.getViewport({ scale: 1.0 });
+        const scale = containerWidth / viewport.width;
+        
+        // Increase scale by 1.5x for better resolution and sharper text
+        const pixelRatio = window.devicePixelRatio || 1;
+        const scaledViewport = page.getViewport({ scale: scale * pixelRatio });
+        
+        // Prepare canvas with higher resolution
+        const canvas = document.getElementById('pdf-canvas');
+        const context = canvas.getContext('2d');
+        
+        // Set canvas dimensions to the higher resolution
+        canvas.width = scaledViewport.width;
+        canvas.height = scaledViewport.height;
+        
+        // Set display size to match container
+        canvas.style.width = '100%';
+        canvas.style.height = 'auto';
+        
+        // Enable image smoothing for better quality
+        context.imageSmoothingEnabled = true;
+        context.imageSmoothingQuality = 'high';
+        
+        // Render the PDF page with higher quality
+        const renderContext = {
+          canvasContext: context,
+          viewport: scaledViewport,
+          enableWebGL: true,
+          renderInteractiveForms: true
+        };
+        
+        await page.render(renderContext).promise;
+        
+      } catch (error) {
+        console.error('Error rendering PDF:', error);
+        document.querySelector('.pdf-canvas-container').innerHTML = 
+          '<p style="padding: 20px; color: red;">Error loading PDF. Please try the download button below.</p>';
+      }
+    };
+    
+    // Render PDF when page loads
+    document.addEventListener('DOMContentLoaded', renderPDF);
+    
+    // Re-render if window is resized, but with debouncing to prevent constant re-renders
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(renderPDF, 300);
+    });
+  </script>
+  
+  <!-- ionicon for button icons -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

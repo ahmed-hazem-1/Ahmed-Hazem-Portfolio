@@ -197,6 +197,43 @@ article {
   z-index: 1;
 }
 
+.sidebar {
+  margin-bottom: 15px;
+  max-height: 112px;
+  overflow: hidden;
+  transition: var(--transition-2);
+}
+
+.sidebar.active { max-height: 500px; }  /* Increased from 405px to 500px to accommodate the resume button */
+
+/* Resume download button in sidebar */
+.resume-download-container {
+  padding: 5px 0;
+  text-align: center;
+}
+
+.resume-download-btn {
+  background-color: var(--orange-yellow-crayola);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 6px;
+  font-size: var(--fs-7);
+  font-weight: var(--fw-500);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s;
+}
+
+.resume-download-btn:hover {
+  background-color: hsl(210, 90%, 35%);
+}
+
+.resume-download-btn ion-icon {
+  font-size: 18px;
+}
+
 .separator {
   width: 100%;
   height: 1px;
@@ -415,7 +452,7 @@ main {
   transition: var(--transition-2);
 }
 
-.sidebar.active { max-height: 405px; }
+.sidebar.active { max-height: 500px; }
 
 .sidebar-info {
   position: relative;
@@ -1010,6 +1047,72 @@ main {
   border-radius: inherit;
 }
 
+.resume-container {
+  max-width: 800px;
+  margin: 60px auto;
+  background: var(--eerie-black-2);
+  border: 1px solid var(--jet);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: var(--shadow-2);
+}
+
+.pdf-canvas-container {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+#pdf-canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.resume-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.resume-button {
+  background-color: var(--orange-yellow-crayola);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: var(--fs-6);
+  font-weight: var(--fw-500);
+  text-decoration: none;
+  border: none;
+  transition: background-color 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.resume-button:hover {
+  background-color: hsl(210, 90%, 35%);
+}
+
+.resume-title {
+  color: var(--white-1);
+  margin-bottom: 25px;
+}
+
+@media (max-width: 768px) {
+  .resume-container {
+    margin: 30px 15px;
+    padding: 15px;
+  }
+}
+
 
 
 
@@ -1446,6 +1549,13 @@ color: white; }
     width: 520px;
     margin-inline: auto;
     padding: 30px;
+  }
+
+  .sidebar.active { max-height: 650px; }  /* Increased for larger screens */
+
+  .resume-download-btn {
+    padding: 10px 15px;
+    font-size: var(--fs-6);
   }
 
   .article-title {
