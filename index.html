@@ -9,7 +9,7 @@
   <meta property="og:title" content="Ahmed Hazem's Portfolio">
   <!-- <title>Ahmed’s Portfolio</title> -->
   <meta property="og:description" content="Junior Data Scientist and Web Scraper from Cairo, Egypt.">
-  <meta property="og:image" content="./assets/images/photo pro.png">
+  <meta property="og:image" content="./assets/images/photo pro.jpg">
   <meta property="og:url" content="https://ahmed-hazem-1.github.io">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Ahmed Hazem's Portfolio">
@@ -20,7 +20,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Ahmed Hazem's Portfolio">
   <meta name="twitter:description" content="Junior Data Scientist and Web Scraper from Cairo, Egypt.">
-  <meta name="twitter:image" content="./assets/images/photo pro.png">
+  <meta name="twitter:image" content="./assets/images/photo pro.jpg">
 
   <!--
     - favicon
@@ -41,6 +41,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+
   
 </head>
 
@@ -61,7 +63,7 @@
       <div class="sidebar-info">
 
         <figure class="avatar-box">
-          <img src="./assets/images/photo pro.png" alt="Ahmed Hazem Elabady" width="80">
+          <img src="./assets/images/photo pro.jpg" alt="Ahmed Hazem Elabady" width="80">
         </figure>
 
         <div class="info-content">
@@ -794,7 +796,9 @@
             <li class="filter-item">
               <button data-filter-btn>Machine Learning</button>
             </li>
-            
+            <li class="filter-item">
+              <button data-filter-btn>Deep Learning</button>
+            </li>
             
             <li class="filter-item">
               <button data-filter-btn>Data Analysis</button>
@@ -838,6 +842,10 @@
 
               <li class="select-item">
                 <button data-select-item>Machine Learning</button>
+              </li>  
+              
+              <li class="select-item">
+                <button data-select-item>Deep Learning</button>
               </li>
 
               <li class="select-item">
@@ -853,27 +861,46 @@
 
           <!-- projects -->
           <ul class="project-list">
-        <!--  -->
-
-        <li class="project-item  active" data-filter-item data-category="machine learning">
-          <a href="https://colab.research.google.com/drive/16nMS2nUjRVy0dFuPgACu51i0Of4lUrIy?usp=sharing" target="_blank">
-
-            <figure class="project-img">
-              <div class="project-item-icon-box">
-                <ion-icon name="eye-outline"></ion-icon>
-              </div>
-
-              <img src="./assets/images/heart disease.png" alt="Machine Learning" loading="lazy">
-            </figure>
-
-            <h3 class="project-title">Indicators of Heart Disease (Logistic Regression, SVC, KNN, Random Forest)</h3>
-
-            <p class="project-category">Machine Learning</p>
-
-          </a>
-        </li>
-        <!--  -->
             <!--  -->
+
+            <li class="project-item active" data-filter-item data-category="deep learning">
+              <a href="https://github.com/ahmed-hazem-1/DEPI-Project--Land-Type-Classification.git" target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/land_type.png" alt="Land Classification" loading="lazy">
+                </figure>
+                <h3 class="project-title">Land Type Classification using Sentinel-2 Images (Upcomming 🔥)</h3>
+                <p class="project-category">Deep Learning</p>
+                <div class="project-description">
+                  <p>Used DNNs on EuroSAT (Sentinel-2) images to classify land types (water, desert, roads, etc.) for resource management.</p>
+                </div>
+              </a>
+            </li>
+            
+
+            <!--  -->
+            <li class="project-item  active" data-filter-item data-category="machine learning">
+              <a href="https://colab.research.google.com/drive/16nMS2nUjRVy0dFuPgACu51i0Of4lUrIy?usp=sharing" target="_blank">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/heart disease.png" alt="Machine Learning" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Indicators of Heart Disease (Logistic Regression, SVC, KNN, Random Forest)</h3>
+
+                <p class="project-category">Machine Learning</p>
+
+                <div class="project-description">
+                  <p>ML pipeline on 319,795 records for heart disease. High accuracy with KNN (90%) vs. LR (74%), SVC (74%), and RF (73%).</p>
+                </div>
+              </a>
+            </li>
 
             <li class="project-item  active" data-filter-item data-category="machine learning">
               <a href="https://www.kaggle.com/code/ahmedhazemelabady/student-performance-linear-regression-model" target="_blank">
@@ -890,29 +917,33 @@
 
                 <p class="project-category">Machine Learning</p>
 
+                <div class="project-description">
+                  <p>Linear regression predicting student scores with R²=0.989 and MSE=4.083, demonstrating data-driven approaches in education.</p>
+                </div>
               </a>
             </li>
-            <!--  -->
-               <!--  -->
 
-               <li class="project-item  active" data-filter-item data-category="machine learning">
-                <a href="https://colab.research.google.com/drive/1n79WKl_ReM-EWaFlLyu-QbYGjohy9fvS?usp=sharing" target="_blank">
-  
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-  
-                    <img src="./assets/images/NBA.jpg" alt="Machine Learning" loading="lazy">
-                  </figure>
-  
-                  <h3 class="project-title">Predict NBA 2K20 Player Salaries (Linear Regression Model)</h3>
-  
-                  <p class="project-category">Machine Learning</p>
-  
-                </a>
-              </li>
-              <!--  -->
+            <li class="project-item  active" data-filter-item data-category="machine learning">
+              <a href="https://colab.research.google.com/drive/1n79WKl_ReM-EWaFlLyu-QbYGjohy9fvS?usp=sharing" target="_blank">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/NBA.jpg" alt="Machine Learning" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Predict NBA 2K20 Player Salaries (Linear Regression Model)</h3>
+
+                <p class="project-category">Machine Learning</p>
+
+                <div class="project-description">
+                  <p>Used performance metrics in a linear model to predict NBA 2K20 player salaries.</p>
+                </div>
+              </a>
+            </li>
+
             <li class="project-item  active" data-filter-item data-category="web scraping">
               <a href="https://www.kaggle.com/datasets/ahmedhazemelabady/wuzzuf-job-listings-dataset-egypt-january-2025" target="_blank">
 
@@ -928,6 +959,9 @@
 
                 <p class="project-category">Web Scraping</p>
 
+                <div class="project-description">
+                  <p>Scraped 8,000+ Wuzzuf job listings for analytics and predictive modeling.</p>
+                </div>
               </a>
             </li>
 
@@ -946,6 +980,9 @@
 
                 <p class="project-category">Data Analysis</p>
 
+                <div class="project-description">
+                  <p>Explored 8,000+ job listings from Wuzzuf, revealing key market trends for informed decisions.</p>
+                </div>
               </a>
             </li>
 
@@ -964,6 +1001,9 @@
 
                 <p class="project-category">Data Analysis</p>
 
+                <div class="project-description">
+                  <p>Analyzed Titanic passenger survival by factors like gender and class, offering insights into survival patterns.</p>
+                </div>
               </a>
             </li>
 
@@ -982,6 +1022,9 @@
 
                 <p class="project-category">Web Scraping</p>
 
+                <div class="project-description">
+                  <p>Gathered 20,000 anime entries to provide a comprehensive ranking and data insights.</p>
+                </div>
               </a>
             </li>
 
@@ -1000,6 +1043,9 @@
 
                 <p class="project-category">Web Scraping</p>
 
+                <div class="project-description">
+                  <p>Scraped 2,000+ Indeed postings to capture workforce trends and skills demands.</p>
+                </div>
               </a>
             </li>
 
@@ -1018,98 +1064,11 @@
 
                 <p class="project-category">Data Analysis</p>
 
+                <div class="project-description">
+                  <p>Analyzed Indeed data for popular roles, demanded skills, and salary insights.</p>
+                </div>
               </a>
             </li>
-<!-- 
-            <li class="project-item  active" data-filter-item data-category="machine learning">
-              <a href="https://github.com/AbdooMohamedd/Machine-Learning-Projects/tree/main/Housing%20Price%20Prediction%20Regression%20Models%20Evaluation" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/boston.jpg" alt="Housing Price Prediction" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Housing Price Prediction</h3>
-
-                <p class="project-category">Machine Learning</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="data analysis">
-              <a href="https://github.com/AbdooMohamedd/Python-Data-Analysis-Projects/tree/main/Credit%20card%20spending%20-%20India%20EDA%20and%20visualisation" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/card.jpg" alt="Credit Card Spending Analysis" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Credit Card Spending Analysis</h3>
-
-                <p class="project-category">Data Analysis</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="machine learning">
-              <a href="https://www.kaggle.com/code/abdoomoh/breast-cancer-classification-logistic-regress" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/breast-cancer.png" alt="Breast Cancer Classification" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Breast Cancer Classification</h3>
-
-                <p class="project-category">Machine Learning</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="python software engineering">
-              <a href="https://www.kaggle.com/code/abdoomoh/10-ways-to-shorten-your-urls-in-python" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/shorten link.png" alt="task manager" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Shorten URL's in Python</h3>
-
-                <p class="project-category">Python Software Engineering</p>
-
-              </a>
-            </li> -->
-
-            <!-- <li class="project-item  active" data-filter-item data-category="python software engineering">
-              <a href="https://github.com/AbdooMohamedd/Article-Summarizer-with-Gemini-API" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/summay.png" alt="Gemini Article Summarizer" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Gemini Article Summarizer</h3>
-
-                <p class="project-category">Python Software Engineering</p>
-
-              </a>
-            </li> -->
 
           </ul>
 
