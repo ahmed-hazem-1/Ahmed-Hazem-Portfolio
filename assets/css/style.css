@@ -677,13 +677,20 @@ main {
 .about .article-title { margin-bottom: 15px; }
 
 .about-text {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
   color: var(--white-1);  /* Darker text for better readability on light background */
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
   line-height: 1.6;
 }
 
-.about-text p { margin-bottom: 15px; }
+.about-text p {
+  margin-bottom: 1rem;
+  font-size: 1em;
+  line-height: 1.6;
+}
 
 
 
