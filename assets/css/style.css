@@ -371,9 +371,9 @@ article.active {
 .skills-technologies {
   background-color: var(--eerie-black-1);
   border-radius: 16px;
-  padding: 25px;
+  padding: 15px 0px;
   margin-bottom: 30px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow-2);
   border: 1px solid var(--jet);
   position: relative;
   overflow: hidden;
@@ -386,11 +386,11 @@ article.active {
   left: 0;
   width: 100%;
   height: 3px;
-  background: linear-gradient(90deg, var(--orange-yellow-crayola), var(--vegas-gold));
+  /* background: linear-gradient(90deg, var(--orange-yellow-crayola), var(--vegas-gold)); */
 }
 
 .skills-technologies .h3 {
-  color: var(--orange-yellow-crayola);
+  color: var(--white-1);
   margin-bottom: 20px;
   font-size: 1.3rem;
   position: relative;
@@ -408,7 +408,7 @@ article.active {
 
 .skills-technologies .skills-item {
   background-color: var(--eerie-black-2);
-  color: var(--light-gray);
+  color: var(--white-2);
   padding: 8px 16px;
   border-radius: 8px;
   font-size: 0.9rem;
@@ -417,7 +417,8 @@ article.active {
   display: flex;
   justify-content: center;
   height: fit-content;
-  width: 30%;
+  width: auto;
+  margin: 0 !important;
   align-items: center;
 }
 
@@ -777,7 +778,7 @@ main {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  /* gap: 15px; */
+  gap: 15px;
   padding:0 10px 4px;
 }
 
@@ -1562,7 +1563,13 @@ main {
   grid-template-columns: 1fr;
   gap: 20px;
 }
-
+.blog-post-item {
+  position: relative;
+  background: var(--eerie-black-2);
+  border-radius: 16px;
+  box-shadow: var(--shadow-2);
+  overflow: hidden;
+}
 .blog-post-item > a {
   position: relative;
   background: var(--border-gradient-onyx);
@@ -1633,6 +1640,92 @@ main {
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
   line-height: 1.6;
+}
+
+/*-----------------------------------*\
+  #BLOG - LinkedIn Embed Fix
+\*-----------------------------------*/
+
+.linkedin-embed-container {
+  position: relative;
+  background: var(--eerie-black-1);
+  border-radius: 12px;
+  overflow: hidden;
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.linkedin-embed-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--eerie-black-2);
+  z-index: 2;
+  transition: opacity 0.3s ease;
+  padding: 20px;
+  text-align: center;
+}
+
+.linkedin-embed-placeholder.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.linkedin-logo {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.linkedin-embed-title {
+  color: var(--white-1);
+  font-size: var(--fs-5);
+  margin-bottom: 10px;
+}
+
+.linkedin-embed-desc {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  margin-bottom: 15px;
+}
+
+.linkedin-load-btn {
+  background-color: #0A66C2;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: var(--fs-6);
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.linkedin-load-btn:hover {
+  background-color: #004182;
+}
+
+.blog-banner-box.linkedin-embed {
+  width: 100%;
+  height: 450px;
+  border: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.blog-banner-box.linkedin-embed.loaded {
+  opacity: 1;
 }
 
 
@@ -2050,7 +2143,8 @@ color: white; }
 
   .project-img, .blog-banner-box { border-radius: 16px; }
 
-  .blog-posts-list { gap: 30px; }
+  .blog-posts-list { gap: 30px; 
+ }
 
   .blog-content { padding: 25px; }
 

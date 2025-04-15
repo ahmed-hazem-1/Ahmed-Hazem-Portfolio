@@ -157,3 +157,31 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+
+
+// LinkedIn embed lazy loading function
+function loadLinkedInEmbed(button) {
+  const placeholder = button.closest('.linkedin-embed-placeholder');
+  const container = placeholder.parentElement;
+  const iframe = container.querySelector('iframe');
+  
+  // Show loading state
+  button.innerHTML = '<ion-icon name="hourglass-outline"></ion-icon> Loading...';
+  button.disabled = true;
+  
+  // Set the src attribute to load the content
+  iframe.src = iframe.getAttribute('data-src');
+  
+  // When the iframe is loaded, hide the placeholder
+  iframe.onload = function() {
+    iframe.classList.add('loaded');
+    placeholder.classList.add('hidden');
+  };
+  
+  // Fallback if onload doesn't trigger
+  setTimeout(() => {
+    iframe.classList.add('loaded');
+    placeholder.classList.add('hidden');
+  }, 3000);
+}
