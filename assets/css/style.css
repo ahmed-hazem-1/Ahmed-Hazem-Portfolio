@@ -1234,6 +1234,7 @@ main {
   background-color: #B8CCE0; /* Light Blue background */
   padding: 10px;
   border-radius: 5px;
+  margin: 0; /* Reset any margins that might cause indentation */
 }
 
 /* Volunteering Section Styles */
@@ -1273,6 +1274,7 @@ main {
   background-color: #B8CCE0; /* Light Blue background */
   padding: 10px;
   border-radius: 5px;
+  margin: 0; /* Reset any margins that might cause indentation */
 }
 
 .Volunteer-title{
@@ -1601,11 +1603,25 @@ main {
   color: var(--light-gray);
   font-size: 14px;
   line-height: 1.6;
+  margin: 0; /* Reset any margins that might cause indentation */
 }
 
 .project-description:hover {
   background-color: #cbe2fb;
   border-color: #cccccc00;
+}
+
+/* General description styles */
+.project-description p,
+.volunteer-description,
+.timeline-text {
+  background-color: #B8CCE0; /* Light Blue background */
+  padding: 10px;
+  border-radius: 5px;
+  color: var(--light-gray);
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0; /* Reset any margins that might cause indentation */
 }
 
 /*-----------------------------------*\
