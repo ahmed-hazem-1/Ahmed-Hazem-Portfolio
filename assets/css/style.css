@@ -1231,6 +1231,9 @@ main {
   font-weight: var(--fw-300);
   line-height: 1.6;
   max-width: 700px;
+  background-color: #B8CCE0; /* Light Blue background */
+  padding: 10px;
+  border-radius: 5px;
 }
 
 /* Volunteering Section Styles */
@@ -1267,6 +1270,9 @@ main {
   font-size: var(--fs-6);
   line-height: 1.6;
   font-weight: var(--fw-300);
+  background-color: #B8CCE0; /* Light Blue background */
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .Volunteer-title{
@@ -1375,6 +1381,47 @@ main {
   .resume-container {
     margin: 30px 15px;
     padding: 15px;
+  }
+}
+
+/* Experience styles */
+.experience-details {
+  margin-top: 10px;
+}
+
+.experience-item {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 8px;
+  color: var(--light-gray);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.experience-item:hover {
+    color: var(--white);
+    transition: color 0.3s ease;
+}
+
+.item-marker {
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  background-color: var(--primary);
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .experience-item {
+    padding-left: 15px;
+  }
+
+  .item-marker {
+    top: 5px;
+    width: 8px;
+    height: 8px;
   }
 }
 
@@ -1545,8 +1592,17 @@ main {
   border: 1px solid #ddd;
   padding: 0.5rem;
   border-radius: 0.5rem;
-
 }
+
+.project-description p {
+  background-color: #B8CCE0; /* Light Blue background */
+  padding: 10px;
+  border-radius: 5px;
+  color: var(--light-gray);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
 .project-description:hover {
   background-color: #cbe2fb;
   border-color: #cccccc00;
