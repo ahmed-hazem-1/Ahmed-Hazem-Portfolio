@@ -1521,6 +1521,7 @@ main {
   overflow: hidden;
   margin-bottom: 15px;
 }
+/* edited */
 
 .project-img::before {
   content: "";
