@@ -185,3 +185,19 @@ function loadLinkedInEmbed(button) {
     placeholder.classList.add('hidden');
   }, 3000);
 }
+
+// Handle project overlay buttons visibility
+document.addEventListener('DOMContentLoaded', function() {
+  // Process all project items to ensure proper button display
+  const projectItems = document.querySelectorAll('.project-item');
+  
+  projectItems.forEach(item => {
+    const appButton = item.querySelector('.btn-view-app');
+    
+    // Check if this project has a view app button but no actual link yet
+    if (appButton && (appButton.getAttribute('href') === '#' || appButton.getAttribute('href') === '' || !appButton.hasAttribute('href'))) {
+      // Hide the app button if there's no valid link
+      appButton.style.display = 'none';
+    }
+  });
+});
