@@ -2588,3 +2588,397 @@ color: white; }
   .timeline-text { max-width: 700px; }
 
 }
+
+/* Enhanced Mobile Responsiveness */
+@media (max-width: 580px) {
+  :root {
+    /* Adjusted typography for better mobile readability */
+    --fs-1: 28px;
+    --fs-2: 20px;
+    --fs-3: 22px;
+    --fs-4: 16px;
+    --fs-5: 15px;
+    --fs-6: 14px;
+    --fs-7: 13px;
+    --fs-8: 11px;
+  }
+
+  /* Improved sidebar for mobile */
+  .sidebar {
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 12px;
+    max-height: 110px;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .sidebar.active {
+    max-height: 90vh;
+    overflow-y: auto;
+    padding-bottom: 30px;
+  }
+
+  /* Smoother sidebar toggle */
+  .info_more-btn {
+    top: -10px;
+    right: -10px;
+    padding: 8px 10px;
+    border-radius: 0 0 0 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .info_more-btn:active {
+    transform: scale(0.95);
+  }
+
+  /* Better avatar display on mobile */
+  .avatar-box {
+    width: 80px;
+    height: 80px;
+    margin-top: -5px;
+  }
+
+  .avatar-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Improved info content */
+  .info-content .name {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+
+  .info-content .title {
+    font-size: 12px;
+    padding: 3px 10px;
+  }
+
+  /* Enhanced contact items for mobile */
+  .contact-item {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .icon-box {
+    min-width: 30px;
+    height: 30px;
+    border-radius: 6px;
+  }
+
+  .contact-info {
+    max-width: calc(100% - 40px);
+  }
+
+  .contact-link, .contact-info address {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: var(--fs-7);
+  }
+
+  /* Better social links spacing */
+  .social-list {
+    padding: 5px 0;
+    justify-content: space-around;
+  }
+
+  /* Enhanced navbar for mobile */
+  .navbar {
+    background: rgba(230, 230, 230, 0.9);
+    backdrop-filter: blur(15px);
+    border-radius: 15px 15px 0 0;
+    padding: 5px 0;
+    box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-list {
+    gap: 5px;
+    padding: 0 5px;
+  }
+
+  .navbar-link {
+    padding: 15px 10px;
+    font-size: 11px;
+    position: relative;
+  }
+
+  .navbar-link::after {
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--orange-yellow-crayola);
+    transition: width 0.3s ease;
+  }
+
+  .navbar-link.active::after,
+  .navbar-link:hover::after {
+    width: 60%;
+  }
+
+  /* Article improvements */
+  article {
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+  }
+
+  .article-title {
+    margin-bottom: 20px;
+  }
+
+  /* Project item enhancements */
+  .project-img {
+    height: 180px;
+    border-radius: 12px;
+  }
+
+  .project-item-icon-box {
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  /* Timeline adjustments */
+  .timeline-list {
+    margin-left: 35px;
+  }
+
+  .timeline-item::after {
+    left: -28px;
+  }
+
+  .timeline-item:not(:last-child)::before {
+    left: -25px;
+  }
+
+  /* Skills section improvements */
+  .skills-technologies .skills-item {
+    padding: 6px 12px;
+    font-size: 12px;
+    animation: fadeInRight 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Form improvements */
+  .form-input {
+    padding: 12px 15px;
+    border-radius: 10px;
+  }
+
+  .form-btn {
+    padding: 12px 15px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, background-color 0.3s;
+  }
+
+  .form-btn:active {
+    transform: scale(0.98);
+  }
+}
+
+/* Enhanced Scroll Animation for Mobile */
+@media (max-width: 580px) {
+  .has-scrollbar {
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .has-scrollbar::-webkit-scrollbar {
+    height: 4px;
+  }
+  
+  .has-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--orange-yellow-crayola);
+    border-radius: 2px;
+  }
+  
+  /* Improve testimonials display */
+  .testimonials-list {
+    padding: 20px 15px;
+    scroll-padding: 15px;
+  }
+  
+  .testimonials-item {
+    scroll-snap-align: center;
+    padding-top: 30px;
+    min-width: 90%;
+  }
+  
+  .testimonials-avatar-box {
+    transform: translate(15px, -20px);
+  }
+  
+  .testimonials-avatar-box img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+  }
+}
+
+/* Card and Button Enhancements for Mobile */
+@media (max-width: 580px) {
+  .content-card {
+    padding: 20px;
+    padding-top: 35px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .content-card:active {
+    transform: scale(0.98);
+  }
+  
+  /* Blog post improvements */
+  .blog-banner-box {
+    height: 180px;
+    border-radius: 10px;
+  }
+  
+  .blog-content {
+    padding: 15px;
+  }
+  
+  .blog-meta {
+    flex-wrap: wrap;
+  }
+  
+  /* Resume section improvements */
+  .resume-download-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin-top: 10px;
+  }
+  
+  /* Portfolio section improvements */
+  .filter-select {
+    padding: 10px 15px;
+    font-size: var(--fs-6);
+  }
+  
+  .select-list {
+    padding: 5px;
+  }
+  
+  .select-item button {
+    padding: 7px 12px;
+    font-size: var(--fs-7);
+  }
+}
+
+/* Touch-friendly animations */
+@media (max-width: 580px) {
+  /* Add subtle fade-in animations for content */
+  article.active {
+    animation: fadeInUp 0.4s ease forwards;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Enhance button hover/active states for touch */
+  .service-item,
+  .project-item > a,
+  .blog-post-item > a,
+  .form-btn,
+  .resume-button,
+  .linkedin-load-btn,
+  .filter-select,
+  .info_more-btn {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .service-item:active,
+  .project-item > a:active,
+  .blog-post-item > a:active,
+  .form-btn:active,
+  .resume-button:active,
+  .linkedin-load-btn:active,
+  .filter-select:active,
+  .info_more-btn:active {
+    transform: scale(0.98);
+  }
+}
+
+/* Improved typography spacing for mobile */
+@media (max-width: 480px) {
+  .article-title {
+    line-height: 1.3;
+  }
+  
+  p, .timeline-text, .project-description p, .volunteer-description {
+    line-height: 1.5;
+    font-size: 13px;
+  }
+  
+  .timeline-item-title, .project-title, .service-item-title {
+    line-height: 1.4;
+  }
+  
+  /* Enhanced spacing for better readability */
+  .timeline-item:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  
+  .service-list, .blog-posts-list, .project-list {
+    gap: 15px;
+  }
+}
+
+/* Ultra-small screens optimization */
+@media (max-width: 350px) {
+  .sidebar {
+    padding: 15px;
+    max-height: 100px;
+  }
+  
+  .avatar-box {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .info-content .name {
+    font-size: 16px;
+  }
+  
+  .info-content .title {
+    font-size: 11px;
+  }
+  
+  .navbar-link {
+    padding: 15px 5px;
+    font-size: 10px;
+  }
+  
+  .icon-box {
+    min-width: 25px;
+    height: 25px;
+  }
+}
