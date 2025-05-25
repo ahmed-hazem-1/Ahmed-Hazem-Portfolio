@@ -894,7 +894,7 @@ main {
 
 
 .about-text {
-  background-color: #f8f9fa;
+  background-color: #e3e3e3; /* Slightly darker for improved readability */
   padding: 1.5rem;
   border-radius: 0.5rem;
   color: var(--white-1);  /* Darker text for better readability on light background */
