@@ -201,3 +201,138 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+// Blog filtering functionality - similar to project filtering
+const blogFilterBtn = document.querySelectorAll("[data-blog-filter-btn]");
+const blogItems = document.querySelectorAll(".blog-post-item");
+
+// Add event to all blog filter button items
+let lastClickedBlogBtn = blogFilterBtn[0];
+
+for (let i = 0; i < blogFilterBtn.length; i++) {
+  blogFilterBtn[i].addEventListener("click", function() {
+    const selectedCategory = this.getAttribute("data-blog-filter-btn");
+    
+    // Filter blog posts
+    for (let j = 0; j < blogItems.length; j++) {
+      if (selectedCategory === "all" || blogItems[j].dataset.blogCategory === selectedCategory) {
+        blogItems[j].style.display = "block";
+        setTimeout(() => {
+          blogItems[j].classList.add("active");
+        }, 10);
+      } else {
+        blogItems[j].classList.remove("active");
+        setTimeout(() => {
+          blogItems[j].style.display = "none";
+        }, 300);
+      }
+    }
+    
+    // Update button styles
+    lastClickedBlogBtn.classList.remove("active");
+    this.classList.add("active");
+    lastClickedBlogBtn = this;
+  });
+}
+
+// Theme toggle functionality
+const themeToggleBtn = document.getElementById('theme-toggle-btn');
+if (themeToggleBtn) {
+  // Check for saved theme preference or use preferred color scheme
+  const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+  const currentTheme = localStorage.getItem('theme') || 
+                      (prefersDarkScheme.matches ? 'dark' : 'light');
+  
+  // Apply the saved theme or default
+  document.body.classList.toggle('light-theme', currentTheme === 'light');
+  document.body.classList.toggle('dark-theme', currentTheme === 'dark');
+  
+  // Update the toggle button appearance
+  updateThemeToggleIcon(currentTheme);
+  
+  // Add click event to theme toggle button
+  themeToggleBtn.addEventListener('click', function() {
+    let theme;
+    
+    // Toggle theme
+    if (document.body.classList.contains('light-theme')) {
+      document.body.classList.replace('light-theme', 'dark-theme');
+      theme = 'dark';
+    } else {
+      document.body.classList.replace('dark-theme', 'light-theme');
+      theme = 'light';
+    }
+    
+    // Save the preference
+    localStorage.setItem('theme', theme);
+    
+    // Update button icon
+    updateThemeToggleIcon(theme);
+  });
+}
+
+// Function to update theme toggle button appearance
+function updateThemeToggleIcon(theme) {
+  const moonIcon = document.querySelector('.moon-icon');
+  const sunIcon = document.querySelector('.sun-icon');
+  
+  if (theme === 'dark') {
+    moonIcon.style.display = 'none';
+    sunIcon.style.display = 'block';
+  } else {
+    moonIcon.style.display = 'block';
+    sunIcon.style.display = 'none';
+  }
+}
+
+// Enhanced testimonials functionality
+const testimonialItems = document.querySelectorAll('.testimonials-item');
+if (testimonialItems.length > 0) {
+  // Add animation when testimonials come into view
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  
+  testimonialItems.forEach(item => {
+    observer.observe(item);
+  });
+}
+
+// Add skill level indicators animation
+document.addEventListener('DOMContentLoaded', function() {
+  const skillItems = document.querySelectorAll('.skills-item[data-skill-level]');
+  
+  skillItems.forEach(item => {
+    const level = item.getAttribute('data-skill-level');
+    item.classList.add(`skill-${level}`);
+    
+    // Add tooltip showing skill level
+    const tooltip = document.createElement('span');
+    tooltip.className = 'skill-level-tooltip';
+    tooltip.textContent = level.charAt(0).toUpperCase() + level.slice(1);
+    item.appendChild(tooltip);
+  });
+});
+
+// Smooth scroll for internal links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const targetId = this.getAttribute('href');
+    if (targetId !== '#') {
+      e.preventDefault();
+      
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }
+  });
+});

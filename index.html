@@ -43,7 +43,31 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 
-  
+  <!-- Add structured data for better SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ahmed Hazem Elabady",
+  "url": "https://ahmed-hazem-1.github.io",
+  "jobTitle": "Junior Data Scientist",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Freelance"
+  },
+  "description": "Junior Data Scientist and Web Scraper from Cairo, Egypt",
+  "image": "./assets/images/photo pro.png",
+  "sameAs": [
+    "https://github.com/ahmed-hazem-1",
+    "http://www.linkedin.com/in/ahmed-hazem-elabady-9a904924b",
+    "https://www.kaggle.com/ahmedhazemelabady"
+  ],
+  "alumniOf": {
+    "@type": "EducationalOrganization",
+    "name": "Benha Faculty of Computer Science and Artificial Intelligence"
+  }
+}
+</script>
 </head>
 
 <body>
@@ -450,17 +474,20 @@
 
 
           <ul class="skills-list">
-            <li class="skills-item">Data Science</li>
-            <li class="skills-item">Python</li>
-            <li class="skills-item">Web Scraping</li>
-            <li class="skills-item">Pandas</li>
-            <li class="skills-item">Data Analysis</li>
-            <li class="skills-item">Git</li>
-            <li class="skills-item">Scikit-Learn</li>
-            <li class="skills-item">Machine Learning</li>
-            <li class="skills-item">Deep Learning</li>
-            <li class="skills-item">Dash</li>
-            <!-- Add more skills as needed -->
+            <li class="skills-item" data-skill-level="advanced">Data Science</li>
+            <li class="skills-item" data-skill-level="advanced">Python</li>
+            <li class="skills-item" data-skill-level="expert">Web Scraping</li>
+            <li class="skills-item" data-skill-level="advanced">Pandas</li>
+            <li class="skills-item" data-skill-level="advanced">Data Analysis</li>
+            <li class="skills-item" data-skill-level="intermediate">Git</li>
+            <li class="skills-item" data-skill-level="intermediate">Scikit-Learn</li>
+            <li class="skills-item" data-skill-level="intermediate">Machine Learning</li>
+            <li class="skills-item" data-skill-level="intermediate">Deep Learning</li>
+            <li class="skills-item" data-skill-level="intermediate">Dash</li>
+            <li class="skills-item" data-skill-level="intermediate">TensorFlow</li>
+            <li class="skills-item" data-skill-level="intermediate">Keras</li>
+            <li class="skills-item" data-skill-level="beginner">Docker</li>
+            <li class="skills-item" data-skill-level="intermediate">SQL</li>
           </ul>
 
         </section>
@@ -1345,6 +1372,44 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- Add script for lazy loading images -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Lazy load implementation for images
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+    
+    if ('IntersectionObserver' in window) {
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src || img.src;
+            img.classList.add('loaded');
+            imageObserver.unobserve(img);
+          }
+        });
+      });
+      
+      lazyImages.forEach(img => {
+        imageObserver.observe(img);
+      });
+    } else {
+      // Fallback for browsers without IntersectionObserver support
+      lazyImages.forEach(img => {
+        img.src = img.dataset.src || img.src;
+      });
+    }
+    
+    // Function to navigate to contact section
+    window.navigateToContact = function() {
+      const contactNavItem = document.querySelector('[data-nav-link="contact"]');
+      if (contactNavItem) {
+        contactNavItem.click();
+      }
+    };
+  });
+</script>
 
 </body>
 
