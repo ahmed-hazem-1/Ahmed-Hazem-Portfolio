@@ -1629,6 +1629,14 @@ main {
   #BLOG
 \*-----------------------------------*/
 
+.blog,
+.blog-posts,
+.blog-posts-list,
+.blog-post-item,
+article[data-page="blog"] {
+  display: none !important;
+}
+
 .blog-posts { margin-bottom: 10px; }
 
 .blog-posts-list {
@@ -2870,6 +2878,8 @@ color: white; }
     font-size: 12px;
     animation: fadeInRight 0.5s ease-out forwards;
   }
+
+ 
 
   @keyframes fadeInRight {
     from {
