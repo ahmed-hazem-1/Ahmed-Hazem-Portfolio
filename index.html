@@ -35,6 +35,68 @@
   -->
   <link rel="stylesheet" href="./assets/css/style.css">
 
+  <!-- Custom styles for consistent project image sizes -->
+  <style>
+    .project-img img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* Skills hover effect for skill levels */
+    .skills-item {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .skills-item::after {
+      content: attr(data-skill-level);
+      position: absolute;
+      top: -35px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+      z-index: 10;
+      text-transform: capitalize;
+    }
+
+    .skills-item:hover::after {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .skills-item::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid rgba(0, 0, 0, 0.8);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+      z-index: 10;
+    }
+
+    .skills-item:hover::before {
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+
   <!--
     - google font link
   -->
@@ -559,58 +621,6 @@
               <span>2006 — 2007</span>
 
               <p class="timeline-text">
-                Ratione voluptatem sequi nesciunt, facere quisquams facere menda ossimus, omnis voluptas assumenda est
-                omnis..
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">High school of art and design</h4>
-
-              <span>2002 — 2004</span>
-
-              <p class="timeline-text">
-                Duis aute irure dolor in reprehenderit in voluptate, quila voluptas mag odit aut fugit, sed consequuntur
-                magni dolores
-                eos.
-              </p>
-
-            </li> -->
-
-          </ol>
-
-        </section>
-
-        <!-- Experience -->
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3">Experience</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Computer Vision Trainee, National Telecommunication Institute (NTI)</h4>
-
-              <span>July 2025 — August 2025</span>
-
-              <div class="timeline-text">
-                <div class="experience-details" style="padding: 0; margin: 0;">
-                  <div class="experience-item" style="padding: 0; margin: 0;">
-                    <span class="item-marker"></span>
-                    Internship focused on deep learning, exploring neural networks, CNNs, image processing, transfer learning, and hands-on projects.<br><br>
-                  </div>
-                  <div class="experience-item" style="padding: 0; margin: 0;">
-                    <span class="item-marker"></span>
-                    Gained practical experience in image classification, object detection, segmentation, and face recognition technologies.<br><br>
                   </div>
                   <div class="experience-item" style="padding: 0; margin: 0;">
                     <span class="item-marker"></span>
@@ -986,6 +996,23 @@
           <!-- projects -->
           <ul class="project-list">
             <!--  -->
+
+            <li class="project-item active" data-filter-item data-category="deep learning">
+              <figure class="project-img">
+                <img src="./assets/images/5f4161bd-952e-46fd-bac1-98412634feed.jpg" alt="Waste Detection using YOLO" loading="lazy" >
+                <div class="project-overlay">
+                  <div class="project-buttons">
+                    <a href="https://waste-detection-yolo-v8-v11.streamlit.app/" class="btn btn-view-app" target="_blank">View App</a>
+                    <a href="https://github.com/ahmed-hazem-1/Waste-Detection-using-YOLO-v8-v11" class="btn btn-view-code" target="_blank">View Code</a>
+                  </div>
+                </div>
+              </figure>
+              <h3 class="project-title">Waste Detection using YOLO (v8-v11)</h3>
+              <p class="project-category">Deep Learning</p>
+              <div class="project-description">
+                <p>Developed an advanced object detection system using YOLOv8-v11 to identify 22 types of waste materials including cans, plastic bottles, and more. Achieved 94% mAP50 accuracy through data preprocessing, augmentation, and training on 24,000 images from Roboflow dataset.</p>
+              </div>
+            </li>
 
             <li class="project-item active" data-filter-item data-category="deep learning">
               <figure class="project-img">
@@ -1463,12 +1490,6 @@
         contactNavItem.click();
       }
     };
-  });
-</script>
-
-</body>
-
-</html>
   });
 </script>
 
