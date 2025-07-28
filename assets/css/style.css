@@ -2881,7 +2881,9 @@ color: white; }
 
  
 
-  @keyframes fadeInRight {
+
+
+@keyframes fadeInRight {
     from {
       opacity: 0;
       transform: translateX(20px);
@@ -3275,3 +3277,32 @@ color: white; }
 
 /* Remove the margin adjustments that were causing the layout shift */
 /* DO NOT adjust main content margin - let it stay centered naturally */
+
+/* Custom styles for consistent project image sizes */
+.project-img img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Fixed skills hover effect that only shows tooltip on hover */
+.skills-technologies .skills-item {
+  position: relative;
+  cursor: pointer;
+  /* Remove any content from data attributes */
+}
+
+/* Remove the broken tooltip implementation */
+.skills-technologies .skills-item[data-skill-level]::after,
+.skills-technologies .skills-item[data-skill-level]::before {
+  display: none !important;
+  content: none !important;
+}
+
+/* Ensure no pseudo-elements show data attributes */
+.skills-technologies .skills-item::after,
+.skills-technologies .skills-item::before {
+  content: none !important;
+  display: none !important;
+}
