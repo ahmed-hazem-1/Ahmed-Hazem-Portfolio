@@ -7,6 +7,17 @@
  * copyright 2022 @codewithsadee
  */
 
+/* Performance optimizations */
+* {
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Removed GPU acceleration techniques */
+.gpu-accelerated {
+  /* No transform or GPU-intensive properties */
+}
+
 
 
 
@@ -106,8 +117,8 @@
    * transition
    */
 
-  --transition-1: 0.25s ease;
-  --transition-2: 0.5s ease-in-out;
+  --transition-1: 0.2s ease;
+  --transition-2: 0.3s ease;
 
 }
 
@@ -163,9 +174,7 @@ body {
     hsl(210, 60%, 30%) 50%,
     hsl(210, 65%, 35%) 75%, 
     hsl(210, 70%, 40%) 100%);
-  /* background-attachment: fixed;
-  background-size: 200% 200%;
-  animation: gradientShift 20s ease infinite; */
+
 }
 
 /* @keyframes gradientShift {
@@ -195,6 +204,10 @@ article {
   padding: 15px;
   box-shadow: var(--shadow-1);
   z-index: 1;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .sidebar {
@@ -261,7 +274,7 @@ article {
 
 .icon-box {
   position: relative;
-  background: var(--border-gradient-onyx);
+  background: rgba(255, 255, 255, 0.2);
   width: 30px;
   height: 30px;
   border-radius: 8px;
@@ -272,13 +285,16 @@ article {
   color: var(--orange-yellow-crayola);
   box-shadow: var(--shadow-1);
   z-index: 1;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .icon-box::before {
   content: "";
   position: absolute;
   inset: 1px;
-  background: var(--eerie-black-1);
+  background: transparent;
   border-radius: inherit;
   z-index: -1;
 }
@@ -289,7 +305,7 @@ article { display: none; }
 
 article.active {
   display: block;
-  animation: fade 0.5s ease backwards;
+  animation: fade 0.3s ease forwards;
 }
 
 @keyframes fade {
@@ -350,33 +366,37 @@ article.active {
 
 .content-card {
   position: relative;
-  background: var(--border-gradient-onyx);
   padding: 15px;
   padding-top: 45px;
   border-radius: 14px;
-  box-shadow: var(--shadow-2);
+  box-shadow: var(--shadow-1);
   cursor: pointer;
   z-index: 1;
+  /* Removed backdrop-filter for better performance */
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .content-card::before {
   content: "";
   position: absolute;
   inset: 1px;
-  background: var(--bg-gradient-jet);
+  background: transparent;
   border-radius: inherit;
   z-index: -1;
 }
 
 .skills-technologies {
-  background-color: var(--eerie-black-1);
+  background-color: transparent;
   border-radius: 16px;
   padding: 15px 0px;
   margin-bottom: 30px;
-  box-shadow: var(--shadow-2);
-  border: 1px solid var(--jet);
+  box-shadow: var(--shadow-1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   position: relative;
   overflow: hidden;
+  /* Removed backdrop-filter for better performance */
+  background: rgba(255, 255, 255, 0.65);
 }
 
 .skills-technologies::before {
@@ -442,25 +462,28 @@ article.active {
 }
 
 .skills-technologies .skills-item {
-  background-color: var(--eerie-black-2);
+  background-color: rgba(255, 255, 255, 0.15);
   color: var(--light-gray);
   padding: 8px 16px;
   border-radius: 8px;
   font-size: 0.9rem;
   transition: all 0.3s ease;
-  border: 1px solid var(--jet);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   display: inline-flex;
   align-items: center;
   opacity: 0;
   animation: fadeInUp 0.5s ease-out forwards;
   animation-delay: calc(var(--i, 0) * 0.1s);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
 .skills-technologies .skills-item:hover {
-  background-color: var(--jet);
+  background-color: rgba(255, 255, 255, 0.25);
   transform: translateY(-5px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   color: var(--orange-yellow-crayola);
+  border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .skills-technologies .skills-item:nth-child(1) { --i: 1; }
@@ -594,6 +617,7 @@ main {
   transition: var(--transition-2);
   position: relative;
   z-index: 3;
+  /* Removed will-change for better performance */
 }
 
 .sidebar.active { 
@@ -797,6 +821,7 @@ main {
 
   .timeline-item {
     margin-bottom: 1px; /* Reduce vertical distance between items */
+    position: relative; /* Ensure proper positioning in mobile view */
   }
 
   .timeline-item-title {
@@ -816,11 +841,20 @@ main {
 
   .timeline-item a {
     text-decoration: none;
-    color: var(--orange-yellow-crayola); /* Change from white to LinkedIn blue */
+    color: var(--orange-yellow-crayola); 
+    display: inline-block;
+    margin-top: 5px;
+    padding: 3px 8px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
   }
 
   .timeline-item a:hover {
-    text-decoration: underline; /* Optional: underline link on hover */
+    text-decoration: underline;
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
   }
 
   .timeline-item::after {
@@ -830,11 +864,10 @@ main {
     left: -33px;
     height: 6px;
     width: 6px;
-    /* background: var (--text-gradient-yellow); */
     background-color: var(--orange-yellow-crayola); /* Change from gradient to LinkedIn blue */
-
     border-radius: 50%;
     box-shadow: 0 0 0 4px var(--jet);
+    z-index: 1;
   }
 
 
@@ -847,11 +880,11 @@ main {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: rgba(200, 200, 200, 0.85);  /* Lighter, semi-transparent background */
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--onyx);
+  background: rgba(255, 255, 255, 0.85);  /* Higher opacity instead of blur */
+  /* Removed backdrop-filter for better performance */
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 12px 12px 0 0;
-  box-shadow: var (--shadow-2);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
   z-index: 5;
 }
 
@@ -926,18 +959,21 @@ main {
 
 .service-item {
   position: relative;
-  background: var(--border-gradient-onyx);
+  background: rgba(255, 255, 255, 0.2);
   padding: 20px;
   border-radius: 14px;
-  box-shadow: var(--shadow-2);
+  box-shadow: var(--shadow-1);
   z-index: 1;
+  /* Removed backdrop-filter for better performance */
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .service-item::before {
   content: "";
   position: absolute;
   inset: 1px;
-  background: var(--bg-gradient-jet);
+  background: transparent;
   border-radius: inherit;
   z-index: -1;
 }
@@ -990,9 +1026,11 @@ main {
   top: 0;
   left: 0;
   transform: translate(15px, -25px);
-  background: var(--bg-gradient-onyx);
+  background: rgba(255, 255, 255, 0.65);
   border-radius: 14px;
   box-shadow: var(--shadow-1);
+  /* Removed backdrop-filter for better performance */
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .testimonials-item-title { margin-bottom: 7px; }
@@ -1166,20 +1204,32 @@ main {
   #RESUME
 \*-----------------------------------*/
 
-.article-title { margin-bottom: 30px; }
+.resume .article-title { 
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.resume .article-title::after {
+  width: 40px;
+  height: 4px;
+}
 
 
 /**
  * education and experience 
  */
 
-.timeline { margin-bottom: 30px; }
+.timeline { 
+  margin-bottom: 40px;
+  position: relative;
+}
 
 .timeline .title-wrapper {
   display: flex;
   align-items: center;
   gap: 15px;
   margin-bottom: 25px;
+  position: relative;
 }
 
 .timeline-list {
@@ -1187,9 +1237,22 @@ main {
   margin-left: 45px;
 }
 
-.timeline-item { position: relative; }
+/* Ensure consistent margin for timeline list on all devices */
+@media (min-width: 768px) {
+  .timeline-list {
+    margin-left: 45px;
+  }
+}
 
-.timeline-item:not(:last-child) { margin-bottom: 20px; }
+.timeline-item { 
+  position: relative;
+  margin-top: 15px;
+}
+
+.timeline-item:not(:last-child) { 
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+}
 
 .timeline-item-title {
   font-size: var(--fs-6);
@@ -1202,15 +1265,21 @@ main {
   color: var(--vegas-gold);
   font-weight: var(--fw-400);
   line-height: 1.6;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.timeline-list span + span {
+  margin-top: 3px;
 }
 
 .timeline-item:not(:last-child)::before {
   content: "";
   position: absolute;
-  top: -25px;
-  left: -30px;
+  top: 5px;
+  left: -33px;
   width: 1px;
-  height: calc(100% + 50px);
+  height: calc(100% + 25px);
   background: var(--jet);
 }
 
@@ -1221,75 +1290,94 @@ main {
   left: -33px;
   height: 6px;
   width: 6px;
-  background: var (--text-gradient-yellow);
+  background: var(--orange-yellow-crayola);
   border-radius: 50%;
   box-shadow: 0 0 0 4px var(--jet);
+  z-index: 1;
+}
+
+/* Desktop adjustment for timeline alignment */
+@media (min-width: 768px) {
+  /* Adjust timeline list and items for desktop */
+  .timeline-list {
+    margin-left: 45px;
+    position: relative;
+  }
+  
+  .timeline-item {
+    padding-left: 0;
+    position: relative;
+  }
+  
+  /* Fix the vertical line connecting timeline items */
+  .timeline-item:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: -33px;
+    width: 1px;
+    height: calc(100% + 30px);
+    background: var(--jet);
+  }
+  
+  /* Fix the circle indicator */
+  .timeline-item::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: -33px;
+    height: 6px;
+    width: 6px;
+    background: var(--orange-yellow-crayola);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px var(--jet);
+    z-index: 1;
+  }
 }
 
 .timeline-text {
-  color: var(--white-1);  /* Darker text instead of #585555 */
+  color: var(--light-gray);
   font-weight: var(--fw-300);
   line-height: 1.6;
   max-width: 700px;
-  background-color: #B8CCE0; /* Light Blue background */
+  background-color: rgba(255, 255, 255, 0.4);
   padding: 10px;
   border-radius: 5px;
+  /* Removed backdrop-filter for better performance */
+  border: 1px solid rgba(255, 255, 255, 0.2);
   margin: 0; /* Reset any margins that might cause indentation */
 }
 
-/* Volunteering Section Styles */
-.volunteering-item {
-  background-color: var(--eerie-black-2);
-  border-radius: 8px;
-  padding: 14px;
-  margin-bottom: 15px;
-  /* border: 1px solid var(--jet); */
-  transition: all 0.3s ease;
+/* Additional margin for timeline text */
+.timeline-text {
+  margin: 15px 0 5px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* .volunteering-item:hover {
-  background-color: var(--jet);
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-} */
-
-.volunteer-position {
-  color: var(--orange-yellow-crayola);
-  margin-bottom: 5px;
-  font-weight: var(--fw-500);
+/* Additional styling for resume content sections */
+.resume-content {
+  margin-bottom: 30px;
 }
 
-.volunteer-date {
-  color: var(--vegas-gold);
-  font-size: var(--fs-6);
-  margin-bottom: 10px;
-  font-weight: var(--fw-400);
-}
-
-.volunteer-description {
-  color: var(--light-gray);
-  font-size: var(--fs-6);
-  line-height: 1.6;
-  font-weight: var(--fw-300);
-  background-color: #B8CCE0; /* Light Blue background */
-  padding: 10px;
-  border-radius: 5px;
-  margin: 0; /* Reset any margins that might cause indentation */
-}
-
-.Volunteer-title{
-  margin: 25px 0;
-  font-size: 24px;
-  font-weight: 700; /* Bold title */
-  color: var(--white-1); /* Change from #FFFFFF (white) to dark color */
+/* Ensure consistent styling across all sections in resume */
+.resume section, .resume .resume-content {
+  margin-bottom: 40px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 /**
  * skills 
  */
 
-.skills-title { margin-bottom: 20px; }
-
-.skills-list { padding: 20px; }
+/* Style adjustments for skills in resume section */
+.skill .skills-list.content-card {
+  margin-left: 45px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
 
 
 .skills-item:not(:last-child) { margin-bottom: 15px; }
@@ -1499,16 +1587,18 @@ main {
   margin-bottom: 10px;
 }
 
-.project-item { display: none; }
+.project-item { 
+  display: none;
+}
 
 .project-item.active {
   display: block;
-  animation: scaleUp 0.25s ease forwards;
+  animation: scaleUp 0.2s ease forwards;
 }
 
 @keyframes scaleUp {
-  0% { transform: scale(0.5); }
-  100% { transform: scale(1); }
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 /* ddd */
 .project-item > a { width: 100%; }
@@ -1646,9 +1736,12 @@ article[data-page="blog"] {
 }
 .blog-post-item {
   position: relative;
-  background: var(--eerie-black-2);
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 16px;
   box-shadow: var(--shadow-2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   overflow: hidden;
 }
 .blog-post-item > a {
@@ -1852,9 +1945,12 @@ article[data-page="blog"] {
   font-size: var(--fs-6);
   font-weight: var(--fw-400);
   padding: 13px 20px;
-  border: 1px solid var(--jet);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 14px;
   outline: none;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .form-input::placeholder { font-weight: var(--fw-500); }
@@ -2307,21 +2403,21 @@ color: white; }
   .timeline-item:not(:last-child)::before {
     content: "";
     position: absolute;
-    top: -40px;
+    /* top: -40px; */
     left: -30px;
     width: 1px;
-    height: calc(100% + 50px);
+    height: calc(100% + 30px);
     background: var(--jet);
   }
 
   .timeline-item::after {
     content: "";
     position: absolute;
-    top: 5px;
-    left: -43px;
+    /* top: 5px; */
+    /* left: -43px; */
     height: 8px;
     width: 8px;
-    left: -43px;
+    /* left: -43px; */
   }
 
   .skills-item:not(:last-child) { margin-bottom: 25px; }
@@ -2752,6 +2848,7 @@ color: white; }
     width: 80px;
     height: 80px;
     margin-top: -5px;
+    border-radius: 20px;
   }
 
   .avatar-box img {
@@ -3109,11 +3206,13 @@ color: white; }
   top: 50%;
   transform: translateY(-50%);
   z-index: 1000;
-  background: var(--eerie-black-2);
-  border: 1px solid var(--jet);
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 15px;
   padding: 15px 8px;
   box-shadow: var(--shadow-2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   transition: all 0.3s ease;
 }
 

@@ -746,9 +746,14 @@
         </section>
 
         <!-- Skills -->
-        <section class="skill">
-
-          <h3 class="h3 skills-title">My skills</h3>
+        <section class="skill timeline">
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="bar-chart-outline"></ion-icon>
+            </div>
+            
+            <h3 class="h3">My skills</h3>
+          </div>
 
           <ul class="skills-list content-card">
 
@@ -811,26 +816,33 @@
                 <!--
           - Volunteering section
         -->
-        <h3 class="h3 Volunteer-title">Volunteering</h3>
-        <section class="skills-technologies">
-
-          <div class="volunteering-item">
-            <h4 class="h4 volunteer-position">Researcher Mentor, Nasa Space Apps Benha</h4>
-            <p class="volunteer-date">June 2025 — Present</p>
-            <p class="volunteer-description">
-              Guided participants in innovative space-related projects, fostering collaboration and problem-solving in science and technology challenges.
-            </p>
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="people-outline"></ion-icon>
+            </div>
+            
+            <h3 class="h3">Volunteering</h3>
           </div>
+          
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Researcher Mentor, Nasa Space Apps Benha</h4>
+              <span>June 2025 — Present</span>
+              <p class="timeline-text">
+                Guided participants in innovative space-related projects, fostering collaboration and problem-solving in science and technology challenges.
+              </p>
+            </li>
 
-          <div class="volunteering-item">
-            <h4 class="h4 volunteer-position">Event Organizer, Codeavour 5.0 Egypt</h4>
-            <p class="volunteer-date">March 2024</p>
-            <p class="volunteer-description">
-              Joined in organization of event for a programming competition for AI and Robotics. The event's total capacity is 5,000 people, including 1,500 participants and 
-              3,500 parents and spectators. This competition is a countrywide competition that make 90% of its participants better in their technical life.
-            </p>
-          </div>
-
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Event Organizer, Codeavour 5.0 Egypt</h4>
+              <span>March 2024</span>
+              <p class="timeline-text">
+                Joined in organization of event for a programming competition for AI and Robotics. The event's total capacity is 5,000 people, including 1,500 participants and 
+                3,500 parents and spectators. This competition is a countrywide competition that make 90% of its participants better in their technical life.
+              </p>
+            </li>
+          </ol>
         </section>
 
 
@@ -1428,6 +1440,19 @@
         contactNavItem.click();
       }
     };
+    
+    // Removed GPU acceleration to improve performance
+  });
+</script>
+
+<!-- Performance optimization script -->
+<script>
+  // Delay non-critical operations
+  window.addEventListener('load', function() {
+    // Add lazy loading to all images that don't have it already
+    document.querySelectorAll('img:not([loading])').forEach(img => {
+      img.setAttribute('loading', 'lazy');
+    });
   });
 </script>
 
