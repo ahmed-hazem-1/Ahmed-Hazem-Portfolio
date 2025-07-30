@@ -1493,6 +1493,15 @@ main {
     transition: color 0.3s ease;
 }
 
+.timeline-company {
+  color: var(--vegas-gold);
+  font-style: italic;
+  font-weight: var(--fw-300);
+  font-size: var(--fs-7);
+  margin-top: -5px;
+  margin-bottom: 5px;
+}
+
 .item-marker {
   position: absolute;
   left: 0;
