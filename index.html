@@ -1,1583 +1,517 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ahmed Hazem - Personal Portfolio</title>
-  <meta property="og:title" content="Ahmed Hazem's Portfolio">
-  <!-- <title>Ahmed’s Portfolio</title> -->
-  <meta property="og:description" content="Junior Data Scientist and Web Scraper from Cairo, Egypt.">
-  <meta property="og:image" content="./assets/images/photo pro.png">
-  <meta property="og:url" content="https://ahmed-hazem-1.github.io">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Ahmed Hazem's Portfolio">
-  <meta property="og:image:width" content="12000">
-  <meta property="og:image:height" content="6300">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ahmed Hazem – Data Scientist Portfolio</title>
+  <meta name="description" content="Ahmed Hazem Elabady – Junior Data Scientist & Web Scraper from Cairo, Egypt. Portfolio, projects, resume, and contact." />
+  <meta name="keywords" content="Ahmed Hazem, Data Scientist, Web Scraping, Machine Learning, Data Analysis, Portfolio" />
+  <meta name="author" content="Ahmed Hazem" />
+  <meta name="robots" content="index, follow" />
 
-  <!-- Twitter Card tags (optional) -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Ahmed Hazem's Portfolio">
-  <meta name="twitter:description" content="Junior Data Scientist and Web Scraper from Cairo, Egypt.">
-  <meta name="twitter:image" content="./assets/images/photo pro.png">
+  <meta property="og:title" content="Ahmed Hazem's Portfolio" />
+  <meta property="og:description" content="Junior Data Scientist and Web Scraper from Cairo, Egypt." />
+  <meta property="og:image" content="./assets/images/photo pro.png" />
+  <meta property="og:url" content="https://ahmed-hazem-1.github.io" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Ahmed Hazem's Portfolio" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
-  <!--
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./assets/images/portfolio.ico" type="image/x-icon">
-<!-- Edited the icon -->
-  <!--
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ahmed Hazem's Portfolio" />
+  <meta name="twitter:description" content="Junior Data Scientist and Web Scraper from Cairo, Egypt." />
+  <meta name="twitter:image" content="./assets/images/photo pro.png" />
 
-  <!--
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="./assets/images/portfolio.ico" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
+  <link rel="stylesheet" href="./assets/css/style.css" />
 
-  <!-- Add structured data for better SEO -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Ahmed Hazem Elabady",
-  "url": "https://ahmed-hazem-1.github.io",
-  "jobTitle": "Junior Data Scientist",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "Freelance"
-  },
-  "description": "Junior Data Scientist and Web Scraper from Cairo, Egypt",
-  "image": "./assets/images/photo pro.png",
-  "sameAs": [
-    "https://github.com/ahmed-hazem-1",
-    "http://www.linkedin.com/in/ahmed-hazem-elabady-9a904924b",
-    "https://www.kaggle.com/ahmedhazemelabady"
-  ],
-  "alumniOf": {
-    "@type": "EducationalOrganization",
-    "name": "Benha Faculty of Computer Science and Artificial Intelligence"
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ahmed Hazem Elabady",
+    "url": "https://ahmed-hazem-1.github.io",
+    "jobTitle": "Junior Data Scientist",
+    "worksFor": { "@type": "Organization", "name": "Freelance" },
+    "description": "Junior Data Scientist and Web Scraper from Cairo, Egypt",
+    "image": "./assets/images/photo pro.png",
+    "sameAs": [
+      "https://github.com/ahmed-hazem-1",
+      "http://www.linkedin.com/in/ahmed-hazem-elabady-9a904924b",
+      "https://www.kaggle.com/ahmedhazemelabady"
+    ],
+    "alumniOf": {"@type": "EducationalOrganization","name": "Benha Faculty of Computer Science and Artificial Intelligence"}
   }
-}
-</script>
-<meta name="description" content="Junior Data Scientist showcasing projects in AI, Data Analysis, Machine Learning, and Web Scraping." />
-<meta name="keywords" content="portfolio,Ahmed Hazem, web developer, projects, skills, data science, machine learning, web scraping, COVID-19 detection, medical imaging, CNN" />
-<meta name="author" content="Ahmed Hazem" />
-<meta name="robots" content="index, follow" />
+  </script>
 </head>
-
 <body>
+  <header class="site-header">
+    <a class="brand" href="#home">
+      <img class="brand-avatar" src="./assets/images/my-avatar.png" alt="Ahmed Hazem avatar"/>
+      <span class="brand-name">Ahmed Hazem</span>
+    </a>
 
-  <!--
-    - #MAIN
-  -->
+    <nav class="site-nav" aria-label="Primary">
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-list" id="navList">
+        <li><a class="nav-link active" data-nav="about" href="#about">About</a></li>
+        <li><a class="nav-link" data-nav="experience" href="#experience">Experience</a></li>
+        <li><a class="nav-link" data-nav="education" href="#education">Education</a></li>
+        <li><a class="nav-link" data-nav="projects" href="#projects">Projects</a></li>
+        <li><a class="nav-link" data-nav="skills" href="#skills">Skills</a></li>
+        <li><a class="nav-link" data-nav="contact" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <main>
-
-    <!--
-      - #SIDEBAR
-    -->
-
-    <aside class="sidebar" data-sidebar> <!-- Adjust width as needed -->
-
-      <div class="sidebar-info">
-
-        <figure class="avatar-box">
-          <img src="./assets/images/photo pro.png" alt="Ahmed Hazem Portrait" />
-        </figure>
-
-        <div class="info-content">
-          <h6 class="name" title="Ahmed Hazem Elabady"><small>Ahmed Hazem Elabady</small></h6>
-          <p class="title">Junior Data Scientist</p>
+    <section class="hero section" id="about">
+      <div class="hero-text">
+        <!-- <h2 class="title-lg" style="margin-top:0">About me</h2> -->
+        <h1 class="title-xl">Ahmed Hazem Elabady</h1>
+        <p class="subtitle">Junior Data Scientist • Web Scraper • Cairo, Egypt</p>
+        <p class="lead">I’m a Data Science professional who turns raw data into smart, results‑driven decisions. From machine learning and data analysis to web scraping, I uncover insights that cut costs, boost efficiency, and reveal new opportunities. I translate complex information into clear strategies that give businesses a competitive edge.</p>
+        <div class="cta-row">
+        <a class="btn ghost" href="assets/pdf/resume.pdf" target="_blank"><ion-icon name="download-outline"></ion-icon> Download PDF</a>
+          <!-- <a class="btn primary" href="resume.html"><ion-icon name="document-text-outline"></ion-icon> View Resume</a> -->
+          <a class="btn primary" href="#projects"><ion-icon name="grid-outline"></ion-icon> View Projects</a>
+          <!-- <a class="btn ghost" href="https://drive.google.com/file/d/14Z2ZxAimzsgGeOcPO5YtJi-Aj659dJIu/view?usp=sharing" target="_blank" rel="noreferrer"><ion-icon name="cloud-outline"></ion-icon> View on Drive</a> -->
         </div>
+        <ul class="socials">
+          <li><a href="https://github.com/ahmed-hazem-1" target="_blank" rel="noreferrer" aria-label="GitHub"><img src="./assets/images/github.png" alt="GitHub"/></a></li>
+          <li><a href="http://www.linkedin.com/in/ahmed-hazem-elabady-9a904924b" target="_blank" rel="noreferrer" aria-label="LinkedIn"><img src="./assets/images/linkedin.png" alt="LinkedIn"/></a></li>
+          <li><a href="https://www.kaggle.com/ahmedhazemelabady" target="_blank" rel="noreferrer" aria-label="Kaggle"><img src="./assets/images/kaggle.png" alt="Kaggle"/></a></li>
+          <li><a href="https://www.upwork.com/freelancers/~01b3e08df9c50aadb7?mp_source=share" target="_blank" rel="noreferrer" aria-label="Upwork"><img src="./assets/images/pngwing.com.png" alt="Upwork"/></a></li>
+          <li><a href="https://www.freelancer.com/u/AhmedHazem1111" target="_blank" rel="noreferrer" aria-label="Freelancer"><img src="./assets/images/freelancer-1.svg" alt="Freelancer"/></a></li>
+        </ul>
+      </div>
+      <div class="hero-media">
+        <img class="hero-photo" src="./assets/images/photo pro.png" alt="Ahmed Hazem portrait" loading="eager" />
+      </div>
+    </section>
 
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
-          <ion-icon name="chevron-down"></ion-icon>
-        </button>
+    <!-- Experience -->
+    <section class="section" id="experience">
+      <h2 class="title-lg">Experience</h2>
+      <div class="timeline">
+        <ul class="timeline-list">
+          <li class="timeline-item">
+            <h4>Computer Vision Trainee</h4>
+            <p class="meta">National Telecommunication Institute (NTI) • Jul–Aug 2025 • Remote</p>
+            <p>Explored CNNs and transfer learning with hands‑on projects; built skills across classification, detection, segmentation, and face recognition.</p>
+          </li>
+          <li class="timeline-item">
+            <h4>AI & Data Science Trainee</h4>
+            <p class="meta">Digital Egypt Pioneers Initiative (DEPI) • Oct 2024–Jun 2025 • Hybrid</p>
+            <p>Applied ML/DL to real datasets; improved predictive modeling and end‑to‑end analysis for actionable insights.</p>
+          </li>
+          <li class="timeline-item">
+            <h4>AI Model Trainer (Freelance)</h4>
+            <p class="meta">Outlier • Sep–Nov 2024 • Remote</p>
+            <p>Trained LLMs to solve math problems and optimized performance via iterative evaluation.</p>
+          </li>
+          <li class="timeline-item">
+            <h4>Information Technology Trainee</h4>
+            <p class="meta">EGAS • Jul 2024 • On‑site</p>
+            <p>Troubleshot and resolved IT issues; collaborated on system maintenance and support.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
 
+    <!-- Education -->
+    <section class="section" id="education">
+      <h2 class="title-lg">Education</h2>
+      <div class="timeline">
+        <ul class="timeline-list">
+          <li class="timeline-item">
+            <h4>Benha Faculty of Computer Science and Artificial Intelligence</h4>
+            <p class="meta">B.Sc. • 2023–2027</p>
+            <p>Focus on CS and Data Science fundamentals and data‑driven technologies.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="section-head">
+        <h2 class="title-lg">Projects</h2>
+        <div class="filters" role="tablist" aria-label="Project Categories">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="filter-btn" data-filter="machine learning" role="tab">Machine Learning</button>
+          <button class="filter-btn" data-filter="deep learning" role="tab">Deep Learning</button>
+          <button class="filter-btn" data-filter="web scraping" role="tab">Web Scraping</button>
+          <button class="filter-btn" data-filter="data analysis" role="tab">Data Analysis</button>
+        </div>
       </div>
 
-      <div class="sidebar-info_more">
-
-        <div class="separator"></div>
-
-        <ul class="contacts-list">
-
-          <li class="contact-item">
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
+      <ul class="project-grid" id="projectGrid">
+        <!-- 1. Deep Learning: Waste Detection using YOLO -->
+        <li class="project-card" data-category="deep learning">
+          <figure class="cover">
+            <img src="./assets/images/5f4161bd-952e-46fd-bac1-98412634feed.jpg" alt="Waste Detection using YOLO" loading="lazy" />
+            <div class="img-overlay">
+              <a class="btn ghost" href="https://trash--detector.streamlit.app/" target="_blank" rel="noreferrer">View App</a>
+              <a class="btn primary" href="https://github.com/ahmed-hazem-1/Trash_Detector" target="_blank" rel="noreferrer">View Code</a>
             </div>
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
-              <a href="mailto:ahmed.hazem.elabady@gmail.com" class="contact-link">ahmed.hazem.elabady@gmail.com</a>
-            </div>
-          </li>
-
-          <li class="contact-item">
-            <div class="icon-box">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
-            </div>
-            <div class="contact-info">
-              <p class="contact-title">Phone</p>
-              <a href="tel:+201275012177" class="contact-link">+20 127 5012 177</a>
-            </div>
-          </li>
-
-  
-
-          <li class="contact-item">
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-            <div class="contact-info">
-              <p class="contact-title">Location</p>
-              <address>Cairo, EGYPT</address>
-            </div>
-          </li>
-
-        </ul>
-
-        <div class="separator"></div>
-
-        <div class="resume-download-container">
-            <a href="https://drive.google.com/file/d/14Z2ZxAimzsgGeOcPO5YtJi-Aj659dJIu/view?usp=sharing" class="resume-download-btn" target="_blank">
-              <ion-icon name="document-text-outline"></ion-icon>
-              <span>View Resume</span>
-            </a>
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title">Waste Detection using YOLO (v8–v11)</h3>
+            <p class="card-tags">Deep Learning · Object Detection</p>
+            <p class="card-text">Detects 22 waste categories with 94% mAP50 on 24k Roboflow images. Includes augmentation and transfer learning.</p>
           </div>
-
-        </div>
-
-    </aside>
-
-    <!-- Add new fixed social sidebar -->
-    <div class="social-sidebar">
-      <ul class="social-list">
-        <li class="social-item">
-          <a href="https://github.com/ahmed-hazem-1" class="social-link" title="GitHub" target="_blank">
-            <img src="./assets/images/github.png" alt="GitHub" width="24" height="24">
-            <span class="social-tooltip">GitHub</span>
-          </a>
         </li>
 
-        <li class="social-item">
-          <a href="http://www.linkedin.com/in/ahmed-hazem-elabady-9a904924b" class="social-link" title="LinkedIn" target="_blank">
-            <img src="./assets/images/linkedin.png" alt="LinkedIn" width="24" height="24">
-            <span class="social-tooltip">LinkedIn</span>
-          </a>
+        <!-- 2. Deep Learning: Land Type Classification -->
+        <li class="project-card" data-category="deep learning">
+          <figure class="cover">
+            <img src="./assets/images/land_type.png" alt="Land Type Classification (EuroSAT)" loading="lazy" />
+            <div class="img-overlay">
+              <a class="btn primary" href="https://github.com/ahmed-hazem-1/DEPI-Project--Land-Type-Classification.git" target="_blank" rel="noreferrer">View Code</a>
+            </div>
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title">Land Type Classification (EuroSAT)</h3>
+            <p class="card-tags">Deep Learning · Remote Sensing</p>
+            <p class="card-text">Classifies Sentinel‑2 images into land‑use types (water, desert, roads, etc.) for geospatial insights.</p>
+          </div>
         </li>
 
-        <li class="social-item">
-          <a href="https://www.kaggle.com/ahmedhazemelabady" class="social-link" title="Kaggle" target="_blank">
-            <img src="./assets/images/kaggle.png" alt="Kaggle" width="24" height="24">
-            <span class="social-tooltip">Kaggle</span>
-          </a>
+        <!-- 3. Deep Learning: COVID-19 X-ray Detection -->
+        <li class="project-card" data-category="deep learning">
+          <figure class="cover">
+            <img src="./assets/images/covid-xray.png" alt="COVID-19 X-ray Detection" loading="lazy" />
+            <div class="img-overlay">
+              <a class="btn ghost" href="https://covid-19-xray-detection.streamlit.app/" target="_blank" rel="noreferrer">View App</a>
+              <a class="btn primary" href="https://github.com/ahmed-hazem-1/COVID-19-Xray-Detection.git" target="_blank" rel="noreferrer">View Code</a>
+            </div>
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title">COVID-19 X-ray Detection</h3>
+            <p class="card-tags">CNN · Medical Imaging</p>
+            <p class="card-text">CNN with confidence visualization for classifying chest X‑rays in real time.</p>
+          </div>
         </li>
 
-        <li class="social-item">
-          <a href="https://www.upwork.com/freelancers/~01b3e08df9c50aadb7?mp_source=share" class="social-link" title="Upwork" target="_blank">
-            <img src="./assets/images/pngwing.com.png" alt="Upwork" width="24" height="24">
-            <span class="social-tooltip">Upwork</span>
-          </a>
+        <!-- 4. Deep Learning: Cat vs Dog -->
+        <li class="project-card" data-category="deep learning">
+          <figure class="cover">
+            <img src="assets/images/cats-vs-dogs-thumbnail.jpg" alt="Cat vs Dog Classifier" loading="lazy" />
+            <div class="img-overlay">
+              <a class="btn ghost" href="https://cats-or-dogs.streamlit.app/" target="_blank" rel="noreferrer">View App</a>
+              <a class="btn primary" href="https://github.com/ahmed-hazem-1/Cats_VS_Dogs" target="_blank" rel="noreferrer">View Code</a>
+            </div>
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title">Cat vs. Dog Image Classifier</h3>
+            <p class="card-tags">CNN</p>
+            <p class="card-text">Binary image classifier trained on cats vs dogs with strong generalization.</p>
+          </div>
         </li>
 
-        <li class="social-item">
-          <a href="https://www.freelancer.com/u/AhmedHazem1111" class="social-link" title="Freelancer" target="_blank">
-            <img src="./assets/images/freelancer-1.svg" alt="Freelancer" width="24" height="24">
-            <span class="social-tooltip">Freelancer</span>
-          </a>
+        <!-- 5. Deep Learning: Air Delay Prediction -->
+        <li class="project-card" data-category="deep learning">
+          <figure class="cover">
+            <img src="./assets/images/Air Delay Prediction.jpg" alt="Air Delay Prediction" loading="lazy" />
+            <div class="img-overlay">
+              <a class="btn primary" href="https://colab.research.google.com/drive/1_TZxoqVbBwWezRDTmLzZzw6-DMKfmxo1?usp=sharing" target="_blank" rel="noreferrer">View Code</a>
+            </div>
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title">Air Delay Prediction</h3>
+            <p class="card-tags">TensorFlow · Keras</p>
+            <p class="card-text">Predicts weather‑caused flight delays; tuned with early stopping for 99.9% accuracy.</p>
+          </div>
+        </li>
+
+        <!-- 6. ML: Customer Churn -->
+        <li class="project-card" data-category="machine learning">
+          <figure class="cover">
+            <img src="./assets/images/Customer Churn.png" alt="Customer Churn Prediction" loading="lazy" />
+            <div class="img-overlay">
+              <a class="btn primary" href="https://colab.research.google.com/drive/1HGWa_N0SFB6dJCkHtCHCiBSvhbwMMfRj?usp=sharing" target="_blank" rel="noreferrer">View Code</a>
+            </div>
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title">Customer Churn Prediction</h3>
+            <p class="card-tags">LR · RF · SVC · KNN · XGBoost</p>
+            <p class="card-text">Preprocessing, model comparison, and GridSearchCV optimization for bank churn prediction.</p>
+          </div>
+        </li>
+
+        <!-- 7. ML: Heart Disease -->
+        <li class="project-card" data-category="machine learning">
+          <figure class="cover">
+            <img src="./assets/images/heart disease.png" alt="Indicators of Heart Disease" loading="lazy" />
+            <div class="img-overlay">
+              <a class="btn primary" href="https://colab.research.google.com/drive/16nMS2nUjRVy0dFuPgACu51i0Of4lUrIy?usp=sharing" target="_blank" rel="noreferrer">View Code</a>
+            </div>
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title">Indicators of Heart Disease</h3>
+            <p class="card-tags">LR · SVC · KNN · Random Forest</p>
+            <p class="card-text">Pipeline on 319,795 records; best KNN (90%) vs LR/SVC/RF baselines.</p>
+          </div>
+        </li>
+
+        <!-- 8. ML: Student Performance -->
+        <li class="project-card" data-category="machine learning">
+          <figure class="cover">
+            <img src="./assets/images/Student Performance (Linear Regression Model).png" alt="Student Performance" loading="lazy" />
+            <div class="img-overlay">
+              <a class="btn primary" href="https://www.kaggle.com/code/ahmedhazemelabady/student-performance-linear-regression-model" target="_blank" rel="noreferrer">View Code</a>
+            </div>
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title">Student Performance</h3>
+            <p class="card-tags">Linear Regression</p>
+            <p class="card-text">Predicts student scores; R²=0.989 and MSE=4.083 on held‑out data.</p>
+          </div>
+        </li>
+
+        <!-- 9. ML: NBA Salaries -->
+        <li class="project-card" data-category="machine learning">
+          <figure class="cover">
+            <img src="./assets/images/NBA.jpg" alt="Predict NBA 2K20 Player Salaries" loading="lazy" />
+            <div class="img-overlay">
+              <a class="btn primary" href="https://colab.research.google.com/drive/1n79WKl_ReM-EWaFlLyu-QbYGjohy9fvS?usp=sharing" target="_blank" rel="noreferrer">View Code</a>
+            </div>
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title">Predict NBA 2K20 Player Salaries</h3>
+            <p class="card-tags">Linear Regression</p>
+            <p class="card-text">Salary prediction from performance metrics using a linear model.</p>
+          </div>
+        </li>
+
+        <!-- 10. Web Scraping: Wuzzuf Jobs -->
+        <li class="project-card" data-category="web scraping">
+          <figure class="cover">
+            <img src="./assets/images/Wuzzuf cover img.png" alt="Wuzzuf Jobs Dataset" loading="lazy" />
+            <div class="img-overlay">
+              <a class="btn primary" href="https://www.kaggle.com/datasets/ahmedhazemelabady/wuzzuf-job-listings-dataset-egypt-january-2025" target="_blank" rel="noreferrer">View Dataset</a>
+            </div>
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title">Wuzzuf Jobs – 8,000+ Jobs</h3>
+            <p class="card-tags">Web Scraping</p>
+            <p class="card-text">Scraped 8k+ listings for analytics and predictive modeling.</p>
+          </div>
+        </li>
+
+        <!-- 11. Data Analysis: Wuzzuf EDA -->
+        <li class="project-card" data-category="data analysis">
+          <figure class="cover">
+            <img src="./assets/images/Untitled design.png" alt="Wuzzuf Jobs EDA" loading="lazy" />
+            <div class="img-overlay">
+              <a class="btn primary" href="https://colab.research.google.com/drive/1JDoMmh_pkKgGjcf8O2Ka5SF9zNfOI_yo?usp=sharing#scrollTo=AXPWaF5TP_0-" target="_blank" rel="noreferrer">View Analysis</a>
+            </div>
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title">Exploratory Data Analysis on Wuzzuf Jobs</h3>
+            <p class="card-tags">Data Analysis</p>
+            <p class="card-text">Explores market trends and skill demand across the scraped dataset.</p>
+          </div>
+        </li>
+
+        <!-- 12. Data Analysis: Titanic -->
+        <li class="project-card" data-category="data analysis">
+          <figure class="cover">
+            <img src="./assets/images/Untitled design ww.png" alt="Titanic Data Analysis" loading="lazy" />
+            <div class="img-overlay">
+              <a class="btn primary" href="https://colab.research.google.com/github/ahmed-hazem-1/DEPI-Tasks/blob/main/FullTitanicPloting.ipynb" target="_blank" rel="noreferrer">View Analysis</a>
+            </div>
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title">Titanic Data Analysis</h3>
+            <p class="card-tags">Data Analysis</p>
+            <p class="card-text">Survival patterns by gender, class, and other features with clear visuals.</p>
+          </div>
+        </li>
+
+        <!-- 13. Web Scraping: Top Ranked Anime -->
+        <li class="project-card" data-category="web scraping">
+          <figure class="cover">
+            <img src="./assets/images/Coding Vs Output.png" alt="Top Ranked Anime Dataset" loading="lazy" />
+            <div class="img-overlay">
+              <a class="btn primary" href="https://www.kaggle.com/datasets/ahmedhazemelabady/top-ranked-animes-in-2024" target="_blank" rel="noreferrer">View Dataset</a>
+            </div>
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title">Top Ranked Anime – 20,000+ Rows</h3>
+            <p class="card-tags">Web Scraping</p>
+            <p class="card-text">Collected 20k entries enabling ranking, trend analysis, and EDA.</p>
+          </div>
+        </li>
+
+        <!-- 14. Web Scraping: Indeed Jobs -->
+        <li class="project-card" data-category="web scraping">
+          <figure class="cover">
+            <img src="./assets/images/indeed scraping.png" alt="Indeed Jobs Data" loading="lazy" />
+            <div class="img-overlay">
+              <a class="btn primary" href="https://docs.google.com/spreadsheets/d/1cBvnq2neeA6MXwm78BDZuSd8YXa4gqO_/edit?usp=sharing&ouid=103553655283163842087&rtpof=true&sd=true" target="_blank" rel="noreferrer">View Data</a>
+            </div>
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title">Indeed Jobs – 2,000+ Rows</h3>
+            <p class="card-tags">Web Scraping</p>
+            <p class="card-text">Scraped postings to capture skill and salary trends across roles.</p>
+          </div>
+        </li>
+
+        <!-- 15. Data Analysis: Indeed Jobs Analysis -->
+        <li class="project-card" data-category="data analysis">
+          <figure class="cover">
+            <img src="./assets/images/indeed analysis.png" alt="Indeed Jobs Analysis" loading="lazy" />
+            <div class="img-overlay">
+              <a class="btn primary" href="https://drive.google.com/file/d/1XPGHg7FEpPuFfHUHSM03XcF2-sgKKRMi/view?usp=sharing" target="_blank" rel="noreferrer">View Analysis</a>
+            </div>
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title">Indeed Jobs Analysis</h3>
+            <p class="card-tags">Data Analysis</p>
+            <p class="card-text">Insights on popular roles, in‑demand skills, and salary bands.</p>
+          </div>
         </li>
       </ul>
-    </div>
+    </section>
 
-    <!--
-      - #main-content
-    -->
+    <section class="section" id="skills">
+      <h2 class="title-lg">Skills & Technologies</h2>
+      <ul class="chips">
+        <li>Python</li>
+        <li>Pandas</li>
+        <li>NumPy</li>
+        <li>scikit-learn</li>
+        <li>Data Analysis</li>
+        <li>Machine Learning</li>
+        <li>Deep Learning</li>
+        <li>Computer Vision</li>
+        <li>Object Detection</li>
+        <li>TensorFlow</li>
+        <li>Keras</li>
+        <li>YOLO</li>
+        <li>Web Scraping</li>
+        <li>BeautifulSoup</li>
+        <li>Selenium</li>
+        <li>Dash</li>
+        <li>SQL</li>
+        <li>Matplotlib</li>
+        <li>Seaborn</li>
+        <li>Streamlit</li>
+        <li>Git & GitHub</li>
+      </ul>
 
-    <div class="main-content">
+      <h3 class="title-md">Languages</h3>
+      <ul class="chips muted">
+        <li>Arabic (Native)</li>
+        <li>English (B2)</li>
+      </ul>
 
-      <!--
-        - #NAVBAR
-      -->
-
-      <nav class="navbar">
-
-        <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
+      <div class="certs">
+        <h3 class="title-md">Certificates</h3>
+        <ul>
+          <li>
+            <strong>Fundamentals of Deep Learning</strong> – NVIDIA (Apr 2025)
+            <a class="cert-link" target="_blank" href="https://www.linkedin.com/in/ahmed-hazem-elabady-9a904924b/overlay/1744716991852/single-media-viewer?type=DOCUMENT&profileId=ACoAAD3DtlEBjrg2pVZ_Vw2neyi64i93FzUZoCo&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BIj4O0Tv9Qh6Mi5oO8sw79w%3D%3D">View</a>
           </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
+          <li>
+            <strong>InnovEgypt – Innovation and Entrepreneurship</strong> – ITIDA (Jul 2024)
+            <a class="cert-link" target="_blank" href="https://www.linkedin.com/in/ahmed-hazem-elabady-9a904924b/overlay/1728331601681/single-media-viewer?type=DOCUMENT&profileId=ACoAAD3DtlEBjrg2pVZ_Vw2neyi64i93FzUZoCo&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BrUTtLLaNSfiePBe2%2BsD0kQ%3D%3D">View</a>
           </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
+          <li>
+            <strong>Python</strong> – MaharaTech - ITIMooca (Jun 2024)
+            <a class="cert-link" target="_blank" href="https://maharatech.gov.eg/mod/customcert/view.php?id=1737&downloadown=1">View</a>
           </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
-          </li>
-
         </ul>
-
-      </nav>
-
-
-      <!--
-        - #ABOUT
-      -->
-
-      <article class="about  active" data-page="about">
-
-        <header>
-          <h2 class="h2 article-title">About me</h2>
-        </header>
-
-        <!-- about text -->
-        <section class="about-text">
-          <p>
-            I’m a Data Science professional who turns raw data into smart, results-driven decisions. From machine learning and data analysis to web scraping, I uncover insights that cut costs, boost efficiency, and reveal new opportunities.
-          </p>
-          <p>
-            I translate complex information into clear strategies that give businesses a competitive edge. Backed by real-world project experience and advanced skills honed through the DEPI program, I'm ready to drive impact where it matters most.
-          </p>
-          <p>
-            Let’s talk about how data can fuel your growth.
-          </p>
-        </section>
-        
-
-
-        <!--
-          - service
-        -->
-
-        <section class="service">
-
-          <h3 class="h3 service-title">My Services</h3>
-
-          <ul class="service-list">
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/data-science2.svg
-                " alt="design icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Data Science</h4>
-
-                <p class="service-item-text">
-                  Applying advanced techniques to analyze and interpret complex data, providing actionable insights and solutions.
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/data-analysis2.svg" alt="Web development icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Data Analysis</h4>
-
-                <p class="service-item-text">
-                  Performing in-depth data analysis to uncover trends, patterns, and correlations, ensuring high-quality and accurate results.
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/web-spider.svg" alt="mobile app icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Web Scraping</h4>
-
-                <p class="service-item-text">
-                  Expertly extracting data from websites to gather valuable information and insights, tailored to meet specific needs.
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/ML.svg" alt="camera icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Machine Learning</h4>
-
-                <p class="service-item-text">
-                  Developing and deploying machine learning models to predict outcomes and enhance decision-making processes.
-                </p>
-              </div>
-
-            </li>
-
-          </ul>
-
-        </section>
-
-
-        <!--
-          - testimonials
-        -->
-
-<!--         <section class="testimonials">
-
-          <h3 class="h3 testimonials-title">Testimonials</h3>
-
-          <ul class="testimonials-list has-scrollbar">
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-1.png" alt="Omar Akram" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Omar Akram</h4>
-
-                <div class="testimonials-info">
-                  <p class="testimonials-job-title" data-testimonials-job-title>Cloud Engineer</p>
-                  <a href="https://www.linkedin.com/in/omar-akram-08439b23b/" class="testimonials-linkedin" data-testimonials-linkedin target="_blank">
-                    LinkedIn
-                  </a>
-                </div>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    "Abdelrahman is a truly dedicated and skilled data scientist. Having worked with him on several projects, 
-                    I can say that his commitment and hard work are exceptional. It's always a pleasure collaborating with him, 
-                    and I’m excited about the projects we'll work on together in the future. He consistently brings valuable 
-                    insights and a positive attitude to every challenge. Looking forward to what’s ahead!"
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-
-
-            <li class="testimonials-item">
-            
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/businessman.png" alt="Mohamed Sameh" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Mohamed Sameh</h4>
-
-                <div class="testimonials-info">
-                  <p class="testimonials-job-title" data-testimonials-job-title>Data Analyst</p>
-                  <a href="https://www.linkedin.com/in/mohamed-sameh-05a8021a5/" class="testimonials-linkedin" data-testimonials-linkedin target="_blank">
-                    LinkedIn
-                  </a>
-                </div>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    "Working with Abdelrahman Mohamed was an outstanding experience. He not only met my expectations but exceeded 
-                    them, delivering exactly what I had envisioned and more. His ability to transform complex data into clear, 
-                    actionable insights was impressive, and his attention to detail in creating intuitive and visually appealing 
-                    visualizations made a significant difference. I couldn’t have asked for a better collaborator on this project."
-                  </p>
-                </div>
-
-              </div>
-            
-            </li>
-
-
-
-
-
-          </ul>
-
-        </section> -->
-
-
-        <!--
-          - testimonials modal
-        -->
-
-        
-        <div class="modal-container" data-modal-container>
-
-          <div class="overlay" data-overlay></div>
-
-          <section class="testimonials-modal">
-
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-            <div class="modal-img-wrapper">
-              <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
-              </figure>
-
-              <img src="./assets/images/icon-quote.svg" alt="quote icon">
-            </div>
-
-            <div class="modal-content">
-
-              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
-
-              <!-- <time datetime="2021-06-14">1 Sep, 2024</time> -->
-
-              <div data-modal-text>
-                <p>
-                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                  lot of experience
-                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                  consectetur adipiscing
-                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                </p>
-              </div>
-
-            </div>
-
-            
-
-          </section>
-
-        </div>
-
-
-        <!--
-          - Skills
-        -->
-
-        <h3 class="h3 skills-title">Skills and Technologies</h3>
-        <section class="skills-technologies">
-
-
-          <ul class="skills-list">
-            <li class="skills-item">Data Science</li>
-            <li class="skills-item">Computer Vision</li>
-            <li class="skills-item">Object Detection</li>
-            <li class="skills-item">Scikit-Learn</li>
-            <li class="skills-item">Machine Learning</li>
-            <li class="skills-item">Data Analysis</li>
-            <li class="skills-item">Deep Learning</li>
-            <li class="skills-item">TensorFlow</li>
-            <li class="skills-item">Keras</li>
-            <li class="skills-item">YOLO</li>
-            <li class="skills-item">Python</li>
-            <li class="skills-item">Web Scraping</li>
-            <li class="skills-item">Pandas</li>
-            <li class="skills-item">Git</li>
-            <li class="skills-item">Dash</li>
-            <li class="skills-item">SQL</li>
-          </ul>
-
-        </section>
-
- 
-
-
-        <!--
-          - Languages section
-        -->
-        <h3 class="h3 skills-title">Languages</h3>
-        <section class="skills-technologies">
-
-
-          <ul class="skills-list">
-            <li class="skills-item">Arabic (Native)</li>
-            <li class="skills-item">English (B2)</li>
-          </ul>
-
-        </section>
-
-
-
-      </article>
-
-
-
-      <!--
-        - #RESUME
-      -->
-
-      <article class="resume" data-page="resume">
-
-        <header>
-          <h2 class="h2 article-title">Resume</h2>
-        </header>
-
-
-        <!-- Experience -->
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="briefcase-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3">Experience</h3>
-          </div>
-
-          <ol class="timeline-list">      
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Computer Vision Trainee</h4>
-              <p class="timeline-company">National Telecommunication Institute (NTI)</p>
-
-              <span>July 2025 - August 2025, Remote</span>
-
-              <div class="timeline-text">
-                <div class="experience-details" style="padding: 0; margin: 0;">
-                  <div class="experience-item" style="padding: 0; margin: 0;">
-                    <span class="item-marker"></span>
-                    Explored deep learning techniques, including neural networks, CNNs, and transfer learning, through hands-on internship projects.<br><br>
-                  </div>
-                  <div class="experience-item" style="padding: 0; margin: 0;">
-                    <span class="item-marker"></span>
-                    Developed skills in image processing, focusing on image classification, object detection, segmentation, and face recognition.<br><br>
-                  </div>
-                  <div class="experience-item" style="padding: 0; margin: 0;">
-                    <span class="item-marker"></span>
-                    Applied practical experience to real-world computer vision tasks, enhancing proficiency in deep learning frameworks.
-                  </div>
-                </div>
-              </div>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">AI & Data Science Trainee</h4>
-              <p class="timeline-company">Digital Egypt Pioneers Initiative (DEPI)</p>
-
-              <span>October 2024 - June 2025, Hybrid</span>
-
-              <div class="timeline-text">
-                <div class="experience-details" style="padding: 0; margin: 0;">
-                  <div class="experience-item" style="padding: 0; margin: 0;">
-                    <span class="item-marker"></span>
-                    Applied machine learning and deep learning techniques to real-world datasets, improving predictive modeling capabilities.<br><br>
-                  </div>
-                  <div class="experience-item" style="padding: 0; margin: 0;">
-                    <span class="item-marker"></span>
-                    Enhanced data science skills through hands-on projects focused on practical applications of ML and DL.<br><br>
-                  </div>
-                  <div class="experience-item" style="padding: 0; margin: 0;">
-                    <span class="item-marker"></span>
-                    Developed proficiency in analyzing and interpreting complex datasets to drive actionable insights.
-                  </div>
-                </div>
-              </div>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">AI Model Trainer-Freelancer</h4>
-              <p class="timeline-company">Outlier</p>
-
-              <span>September 2024 - November 2024, Remote</span>
-
-              <div class="timeline-text">
-                <div class="experience-details" style="padding: 0; margin: 0;">
-                  <div class="experience-item" style="padding: 0; margin: 0;">
-                    <span class="item-marker"></span>
-                    Trained large language models (LLMs) to solve complex mathematical problems with high accuracy.<br><br>
-                  </div>
-                  <div class="experience-item" style="padding: 0; margin: 0;">
-                    <span class="item-marker"></span>
-                    Collaborated with cross-functional teams to design and implement data-driven AI solutions.<br><br>
-                  </div>
-                  <div class="experience-item" style="padding: 0; margin: 0;">
-                    <span class="item-marker"></span>
-                    Optimized model performance through iterative testing and refinement, enhancing solution reliability.
-                  </div>
-                </div>
-              </div>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Information Technology Trainee</h4>
-              <p class="timeline-company">Egyptian Natural Gas Holding Company (EGAS)</p>
-
-              <span>July 2024 - July 2024, On-site</span>
-
-              <div class="timeline-text">
-                <div class="experience-details" style="padding: 0; margin: 0;">
-                  <div class="experience-item" style="padding: 0; margin: 0;">
-                    <span class="item-marker"></span>
-                    Gained expertise in diagnosing and resolving real-world IT issues through practical experience.<br><br>
-                  </div>
-                  <div class="experience-item" style="padding: 0; margin: 0;">
-                    <span class="item-marker"></span>
-                    Collaborated with team members to troubleshoot and address technical challenges effectively.<br><br>
-                  </div>
-                  <div class="experience-item" style="padding: 0; margin: 0;">
-                    <span class="item-marker"></span>
-                    Developed problem-solving skills by implementing solutions for complex IT system issues.
-                  </div>
-                </div>
-              </div>
-
-            </li>
-
-          </ol>
-
-        </section>
-
-        <!-- Education -->
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3">Education</h3>
-          </div>
-
-          <ol class="timeline-list">      
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Benha Faculty of Computer Science and Artificial Intelligence</h4>
-
-              <span>2023 — 2027</span>
-
-              <p class="timeline-text">
-                Studying Computer Science with a specialization in Data Science,  gaining expertise in core of CS and AI principles and data-driven technologies.
-              </p>
-
-            </li>
-
-
-            <!-- <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">New york academy of art</h4>
-
-              <span>2006 — 2007</span>
-
-              <p class="timeline-text">
-                  </div>
-                  <div class="experience-item" style="padding: 0; margin: 0;">
-                    <span class="item-marker"></span>
-                    Developed expertise in computer vision applications and deep learning frameworks through intensive hybrid training program.
-                  </div>
-                </div>
-              </div>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">AI and Data Scientist, Digital Egypt Pioneers Initiative - DEPI</h4>
-
-              <span>October 2024 — May 2025 </span>
-
-              <div class="timeline-text">
-                <div class="experience-details" style="padding: 0; margin: 0;">
-                  <div class="experience-item" style="padding: 0; margin: 0;">
-                    <span class="item-marker"></span>
-                    Acquired in-depth knowledge of Data Science principles and methodologies through hands-on training and real-world applications.<br><br>
-                  </div>
-                  <div class="experience-item" style="padding: 0; margin: 0;">
-                    <span class="item-marker"></span>
-                    Applied a variety of Machine Learning techniques, including supervised and unsupervised learning, to solve complex data-driven problems.<br><br>
-                  </div>
-                  <div class="experience-item" style="padding: 0; margin: 0;">
-                    <span class="item-marker"></span>
-                    Contributed to multiple projects, developing and implementing data models, algorithms, and visualizations to derive actionable insights.<br><br>
-                  </div>
-                  <div class="experience-item" style="padding: 0; margin: 0;">
-                    <span class="item-marker"></span>
-                    Enhanced technical proficiency in tools such as Python, TensorFlow, and pandas, while strengthening analytical and problem-solving skills.<br><br>
-                  </div>
-                  <div class="experience-item" style="padding: 0; margin: 0;">
-                    <span class="item-marker"></span>
-                    Collaborated with teams to design and optimize data pipelines, ensuring data integrity and efficient processing for project deliverables.
-                  </div>
-                </div>
-              </div>
-
-            </li>
-
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">AI Model Trainer, Outlier</h4>
-
-              <span>September 2024 — November 2024</span>
-
-              <p class="timeline-text">
-                Trained AI models (LLMs) to solve mathematical problems. Collaborated with cross-functional teams to develop data-driven solutions and improve model
-                performance.
-              </p>
-            </li>
-
-            
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">IT Trainee, Egyptian Natural Gas Holding Company (EGAS)</h4>
-
-              <span>July 2024 - July 2024</span>
-
-              <div class="timeline-text">
-                <div class="experience-details" style="padding: 0; margin: 0;">
-                  <div class="experience-item" style="padding: 0; margin: 0;">
-                    <span class="item-marker"></span>
-                    Gained hands-on experience in identifying, troubleshooting, and resolving real-world IT issues in a dynamic corporate environment.<br><br>
-                  </div>
-                  <div class="experience-item" style="padding: 0; margin: 0;">
-                    <span class="item-marker"></span>
-                    Collaborated effectively with cross-functional teams to diagnose and implement solutions for technical challenges, enhancing system performance and reliability.<br><br>
-                  </div>
-                  <div class="experience-item" style="padding: 0; margin: 0;">
-                    <span class="item-marker"></span>
-                    Developed foundational skills in network configurations, system maintenance, and software troubleshooting under the guidance of experienced IT professionals.<br><br>
-                  </div>
-                  <div class="experience-item" style="padding: 0; margin: 0;">
-                    <span class="item-marker"></span>
-                    Assisted in maintaining IT infrastructure, ensuring operational efficiency and adherence to company standards.<br><br>
-                  </div>
-                  <div class="experience-item" style="padding: 0; margin: 0;">
-                    <span class="item-marker"></span>
-                    Strengthened problem-solving and communication skills through active participation in team projects and technical support tasks.
-                  </div>
-                </div>
-              </div>
-            </li>
-
-            <!-- <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Web designer</h4>
-
-              <span>2010 — 2013</span>
-
-              <p class="timeline-text">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
-              </p>
-
-            </li> -->
-
-          </ol>
-
-        </section>
-
-        <!-- Certificates -->
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="document-text-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3">Certificates</h3>
-          </div>
-
-          <ol class="timeline-list">
-<!--  -->
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Fundamentals of Deep Learning</h4>
-
-              <span>Company: NVIDIA</span>
-              <span>Date: April 2025</span>
-              <a href="https://www.linkedin.com/in/ahmed-hazem-elabady-9a904924b/overlay/1744716991852/single-media-viewer?type=DOCUMENT&profileId=ACoAAD3DtlEBjrg2pVZ_Vw2neyi64i93FzUZoCo&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BIj4O0Tv9Qh6Mi5oO8sw79w%3D%3D" target="_blank">View Certificate</a>
-
-              <p class="timeline-text">
-                Gained hands-on expertise in deep learning fundamentals, including neural network training, CNNs, data augmentation, pre-trained models, advanced architectures, and NLP basics.
-              </p>
-
-            </li>
-
-<!--  -->
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">InnovEgypt - Innovation and Entrepreneurship</h4>
-
-              <span>Company: Information Technology Industry Development Agency, ITIDA</span>
-              <span>Date: Jul 2024</span>
-              <a href="https://www.linkedin.com/in/ahmed-hazem-elabady-9a904924b/overlay/1728331601681/single-media-viewer?type=DOCUMENT&profileId=ACoAAD3DtlEBjrg2pVZ_Vw2neyi64i93FzUZoCo&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BrUTtLLaNSfiePBe2%2BsD0kQ%3D%3D" target="_blank">View Certificate</a>
-
-              <p class="timeline-text">
-                Focusing on developing innovative ideas and business models. <br>
-                The program included workshops, lectures, and mentorship sessions to help us develop our ideas.
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Python</h4>
-
-              <span>Company: MaharaTech - ITIMooca </span>
-              <span>Date: June 2024</span>
-              <a href="https://maharatech.gov.eg/mod/customcert/view.php?id=1737&downloadown=1" target="_blank">View Certificate</a>
-
-              <!-- <p class="timeline-text">
-              This Track provided me with hands-on experience in data analysis using Python, focusing on data manipulation, statistical analysis, and data visualization with libraries such as Pandas, NumPy, and Matplotlib.  
-              </p> -->
-
-            </li>
-
-
-            <!-- <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Big data essential</h4>
-
-              <span>Company: NTI</span>
-              <span>Date: September 2023</span>
-              <a href="https://github.com/AbdooMohamedd/AbdooMohamedd.github.io/blob/master/certifications/Screenshot%202023-12-08%20153740.png" target="_blank">View Certificate</a>
-
-              <p class="timeline-text">
-              This course covered essential big data concepts, including storage, processing frameworks, and distributed technologies like Hadoop and Spark, for handling and analyzing large datasets.
-              </p>
-
-            </li> -->
-
-            <!-- Add more certificates here -->
-
-          </ol>
-
-        </section>
-
-        <!-- Skills -->
-        <section class="skill timeline">
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="bar-chart-outline"></ion-icon>
-            </div>
-            
-            <h3 class="h3">My skills</h3>
-          </div>
-
-          <ul class="skills-list content-card">
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Data Science</h5>
-                <data value="80">80%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Web Scraping</h5>
-                <data value="90">90%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 90%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Data Analysis</h5>
-                <data value="90">90%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 90%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Machine Learning</h5>
-                <data value="70">70%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
-
-            </li>
-
-          </ul>
-
-        </section>
-
-                <!--
-          - Volunteering section
-        -->
-        <section class="timeline">
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="people-outline"></ion-icon>
-            </div>
-            
-            <h3 class="h3">Volunteering</h3>
-          </div>
-          
-          <ol class="timeline-list">
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Researcher Mentor, Nasa Space Apps Benha</h4>
-              <span>June 2025 — Present</span>
-              <p class="timeline-text">
-                Guided participants in innovative space-related projects, fostering collaboration and problem-solving in science and technology challenges.
-              </p>
-            </li>
-
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Event Organizer, Codeavour 5.0 Egypt</h4>
-              <span>March 2024</span>
-              <p class="timeline-text">
-                Joined in organization of event for a programming competition for AI and Robotics. The event's total capacity is 5,000 people, including 1,500 participants and 
-                3,500 parents and spectators. This competition is a countrywide competition that make 90% of its participants better in their technical life.
-              </p>
-            </li>
-          </ol>
-        </section>
-
-
-      </article>
-
-      <!-- - Volunteering -->
-      <!--
-        - #VOLUNTEERING
-      -->
-
-  
-      <!--
-        - #PORTFOLIO
-      -->
-
-      <article class="portfolio" data-page="portfolio">
-
-        <header>
-          <h2 class="h2 article-title">Projects</h2>
-        </header>
-
-        <section class="projects">
-
-          <!-- filter -->
-          <ul class="filter-list">
-
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-
-            <!-- <li class="filter-item">
-              <button data-filter-btn>Data Science</button>
-            </li> -->
-            
-            <li class="filter-item">
-              <button data-filter-btn>Machine Learning</button>
-            </li>
-            <li class="filter-item">
-              <button data-filter-btn>Deep Learning</button>
-            </li>
-            
-            <li class="filter-item">
-              <button data-filter-btn>Data Analysis</button>
-            </li>
-            <li class="filter-item">
-              <button data-filter-btn>Web Scraping</button>
-            </li>
-            
-            <!-- <li class="select-item">
-              <button data-select-item>Python Software Engineering</button>
-            </li> -->
-          </ul>
-
-          <!-- filter-select-box -->
-          <div class="filter-select-box">
-
-            <button class="filter-select" data-select>
-
-              <div class="select-value" data-selecct-value>Select category</div>
-
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-
-            </button>
-
-            <!-- select list -->
-            <ul class="select-list">
-
-              <li class="select-item">
-                <button data-select-item>All</button>
-              </li>
-
-              <!-- <li class="select-item">
-                <button data-select-item>Data Science</button>
-              </li> -->
-
-              <li class="select-item">
-                <button data-select-item>Web Scraping</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Machine Learning</button>
-              </li>  
-              
-              <li class="select-item">
-                <button data-select-item>Deep Learning</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Data Analysis</button>
-              </li>
-    
-              <!-- <li class="select-item">
-                <button data-select-item>Python Software Engineering</button>
-              </li> -->
-            </ul>
-
-          </div>
-
-          <!-- projects -->
-          <ul class="project-list">
-            <!--  -->
-
-            <li class="project-item active" data-filter-item data-category="deep learning">
-              <figure class="project-img">
-                <img src="./assets/images/5f4161bd-952e-46fd-bac1-98412634feed.jpg" alt="Waste Detection using YOLO" loading="lazy" >
-                <div class="project-overlay">
-                  <div class="project-buttons">
-                    <a href="https://trash--detector.streamlit.app/" class="btn btn-view-app" target="_blank">View App</a>
-                    <a href="https://github.com/ahmed-hazem-1/Trash_Detector" class="btn btn-view-code" target="_blank">View Code</a>
-                  </div>
-                </div>
-              </figure>
-              <h3 class="project-title">Waste Detection using YOLO (v8-v11)</h3>
-              <p class="project-category">Deep Learning</p>
-              <div class="project-description">
-                <p>Developed an advanced object detection system using YOLOv8-v11 to identify 22 types of waste materials including cans, plastic bottles, and more. Achieved 94% mAP50 accuracy through data preprocessing, augmentation, and training on 24,000 images from Roboflow dataset.</p>
-              </div>
-            </li>
-
-            <li class="project-item active" data-filter-item data-category="deep learning">
-              <figure class="project-img">
-                <img src="./assets/images/land_type.png" alt="Land Classification" loading="lazy">
-                <div class="project-overlay">
-                  <div class="project-buttons">
-                    <a href="https://github.com/ahmed-hazem-1/DEPI-Project--Land-Type-Classification.git" class="btn btn-view-code" target="_blank">View Code</a>
-                  </div>
-                </div>
-              </figure>
-              <h3 class="project-title">Land Type Classification using Sentinel-2 Images </h3>
-              <p class="project-category">Deep Learning</p>
-              <div class="project-description">
-                <p>Used DNNs on EuroSAT (Sentinel-2) images to classify land types (water, desert, roads, etc.) for resource management.</p>
-              </div>
-            </li>
-            
-<!--  -->
-
-
-            <li class="project-item active" data-filter-item data-category="deep learning">
-              <figure class="project-img">
-                <img src="./assets/images/covid-xray.png" alt="COVID-19 X-ray Detection" loading="lazy">
-                <div class="project-overlay">
-                  <div class="project-buttons">
-                    <a href="https://covid-19-xray-detection.streamlit.app/" class="btn btn-view-app" target="_blank">View App</a>
-                    <a href="https://github.com/ahmed-hazem-1/COVID-19-Xray-Detection.git" class="btn btn-view-code" target="_blank">View Code</a>
-                  </div>
-                </div>
-              </figure>
-              <h3 class="project-title">COVID-19 X-ray Detection</h3>
-              <p class="project-category">Deep Learning</p>
-              <div class="project-description">
-                <p>Built a CNN model to detect COVID-19 from chest X-rays, featuring real-time prediction with clear confidence visualization. The model uses multiple convolutional layers, max pooling, and dropout to prevent overfitting.</p>
-              </div>
-            </li>
-<!--  -->
-
-
-
-            <!-- Deep Learning Projects -->
-            <li class="project-item active" data-filter-item data-category="deep learning">
-              <figure class="project-img">
-                <img src="assets/images/cats-vs-dogs-thumbnail.jpg" class="img-fluid" alt="Cat vs. Dog Image Classifier">
-                <div class="project-overlay">
-                  <div class="project-buttons">
-                    <a href="https://cats-or-dogs.streamlit.app/" class="btn btn-view-app" target="_blank">View App</a>
-                    <a href="https://github.com/ahmed-hazem-1/Cats_VS_Dogs" class="btn btn-view-code" target="_blank">View Code</a>
-                  </div>
-                </div>
-              </figure>
-              <h3 class="project-title">Cat vs. Dog Image Classifier</h3>
-              <p class="project-category">Deep Learning</p>
-              <div class="project-description">
-                <p>Implemented a deep learning model to classify images of cats and dogs, achieving high accuracy.</p>
-              </div>
-            </li>
-              <!--  Streamlit link : https://cats-or-dogs.streamlit.app/ -->
-            <!--  -->
-
-            <li class="project-item active" data-filter-item data-category="deep learning">
-              <figure class="project-img">
-                <img src="./assets/images/Air Delay Prediction.jpg" alt="Land Classification" loading="lazy">
-                <div class="project-overlay">
-                  <div class="project-buttons">
-                    <a href="https://colab.research.google.com/drive/1_TZxoqVbBwWezRDTmLzZzw6-DMKfmxo1?usp=sharing" class="btn btn-view-code" target="_blank">View Code</a>
-                  </div>
-                </div>
-              </figure>
-              <h3 class="project-title">Air Delay Prediction</h3>
-              <p class="project-category">Deep Learning</p>
-              <div class="project-description">
-                  <p>Built TensorFlow/Keras model predicting weather-caused flight delays with 99.90% accuracy. Included data preprocessing, feature engineering, and model optimization with Adam optimizer and early stopping.</p>
-              </div>
-            </li>
-            
-<!--  -->
-
-<li class="project-item  active" data-filter-item data-category="machine learning">
-  <figure class="project-img">
-    <img src="./assets/images/Customer Churn.png" alt="Machine Learning" loading="lazy">
-    <div class="project-overlay">
-      <div class="project-buttons">
-        <a href="https://colab.research.google.com/drive/1HGWa_N0SFB6dJCkHtCHCiBSvhbwMMfRj?usp=sharing" class="btn btn-view-code" target="_blank">View Code</a>
       </div>
-    </div>
-  </figure>
-  <h3 class="project-title">Customer Churn Prediction |  (LR, RF, SVC, KNN, XGBoost)</h3>
-  <p class="project-category">Machine Learning</p>
-  <div class="project-description">
-    <p>
-    Built bank customer churn model using multiple ML algorithms with thorough preprocessing.
-    Optimized via GridSearchCV and evaluated across several metrics for reliability.
-    </p>
-  </div>
-</li>
+    </section>
 
-            <!--  -->
-            <li class="project-item  active" data-filter-item data-category="machine learning">
-              <figure class="project-img">
-                <img src="./assets/images/heart disease.png" alt="Machine Learning" loading="lazy">
-                <div class="project-overlay">
-                  <div class="project-buttons">
-                    <a href="https://colab.research.google.com/drive/16nMS2nUjRVy0dFuPgACu51i0Of4lUrIy?usp=sharing" class="btn btn-view-code" target="_blank">View Code</a>
-                  </div>
-                </div>
-              </figure>
-              <h3 class="project-title">Indicators of Heart Disease (Logistic Regression, SVC, KNN, Random Forest)</h3>
-              <p class="project-category">Machine Learning</p>
-              <div class="project-description">
-                <p>ML pipeline on 319,795 records for heart disease. High accuracy with KNN (90%) vs. LR (74%), SVC (74%), and RF (73%).</p>
-              </div>
-            </li>
+    <!-- Resume section removed; split into Experience and Education above -->
 
-            <li class="project-item  active" data-filter-item data-category="machine learning">
-              <figure class="project-img">
-                <img src="./assets/images/Student Performance (Linear Regression Model).png" alt="Machine Learning" loading="lazy">
-                <div class="project-overlay">
-                  <div class="project-buttons">
-                    <a href="https://www.kaggle.com/code/ahmedhazemelabady/student-performance-linear-regression-model" class="btn btn-view-code" target="_blank">View Code</a>
-                  </div>
-                </div>
-              </figure>
-              <h3 class="project-title">Student Performance (Linear Regression Model)</h3>
-              <p class="project-category">Machine Learning</p>
-              <div class="project-description">
-                <p>Linear regression predicting student scores with R²=0.989 and MSE=4.083, demonstrating data-driven approaches in education.</p>
-              </div>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="machine learning">
-              <figure class="project-img">
-                <img src="./assets/images/NBA.jpg" alt="Machine Learning" loading="lazy">
-                <div class="project-overlay">
-                  <div class="project-buttons">
-                    <a href="https://colab.research.google.com/drive/1n79WKl_ReM-EWaFlLyu-QbYGjohy9fvS?usp=sharing" class="btn btn-view-code" target="_blank">View Code</a>
-                  </div>
-                </div>
-              </figure>
-              <h3 class="project-title">Predict NBA 2K20 Player Salaries (Linear Regression Model)</h3>
-              <p class="project-category">Machine Learning</p>
-              <div class="project-description">
-                <p>Used performance metrics in a linear model to predict NBA 2K20 player salaries.</p>
-              </div>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web scraping">
-              <figure class="project-img">
-                <img src="./assets/images/Wuzzuf cover img.png" alt="Wuzzuf Jobs" loading="lazy">
-                <div class="project-overlay">
-                  <div class="project-buttons">
-                    <a href="https://www.kaggle.com/datasets/ahmedhazemelabady/wuzzuf-job-listings-dataset-egypt-january-2025" class="btn btn-view-code" target="_blank">View Dataset</a>
-                  </div>
-                </div>
-              </figure>
-              <h3 class="project-title">Wuzzuf Jobs - +8,000 job</h3>
-              <p class="project-category">Web Scraping</p>
-              <div class="project-description">
-                <p>Scraped 8,000+ Wuzzuf job listings for analytics and predictive modeling.</p>
-              </div>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="data analysis">
-              <figure class="project-img">
-                <img src="./assets/images/Untitled design.png" alt="Exploratory Data Analysis on Wuzzuf Jobs" loading="lazy">
-                <div class="project-overlay">
-                  <div class="project-buttons">
-                    <a href="https://colab.research.google.com/drive/1JDoMmh_pkKgGjcf8O2Ka5SF9zNfOI_yo?usp=sharing#scrollTo=AXPWaF5TP_0-" class="btn btn-view-code" target="_blank">View Analysis</a>
-                  </div>
-                </div>
-              </figure>
-              <h3 class="project-title">Exploratory Data Analysis on Wuzzuf Jobs</h3>
-              <p class="project-category">Data Analysis</p>
-              <div class="project-description">
-                <p>Explored 8,000+ job listings from Wuzzuf, revealing key market trends for informed decisions.</p>
-              </div>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="data analysis">
-              <figure class="project-img">
-                <img src="./assets/images/Untitled design ww.png" alt="Titanic Data Analysis" loading="lazy">
-                <div class="project-overlay">
-                  <div class="project-buttons">
-                    <a href="https://colab.research.google.com/github/ahmed-hazem-1/DEPI-Tasks/blob/main/FullTitanicPloting.ipynb" class="btn btn-view-code" target="_blank">View Analysis</a>
-                  </div>
-                </div>
-              </figure>
-              <h3 class="project-title">Titanic Data Analysis</h3>
-              <p class="project-category">Data Analysis</p>
-              <div class="project-description">
-                <p>Analyzed Titanic passenger survival by factors like gender and class, offering insights into survival patterns.</p>
-              </div>
-            </li>
-
-            <li class="project-item active" data-filter-item data-category="web scraping">
-              <figure class="project-img">
-                <img src="./assets/images/Coding Vs Output.png" alt="Top Ranked Anime" loading="lazy">
-                <div class="project-overlay">
-                  <div class="project-buttons">
-                    <a href="https://www.kaggle.com/datasets/ahmedhazemelabady/top-ranked-animes-in-2024" class="btn btn-view-code" target="_blank">View Dataset</a>
-                  </div>
-                </div>
-              </figure>
-              <h3 class="project-title">Top Ranked Anime +20,000 Row</h3>
-              <p class="project-category">Web Scraping</p>
-              <div class="project-description">
-                <p>Gathered 20,000 anime entries to provide a comprehensive ranking and data insights.</p>
-              </div>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web scraping">
-              <figure class="project-img">
-                <img src="./assets/images/indeed scraping.png" alt="Indeed Jobs +2,000 Rows" loading="lazy">
-                <div class="project-overlay">
-                  <div class="project-buttons">
-                    <a href="https://docs.google.com/spreadsheets/d/1cBvnq2neeA6MXwm78BDZuSd8YXa4gqO_/edit?usp=sharing&ouid=103553655283163842087&rtpof=true&sd=true" class="btn btn-view-code" target="_blank">View Data</a>
-                  </div>
-                </div>
-              </figure>
-              <h3 class="project-title">Indeed Jobs +2,000 Rows</h3>
-              <p class="project-category">Web Scraping</p>
-              <div class="project-description">
-                <p>Scraped 2,000+ Indeed postings to capture workforce trends and skills demands.</p>
-              </div>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="data analysis">
-              <figure class="project-img">
-                <img src="./assets/images/indeed analysis.png" alt="Indeed Jobs Analysis" loading="lazy">
-                <div class="project-overlay">
-                  <div class="project-buttons">
-                    <a href="https://drive.google.com/file/d/1XPGHg7FEpPuFfHUHSM03XcF2-sgKKRMi/view?usp=sharing" class="btn btn-view-code" target="_blank">View Analysis</a>
-                  </div>
-                </div>
-              </figure>
-              <h3 class="project-title">Indeed Jobs Analysis</h3>
-              <p class="project-category">Data Analysis</p>
-              <div class="project-description">
-                <p>Analyzed Indeed data for popular roles, demanded skills, and salary insights.</p>
-              </div>
-            </li>
-
-
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-      <!--
-        - #BLOG
-      -->
-
-      <article class="blog" data-page="blog" style="display: none;">
-
-        <header>
-          <h2 class="h2 article-title">Blog</h2>
-        </header>
-
-        <section class="blog-posts">
-
-          <ul class="blog-posts-list">
-            
-            <li class="blog-post-item">
-              <div class="linkedin-embed-container">
-                <div class="linkedin-embed-placeholder" data-linkedin-id="urn:li:ugcPost:7302446689544499200">
-                  <img src="./assets/images/linkedin.png" alt="LinkedIn Logo" class="linkedin-logo">
-                  <h3 class="linkedin-embed-title">ازاي تبدأ Data Science من الصفر؟</h3>
-                  <p class="linkedin-embed-desc">لو عايز تبدأ في Data Science بس مش عارف منين، فدي خريطة طريق بسيطة للمبتدئين عشان متتوهش في التفاصيل وتضيع وقتك.</p>
-                  <button class="linkedin-load-btn" onclick="loadLinkedInEmbed(this)">
-                    <ion-icon name="logo-linkedin"></ion-icon>
-                    Load LinkedIn Post
-                  </button>
-                </div>
-                <iframe class="blog-banner-box linkedin-embed" data-src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7302446689544499200" loading="lazy" allowfullscreen title="Embedded post"></iframe>
-              </div>
-              
-              <div class="blog-content">
-                <div class="blog-meta">
-                  <p class="blog-category">Data Science</p>
-                  <span class="dot"></span>
-                </div>
-                <h3 class="h3 blog-item-title"> ازاي تبدأ Data Science من الصفر؟</h3>
-                <p class="blog-text">
-                  لو عايز تبدأ في Data Science بس مش عارف منين، فدي خريطة طريق بسيطة للمبتدئين عشان متتوهش في التفاصيل وتضيع وقتك. خلينا نركز على الأساسيات الأول، وبعدها هنقدر نتوسع.
-                </p>
-              </div>
-            </li>
-
-            <li class="blog-post-item">
-              <div class="linkedin-embed-container">
-                <div class="linkedin-embed-placeholder" data-linkedin-id="urn:li:share:7282546533550505984">
-                  <img src="./assets/images/linkedin.png" alt="LinkedIn Logo" class="linkedin-logo">
-                  <h3 class="linkedin-embed-title">Importance of Web Scraping and Analysis</h3>
-                  <p class="linkedin-embed-desc">Web scraping accelerates data collection and unlocks deeper insights for informed decision-making.</p>
-                  <button class="linkedin-load-btn" onclick="loadLinkedInEmbed(this)">
-                    <ion-icon name="logo-linkedin"></ion-icon>
-                    Load LinkedIn Post
-                  </button>
-                </div>
-                <iframe class="blog-banner-box linkedin-embed" data-src="https://www.linkedin.com/embed/feed/update/urn:li:share:7282546533550505984" loading="lazy" allowfullscreen title="Embedded post"></iframe>
-              </div>
-              
-              <div class="blog-content">
-                <div class="blog-meta">
-                  <p class="blog-category">Web Scraping</p>
-                  <span class="dot"></span>
-                </div>
-                <h3 class="h3 blog-item-title">Importance of Web Scraping and Analysis</h3>
-                <p class="blog-text">
-                  Web scraping accelerates data collection and unlocks deeper insights for informed decision-making.
-                </p>
-              </div>
-            </li>
-
-            <li class="blog-post-item">
-              <div class="linkedin-embed-container">
-                <div class="linkedin-embed-placeholder" data-linkedin-id="urn:li:share:7276968189878501376">
-                  <img src="./assets/images/linkedin.png" alt="LinkedIn Logo" class="linkedin-logo">
-                  <h3 class="linkedin-embed-title">Who Survived the Titanic?</h3>
-                  <p class="linkedin-embed-desc">A quick look at Titanic survival rates reveals patterns by gender and other factors.</p>
-                  <button class="linkedin-load-btn" onclick="loadLinkedInEmbed(this)">
-                    <ion-icon name="logo-linkedin"></ion-icon>
-                    Load LinkedIn Post
-                  </button>
-                </div>
-                <iframe class="blog-banner-box linkedin-embed" data-src="https://www.linkedin.com/embed/feed/update/urn:li:share:7276968189878501376" loading="lazy" allowfullscreen title="Embedded post"></iframe>
-              </div>
-              
-              <div class="blog-content">
-                <div class="blog-meta">
-                  <p class="blog-category">Data Analysis</p>
-                  <span class="dot"></span>
-                </div>
-                <h3 class="h3 blog-item-title">Who Survived the Titanic?</h3>
-                <p class="blog-text">
-                 A quick look at Titanic survival rates reveals patterns by gender and other factors.
-                </p>
-              </div>
-            </li>
-
-            <li class="blog-post-item">
-              <div class="linkedin-embed-container">
-                <div class="linkedin-embed-placeholder" data-linkedin-id="urn:li:share:7278173803715715072">
-                  <img src="./assets/images/linkedin.png" alt="LinkedIn Logo" class="linkedin-logo">
-                  <h3 class="linkedin-embed-title">Importance of a Portfolio</h3>
-                  <p class="linkedin-embed-desc">A portfolio offers a concise way to highlight progress, projects, and skills at any stage.</p>
-                  <button class="linkedin-load-btn" onclick="loadLinkedInEmbed(this)">
-                    <ion-icon name="logo-linkedin"></ion-icon>
-                    Load LinkedIn Post
-                  </button>
-                </div>
-                <iframe class="blog-banner-box linkedin-embed" data-src="https://www.linkedin.com/embed/feed/update/urn:li:share:7278173803715715072" loading="lazy" allowfullscreen title="Embedded post"></iframe>
-              </div>
-              
-              <div class="blog-content">
-                <div class="blog-meta">
-                  <p class="blog-category">Career Improvement</p>
-                  <span class="dot"></span>
-                </div>
-                <h3 class="h3 blog-item-title">Importance of a Portfolio</h3>
-                <p class="blog-text">
-                  A portfolio offers a concise way to highlight progress, projects, and skills at any stage.
-                </p>
-              </div>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-      <!--
-        - #CONTACT
-      -->
-
-      <article class="contact" data-page="contact">
-
-        <header>
-          <h2 class="h2 article-title">Contact</h2>
-        </header>
-
-        <!-- <section class="mapbox" data-mapbox>
-          <figure>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26276.064328558616!2d31.1760625!3d30.0596113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa60b21beeb%3A0x79dfb296e8423bba!2sCairo%2C%20Cairo%20Governorate%2C%20Egypt!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
-              width="400" height="300" loading="lazy"></iframe>
-          </figure>
-        </section> -->
-
-
-        <section class="contact-form">
-          <h3 class="h3 form-title">Contact Form</h3>
-          <form action="https://formspree.io/f/xjkgapwy" method="POST" class="form" data-form>
-            <div class="input-wrapper">
-              <input type="text" id="fullname" name="fullname" class="form-input" placeholder="Full Name" required data-form-input aria-label="Full Name">
-              <input type="email" id="email" name="email" class="form-input" placeholder="Email address" required data-form-input aria-label="Email address">
+    <!-- <section class="section" id="blog">
+      <h2 class="title-lg">Blog</h2>
+      <ul class="blog-grid">
+        <li class="blog-card">
+          <div class="linkedin-embed-container">
+            <div class="linkedin-embed-placeholder">
+              <img src="./assets/images/linkedin.png" alt="LinkedIn" class="linkedin-logo" />
+              <h3 class="card-title">ازاي تبدأ Data Science من الصفر؟</h3>
+              <p class="card-text">خريطة طريق بسيطة للمبتدئين في Data Science.</p>
+              <button class="btn ghost linkedin-load-btn" onclick="loadLinkedInEmbed(this)" data-src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7302446689544499200">Load LinkedIn Post</button>
             </div>
-        
-            <textarea id="message" name="message" class="form-input" placeholder="Your Message" required data-form-input aria-label="Your Message"></textarea>
-        
-            <button class="form-btn" type="submit" data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
-          </form>
-        </section>
-        
+            <iframe class="linkedin-embed" loading="lazy" allowfullscreen title="Embedded post"></iframe>
+          </div>
+        </li>
+        <li class="blog-card">
+          <div class="linkedin-embed-container">
+            <div class="linkedin-embed-placeholder">
+              <img src="./assets/images/linkedin.png" alt="LinkedIn" class="linkedin-logo" />
+              <h3 class="card-title">Importance of Web Scraping and Analysis</h3>
+              <p class="card-text">Scraping accelerates data collection and insights.</p>
+              <button class="btn ghost linkedin-load-btn" onclick="loadLinkedInEmbed(this)" data-src="https://www.linkedin.com/embed/feed/update/urn:li:share:7282546533550505984">Load LinkedIn Post</button>
+            </div>
+            <iframe class="linkedin-embed" loading="lazy" allowfullscreen title="Embedded post"></iframe>
+          </div>
+        </li>
+        <li class="blog-card">
+          <div class="linkedin-embed-container">
+            <div class="linkedin-embed-placeholder">
+              <img src="./assets/images/linkedin.png" alt="LinkedIn" class="linkedin-logo" />
+              <h3 class="card-title">Who Survived the Titanic?</h3>
+              <p class="card-text">Patterns by gender and class in survival rates.</p>
+              <button class="btn ghost linkedin-load-btn" onclick="loadLinkedInEmbed(this)" data-src="https://www.linkedin.com/embed/feed/update/urn:li:share:7276968189878501376">Load LinkedIn Post</button>
+            </div>
+            <iframe class="linkedin-embed" loading="lazy" allowfullscreen title="Embedded post"></iframe>
+          </div>
+        </li>
+        <li class="blog-card">
+          <div class="linkedin-embed-container">
+            <div class="linkedin-embed-placeholder">
+              <img src="./assets/images/linkedin.png" alt="LinkedIn" class="linkedin-logo" />
+              <h3 class="card-title">Importance of a Portfolio</h3>
+              <p class="card-text">Show progress, projects, and skills at any stage.</p>
+              <button class="btn ghost linkedin-load-btn" onclick="loadLinkedInEmbed(this)" data-src="https://www.linkedin.com/embed/feed/update/urn:li:share:7278173803715715072">Load LinkedIn Post</button>
+            </div>
+            <iframe class="linkedin-embed" loading="lazy" allowfullscreen title="Embedded post"></iframe>
+          </div>
+        </li>
+      </ul>
+    </section> -->
 
-
-      </article>
-
-
-
-      
-
-    </div>
-
+    <section class="section" id="contact">
+      <h2 class="title-lg">Contact</h2>
+      <div class="contact-info">
+        <a href="mailto:ahmed.hazem.elabady@gmail.com"><ion-icon name="mail-outline"></ion-icon> ahmed.hazem.elabady@gmail.com</a>
+        <a href="tel:+201275012177"><ion-icon name="call-outline"></ion-icon> +20 127 5012 177</a>
+        <span><ion-icon name="location-outline"></ion-icon> Cairo, Egypt</span>
+      </div>
+      <form class="contact-form" action="https://formspree.io/f/xjkgapwy" method="POST" data-form>
+        <div class="row">
+          <input class="input" type="text" name="name" placeholder="Your Name" required data-form-input />
+          <input class="input" type="email" name="email" placeholder="Your Email" required data-form-input />
+        </div>
+        <textarea class="input" name="message" rows="6" placeholder="Your Message" required data-form-input></textarea>
+        <button class="btn primary" type="submit" data-form-btn><ion-icon name="send-outline"></ion-icon> Send Message</button>
+      </form>
+    </section>
   </main>
 
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Ahmed Hazem. All rights reserved.</p>
+  </footer>
 
-
-
-
-
-  <!--
-    - custom js link
-  -->
   <script src="./assets/js/script.js"></script>
-
-  <!--
-    - ionicon link
-  -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-  <!-- Add script for lazy loading images -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Lazy load implementation for images
-    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-    
-    if ('IntersectionObserver' in window) {
-      const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const img = entry.target;
-            img.src = img.dataset.src || img.src;
-            img.classList.add('loaded');
-            imageObserver.unobserve(img);
-          }
-        });
-      });
-      
-      lazyImages.forEach(img => {
-        imageObserver.observe(img);
-      });
-    } else {
-      // Fallback for browsers without IntersectionObserver support
-      lazyImages.forEach(img => {
-        img.src = img.dataset.src || img.src;
-      });
-    }
-    
-    // Function to navigate to contact section
-    window.navigateToContact = function() {
-      const contactNavItem = document.querySelector('[data-nav-link="contact"]');
-      if (contactNavItem) {
-        contactNavItem.click();
-      }
-    };
-    
-    // Removed GPU acceleration to improve performance
-  });
-</script>
-
-<!-- Performance optimization script -->
-<script>
-  // Delay non-critical operations
-  window.addEventListener('load', function() {
-    // Add lazy loading to all images that don't have it already
-    document.querySelectorAll('img:not([loading])').forEach(img => {
-      img.setAttribute('loading', 'lazy');
-    });
-  });
-</script>
-
 </body>
-
 </html>
 
