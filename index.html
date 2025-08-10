@@ -512,6 +512,174 @@
   <script src="./assets/js/script.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- Chatbot widget -->
+  <div id="chatbot" class="chatbot" aria-live="polite">
+    <button id="chatbotToggle" class="chatbot-fab" aria-label="Open chat">
+      <ion-icon name="chatbubbles-outline"></ion-icon>
+    </button>
+    <section id="chatbotPanel" class="chatbot-panel" aria-label="Chat with Ahmed's Assistant">
+      <header class="chatbot-header">
+        <div class="chatbot-ident">
+          <img src="./assets/images/my-avatar.png" alt="Ahmed Hazem avatar" />
+          <div class="chatbot-titles">
+            <strong>Ahmed's Assistant</strong>
+            <span>Ask about skills, projects, and contact</span>
+          </div>
+        </div>
+        <button id="chatbotClose" class="chatbot-close" aria-label="Close chat">
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+      </header>
+      <div id="chatbotMessages" class="chatbot-messages" role="log">
+        <div class="msg bot">Hi! I'm Ahmed's assistant. How can I help you today?</div>
+      </div>
+      <form id="chatbotForm" class="chatbot-input" autocomplete="off">
+        <input id="chatbotInput" class="chatbot-text" type="text" placeholder="Type your question…" required />
+        <button class="chatbot-send" type="submit" aria-label="Send">
+          <ion-icon name="send-outline"></ion-icon>
+        </button>
+      </form>
+    </section>
+  </div>
+
+  <!-- Chatbot logic via secure serverless proxy (/api/chat) -->
+  <script type="module">
+    const root = document.getElementById('chatbot');
+    const toggleBtn = document.getElementById('chatbotToggle');
+    const panel = document.getElementById('chatbotPanel');
+    const closeBtn = document.getElementById('chatbotClose');
+    const headerEl = document.querySelector('#chatbotPanel .chatbot-header');
+    const formEl = document.getElementById('chatbotForm');
+    const inputEl = document.getElementById('chatbotInput');
+    const messagesEl = document.getElementById('chatbotMessages');
+    const sendBtn = document.querySelector('#chatbotForm .chatbot-send');
+
+    let busy = false;
+
+    function appendMessage(text, who = 'bot'){
+      const div = document.createElement('div');
+      div.className = `msg ${who}`;
+      div.textContent = text;
+      messagesEl.appendChild(div);
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+    }
+
+    function setLoading(on){
+      busy = on;
+      inputEl.disabled = on;
+    }
+
+    async function callChatAPI(message){
+      const resp = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message })
+      });
+      if (!resp.ok) throw new Error('API error '+resp.status);
+      const data = await resp.json();
+      return String(data.reply ?? '');
+    }
+
+    function updateSendState(){
+      if (!sendBtn) return;
+      const hasText = (inputEl?.value || '').trim().length > 0;
+      sendBtn.disabled = !hasText || busy;
+    }
+
+    toggleBtn?.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      const isOpen = root?.classList.contains('open');
+      if (!isOpen) {
+        toggleBtn.setAttribute('aria-expanded','true');
+        root?.classList.add('open');
+        inputEl?.focus();
+        updateSendState();
+      } else {
+        toggleBtn.setAttribute('aria-expanded','false');
+        root?.classList.remove('open');
+      }
+    });
+
+    closeBtn?.addEventListener('click', (e)=>{
+      console.log('Close button clicked!'); // Debug log
+      e.stopPropagation();
+      toggleBtn.setAttribute('aria-expanded','false');
+      root?.classList.remove('open');
+    });
+
+    // Fallback: delegated close (ensures clicks on icon or wrapper also close)
+    headerEl?.addEventListener('click', (e)=>{
+      const target = e.target;
+      if (target && (target.closest ? target.closest('#chatbotClose') : null)){
+        console.log('Header delegate close triggered!'); // Debug log
+        e.stopPropagation();
+        toggleBtn.setAttribute('aria-expanded','false');
+        root?.classList.remove('open');
+      }
+    });
+
+    // Additional direct click handler on close button and its icon
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('#chatbotClose')) {
+        console.log('Document delegate close triggered!'); // Debug log
+        e.stopPropagation();
+        toggleBtn.setAttribute('aria-expanded','false');
+        root?.classList.remove('open');
+      }
+    });
+
+    document.addEventListener('click', (e)=>{
+      if (!root?.classList.contains('open')) return;
+      const within = panel.contains(e.target) || toggleBtn.contains(e.target);
+      if (!within) {
+        toggleBtn.setAttribute('aria-expanded','false');
+        root?.classList.remove('open');
+      }
+    });
+
+    document.addEventListener('keydown', (e)=>{
+      if (e.key === 'Escape' && root?.classList.contains('open')){
+        toggleBtn.setAttribute('aria-expanded','false');
+        root?.classList.remove('open');
+      }
+      if (e.key === 'Enter' && document.activeElement === inputEl && !e.shiftKey){
+        e.preventDefault();
+        formEl?.requestSubmit?.();
+      }
+    });
+
+    inputEl?.addEventListener('input', updateSendState);
+
+    formEl?.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      if (busy) return;
+      const message = (inputEl?.value || '').trim();
+      if (!message) return;
+      appendMessage(message, 'user');
+      inputEl.value = '';
+      setLoading(true);
+      updateSendState();
+      const typing = document.createElement('div');
+      typing.className = 'msg bot typing';
+      typing.textContent = 'Typing…';
+      messagesEl.appendChild(typing);
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+
+      try{
+        const text = await callChatAPI(message);
+        typing.remove();
+        appendMessage(text || 'No response.', 'bot');
+      }catch(err){
+        console.error(err);
+        typing.remove();
+        appendMessage('Sorry, something went wrong. Please try again.', 'bot');
+      }finally{
+        setLoading(false);
+        updateSendState();
+      }
+    });
+  </script>
 </body>
 </html>
 

@@ -1,0 +1,16 @@
+{
+  "name": "ahmed-hazem-portfolio",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Portfolio with chatbot proxy",
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node server.mjs"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "node-fetch": "^3.3.2"
+  }
+}
