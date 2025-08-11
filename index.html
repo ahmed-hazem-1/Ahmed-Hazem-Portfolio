@@ -571,7 +571,9 @@
     }
 
     async function callChatAPI(message){
-      const resp = await fetch('/api/chat', {
+      // Update this URL to your deployed Vercel API
+      const API_BASE = 'https://ahmed-portfolio-api-ten.vercel.app'; // Your deployed API URL
+      const resp = await fetch(`${API_BASE}/api/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message })
