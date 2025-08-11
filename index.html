@@ -557,10 +557,54 @@
 
     let busy = false;
 
+    // Simple markdown parser for basic formatting
+    function parseMarkdown(text) {
+      if (!text) return '';
+      
+      return text
+        // Escape HTML first to prevent XSS, but preserve line breaks
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        // Headers (must come before bold/italic)
+        .replace(/^### (.*$)/gm, '<h3>$1</h3>')
+        .replace(/^## (.*$)/gm, '<h2>$1</h2>')
+        .replace(/^# (.*$)/gm, '<h1>$1</h1>')
+        // Code blocks (triple backticks) - must come before inline code
+        .replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>')
+        // Inline code
+        .replace(/`([^`]+)`/g, '<code>$1</code>')
+        // Bold text (double asterisk or underscore)
+        .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+        .replace(/__([^_]+)__/g, '<strong>$1</strong>')
+        // Italic text (single asterisk or underscore, but not if already in bold)
+        .replace(/(?<!\*)\*([^*]+)\*(?!\*)/g, '<em>$1</em>')
+        .replace(/(?<!_)_([^_]+)_(?!_)/g, '<em>$1</em>')
+        // Lists (bullet points)
+        .replace(/^[\s]*[-*+]\s+(.+)$/gm, '<li>$1</li>')
+        // Wrap consecutive list items in ul tags
+        .replace(/(<li>.*?<\/li>)(\s*<li>.*?<\/li>)*/g, function(match) {
+          return '<ul>' + match + '</ul>';
+        })
+        // Line breaks (convert \n to <br>, but not inside code blocks)
+        .replace(/\n(?![^<]*<\/(?:pre|code)>)/g, '<br>')
+        // Clean up extra breaks around block elements
+        .replace(/<br>\s*(<\/?(?:h[1-6]|ul|li|pre))/g, '$1')
+        .replace(/(<\/(?:h[1-6]|ul|li|pre)>)\s*<br>/g, '$1');
+    }
+
     function appendMessage(text, who = 'bot'){
       const div = document.createElement('div');
       div.className = `msg ${who}`;
-      div.textContent = text;
+      
+      if (who === 'bot') {
+        // Parse markdown for bot messages
+        div.innerHTML = parseMarkdown(text);
+      } else {
+        // Keep user messages as plain text for security
+        div.textContent = text;
+      }
+      
       messagesEl.appendChild(div);
       messagesEl.scrollTop = messagesEl.scrollHeight;
     }
