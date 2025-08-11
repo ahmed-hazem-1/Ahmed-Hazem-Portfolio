@@ -33,11 +33,14 @@ body{
   background: radial-gradient(1200px 800px at 10% -10%, #1b2140 0%, transparent 60%),
               radial-gradient(1000px 700px at 100% 0%, #141a33 0%, transparent 60%),
               var(--bg);
+  background-size: 120% 120%, 120% 120%, 100% 100%;
+  animation: breatheBackground 8s ease-in-out infinite;
   color:var(--text);
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   text-rendering:optimizeLegibility;
+  will-change: background-position;
 }
 img{max-width:100%;display:block}
 figure{margin:0}
@@ -71,6 +74,13 @@ figure{margin:0}
   0%{text-shadow:0 0 0 rgba(124,58,237,0.0)}
   50%{text-shadow:0 0 10px rgba(124,58,237,0.55)}
   100%{text-shadow:0 0 0 rgba(124,58,237,0.0)}
+}
+@keyframes breatheBackground{
+  0%{background-position: 10% -10%, 100% 0%}
+  25%{background-position: 15% -5%, 95% 5%}
+  50%{background-position: 20% 0%, 90% 10%}
+  75%{background-position: 15% -5%, 95% 5%}
+  100%{background-position: 10% -10%, 100% 0%}
 }
 
 .site-nav .nav-toggle{display:none;background:none;border:0}
