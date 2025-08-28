@@ -597,6 +597,7 @@
     const sendBtn = document.querySelector('#chatbotForm .chatbot-send');
 
     let busy = false;
+    let chatHistory = []; // Store conversation history
 
     // Simple markdown parser for basic formatting
     function parseMarkdown(text) {
@@ -655,14 +656,14 @@
       inputEl.disabled = on;
     }
 
-    async function callChatAPI(message){
+    async function callChatAPI(message, history){
       // Update this URL to your deployed Vercel API
       const API_BASE = 'https://ahmed-portfolio-api-ten.vercel.app'; // Your deployed API URL
       const isFirst = messagesEl.children.length <= 1;
       const resp = await fetch(`${API_BASE}/api/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message, isFirst })
+        body: JSON.stringify({ message, history, isFirst })
       });
       if (!resp.ok) throw new Error('API error '+resp.status);
       const data = await resp.json();
@@ -744,10 +745,14 @@
       if (busy) return;
       const message = (inputEl?.value || '').trim();
       if (!message) return;
+      
       appendMessage(message, 'user');
+      chatHistory.push({ role: 'user', parts: [{ text: message }] });
+      
       inputEl.value = '';
       setLoading(true);
       updateSendState();
+      
       const typing = document.createElement('div');
       typing.className = 'msg bot typing';
       typing.textContent = 'Typing…';
@@ -755,9 +760,10 @@
       messagesEl.scrollTop = messagesEl.scrollHeight;
 
       try{
-        const text = await callChatAPI(message);
+        const text = await callChatAPI(message, chatHistory.slice(0, -1));
         typing.remove();
         appendMessage(text || 'No response.', 'bot');
+        chatHistory.push({ role: 'model', parts: [{ text: text || 'No response.' }] });
       }catch(err){
         console.error(err);
         typing.remove();

@@ -18,47 +18,42 @@ async function loadPortfolioContext(forceRefresh = false){
     return cachedContext;
   }
   try{
-  const filePath = path.join(process.cwd(), 'index.html');
-  let html = await fs.readFile(filePath, 'utf8');
-    // remove scripts/styles
-    html = html.replace(/<script[\s\S]*?<\/script>/gi, ' ').replace(/<style[\s\S]*?<\/style>/gi, ' ');
-    const text = (s)=> s.replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
-    const grab = (re)=>{ const m = re.exec(html); return m ? text(m[1]) : ''; };
-    const name = grab(/<h1[^>]*class=["'][^"']*title-xl[^"']*["'][^>]*>([\s\S]*?)<\/h1>/i);
-    const subtitle = grab(/<p[^>]*class=["'][^"']*subtitle[^"']*["'][^>]*>([\s\S]*?)<\/p>/i);
-    const lead = grab(/<p[^>]*class=["'][^"']*lead[^"']*["'][^>]*>([\s\S]*?)<\/p>/i);
-    const skills = Array.from(html.matchAll(/<ul[^>]*class=["'][^"']*chips(?![^"']*muted)[^"']*["'][^>]*>([\s\S]*?)<\/ul>/gi)).map(m=>text(m[1]))[0]||'';
-    const experience = (html.match(/<section[^>]*id=["']experience["'][^>]*>([\s\S]*?)<\/section>/i)||[])[1]||'';
-    const education = (html.match(/<section[^>]*id=["']education["'][^>]*>([\s\S]*?)<\/section>/i)||[])[1]||'';
-    const projectsTitles = Array.from(html.matchAll(/<h3[^>]*class=["'][^"']*card-title[^"']*["'][^>]*>([\s\S]*?)<\/h3>/gi)).map(m=>text(m[1])).slice(0,50);
-    const projectsTags = Array.from(html.matchAll(/<p[^>]*class=["'][^"']*card-tags[^"']*["'][^>]*>([\s\S]*?)<\/p>/gi)).map(m=>text(m[1])).slice(0,50);
-    const projectsTexts = Array.from(html.matchAll(/<p[^>]*class=["'][^"']*card-text[^"']*["'][^>]*>([\s\S]*?)<\/p>/gi)).map(m=>text(m[1])).slice(0,50);
-    const certs = (html.match(/<div[^>]*class=["'][^"']*certs[^"']*["'][^>]*>([\s\S]*?)<\/div>/i)||[])[1]||'';
-    const contact = (html.match(/<section[^>]*id=["']contact["'][^>]*>([\s\S]*?)<\/section>/i)||[])[1]||'';
+    const processHtml = async (fileName) => {
+      const filePath = path.join(process.cwd(), fileName);
+      let html = await fs.readFile(filePath, 'utf8');
+      
+      // Remove scripts, styles, and head
+      html = html.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<head[\s\S]*?<\/head>/gi, ' ');
+      
+      // Convert links to "text (URL)" format
+      html = html.replace(/<a\s+(?:[^>]*?\s+)?href="([^"]*)"[^>]*>(.*?)<\/a>/gi, '$2 ($1)');
+      
+      // Add newlines after block elements for structure
+      html = html.replace(/<\/(h[1-6]|p|div|li|ul|ol|section|article|header|footer)>/gi, '\n');
+      
+      // Strip remaining HTML tags
+      let text = html.replace(/<[^>]*>/g, ' ');
+      
+      // Clean up whitespace and newlines
+      text = text.replace(/(\s*\n\s*){2,}/g, '\n'); // Collapse multiple newlines
+      text = text.replace(/[ \t]+/g, ' '); // Collapse spaces
+      text = text.trim();
+      
+      return text;
+    };
 
-    const projects = projectsTitles.map((t,i)=>`- ${t} | ${projectsTags[i]||''} | ${projectsTexts[i]||''}`).join('\n');
-    // Try to enrich with resume.html (optional)
-    let resumeText = '';
-    try {
-      const resumePath = path.join(process.cwd(), 'resume.html');
-      const resumeHtml = await fs.readFile(resumePath, 'utf8');
-      resumeText = resumeHtml.replace(/<script[\s\S]*?<\/script>/gi, ' ').replace(/<style[\s\S]*?<\/style>/gi, ' ').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
-    } catch {}
+    const indexText = await processHtml('index.html');
+    const resumeText = await processHtml('resume.html').catch(() => ''); // Optional
 
-    cachedContext = [
-      `Name: ${name}`,
-      `Subtitle: ${subtitle}`,
-      `Summary: ${lead}`,
-      `Skills: ${skills}`,
-      `Experience: ${text(experience)}`,
-      `Education: ${text(education)}`,
-      `Projects:\n${projects}`,
-      `Certificates: ${text(certs)}`,
-      `Contact: ${text(contact)}`,
-      resumeText ? `Resume: ${resumeText}` : ''
-    ].join('\n\n');
-  const MAX_CTX = 16000;
-  if (cachedContext.length > MAX_CTX) cachedContext = cachedContext.slice(0, MAX_CTX);
+    cachedContext = `Portfolio Content:\n${indexText}`;
+    if (resumeText) {
+      cachedContext += `\n\nResume Content:\n${resumeText}`;
+    }
+
+    const MAX_CTX = 16000;
+    if (cachedContext.length > MAX_CTX) {
+      cachedContext = cachedContext.slice(0, MAX_CTX);
+    }
   }catch(e){
     console.error('Failed to load portfolio context', e);
     cachedContext = '';
@@ -83,7 +78,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { message, isFirst } = req.body || {};
+    const { message, history, isFirst } = req.body || {};
     if (!message || typeof message !== 'string') {
       return res.status(400).json({ error: 'Missing "message" string' });
     }
@@ -92,13 +87,15 @@ export default async function handler(req, res) {
       return res.status(500).json({ error: 'Server is not configured with GEMINI_API_KEY' });
     }
 
-    const url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
+    const url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent';
     const ctx = await loadPortfolioContext(isFirst);
     const payload = {
       systemInstruction: { role: 'system', parts: [{ text: SYSTEM_PROMPT }] },
       contents: [
-        { role: 'user', parts: [{ text: `Portfolio context:\n${ctx}` }] },
-        { role: 'user', parts: [{ text: `User question: ${message}` }] }
+        { role: 'user', parts: [{ text: `Here is the portfolio context:\n${ctx}` }] },
+        { role: 'model', parts: [{ text: "Got it. I'm ready to answer questions based on the portfolio." }] },
+        ...(history || []),
+        { role: 'user', parts: [{ text: message }] }
       ]
     };
 
