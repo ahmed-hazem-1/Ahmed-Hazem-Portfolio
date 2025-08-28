@@ -11,7 +11,7 @@ if (navToggle && navList) {
 }
 
 // Active nav link on scroll
-const sections = document.querySelectorAll('#about, #experience, #education, #projects, #skills, #contact');
+const sections = document.querySelectorAll('#about, #experience, #education, #projects, #skills, #certificates, #contact');
 const navLinks = document.querySelectorAll('.nav-link');
 const setActiveLink = () => {
   let current = 'home';
