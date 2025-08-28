@@ -658,10 +658,11 @@
     async function callChatAPI(message){
       // Update this URL to your deployed Vercel API
       const API_BASE = 'https://ahmed-portfolio-api-ten.vercel.app'; // Your deployed API URL
+      const isFirst = messagesEl.children.length <= 1;
       const resp = await fetch(`${API_BASE}/api/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message })
+        body: JSON.stringify({ message, isFirst })
       });
       if (!resp.ok) throw new Error('API error '+resp.status);
       const data = await resp.json();

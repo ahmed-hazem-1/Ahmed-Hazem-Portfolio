@@ -12,8 +12,11 @@ If some detail isn't present on the site, say you don't have that info and sugge
 Be concise, friendly, and professional. Detect the user's language (Arabic/English) and respond accordingly.`;
 
 let cachedContext = null;
-async function loadPortfolioContext(){
-  if (cachedContext) return cachedContext;
+
+async function loadPortfolioContext(forceRefresh = false){
+  if (!forceRefresh && cachedContext) {
+    return cachedContext;
+  }
   try{
   const filePath = path.join(process.cwd(), 'index.html');
   let html = await fs.readFile(filePath, 'utf8');
@@ -80,7 +83,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { message } = req.body || {};
+    const { message, isFirst } = req.body || {};
     if (!message || typeof message !== 'string') {
       return res.status(400).json({ error: 'Missing "message" string' });
     }
@@ -90,7 +93,7 @@ export default async function handler(req, res) {
     }
 
     const url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
-    const ctx = await loadPortfolioContext();
+    const ctx = await loadPortfolioContext(isFirst);
     const payload = {
       systemInstruction: { role: 'system', parts: [{ text: SYSTEM_PROMPT }] },
       contents: [
