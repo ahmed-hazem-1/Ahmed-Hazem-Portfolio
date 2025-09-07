@@ -105,7 +105,8 @@ figure{margin:0}
 /* Hero */
 .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center}
 .hero-media{justify-self:end}
-.hero-photo{width:min(360px,80vw);border-radius:16px;box-shadow:var(--shadow);border:1px solid var(--line)}
+.hero-photo{width:min(460px,90vw);border-radius:16px;box-shadow:var(--shadow);border:1px solid var(--line);object-fit:cover;transition:transform 0.3s ease}
+.hero-photo:hover{transform:scale(1.03)}
 .subtitle{color:var(--brand-end)}
 .cta-row{display:flex;gap:12px;margin-top:16px;flex-wrap:wrap}
 
@@ -131,6 +132,7 @@ figure{margin:0}
   .hero{grid-template-columns:1fr; grid-template-areas: "media" "text";}
   .hero-text{grid-area:text}
   .hero-media{grid-area:media; justify-self:center; margin-bottom:14px}
+  .hero-photo{width:min(420px,85vw);} /* Slightly smaller on mobile but still larger than original */
 }
 
 /* Mobile typography and touch targets */
