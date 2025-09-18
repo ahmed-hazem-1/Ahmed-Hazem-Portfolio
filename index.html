@@ -652,7 +652,7 @@
     </section>
   </div>
 
-  <!-- Chatbot logic via secure serverless proxy (/api/chat) -->
+  <!-- Chatbot logic using deployed Vercel API -->
   <script type="module">
     const root = document.getElementById('chatbot');
     const toggleBtn = document.getElementById('chatbotToggle');
@@ -725,7 +725,7 @@
     }
 
     async function callChatAPI(message, history){
-      // Update this URL to your deployed Vercel API
+      // Using deployed Vercel API
       const API_BASE = 'https://ahmed-portfolio-api-ten.vercel.app'; // Your deployed API URL
       const isFirst = messagesEl.children.length <= 1;
       const resp = await fetch(`${API_BASE}/api/chat`, {
