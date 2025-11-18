@@ -827,6 +827,7 @@
     function appendMessage(text, who = 'bot'){
       const div = document.createElement('div');
       div.className = `msg ${who}`;
+      div.setAttribute('dir', 'auto'); // Auto-detect text direction for RTL/LTR
       
       if (who === 'bot') {
         // Parse markdown for bot messages
