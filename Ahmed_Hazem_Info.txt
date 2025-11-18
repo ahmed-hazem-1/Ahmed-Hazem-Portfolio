@@ -1,0 +1,253 @@
+PROFILE: Ahmed Hazem Elabady
+
+CONTACT INFORMATION
+Name: Ahmed Hazem Elabady
+Title: Generative AI Specialist and Founder
+Location: Cairo, Egypt
+Email: ahmed.hazem.elabady@gmail.com
+Phone: +20 127 5012 177
+
+SOCIAL PROFILES
+LinkedIn: http://www.linkedin.com/in/ahmed-hazem-elabady-9a904924b
+GitHub: https://github.com/ahmed-hazem-1
+Kaggle: https://www.kaggle.com/ahmedhazemelabady
+Upwork: https://www.upwork.com/freelancers/~01b3e08df9c50aadb7
+Portfolio: https://ahmed-hazem-1.github.io
+
+
+PROFESSIONAL SUMMARY
+Generative AI Specialist and Founder with proven track record developing and deploying high-impact AI solutions. Expert in architecting autonomous Marketing, Social, and CRM Agents that optimize business processes. Recently launched production-grade GenAI CRM for hospitality sector, securing international B2B contracts in Saudi Arabia. Selected for Creativa AI Labs program and featured as speaker at Cairo ICT 2025. Combines strong technical expertise in LLMs, RAG, and Computer Vision with entrepreneurial execution.
+
+CORE COMPETENCIES
+Generative AI: LangChain, RAG, Prompt Engineering, LLM Fine-tuning, Autonomous Agents
+Product Architecture: Full-Stack AI Deployment, Multi-tenant Systems, Backend Pipelines
+Deep Learning: TensorFlow, Keras, PyTorch, YOLO v8-v11 Object Detection, CNNs
+Startup Leadership: Go-to-Market Strategy, Team Management, Product Launch
+Technical Skills: Python, SQL, Pandas, NumPy, Scikit-Learn, XGBoost, MLFlow, Streamlit, Dash
+
+
+WORK EXPERIENCE
+
+JOB_1
+Position: Founder and AI Engineer
+Company: Mogeeb.ai
+Duration: October 2025 to Present
+Employment_Type: Self-employed
+Location: Remote
+Summary: Founded and launched production-grade GenAI CRM for hospitality sector. Secured first B2B enterprise project in Saudi Arabia within 30 days. Deployed AI solution to 3 premier restaurants and cafés in Egypt within 60 days. Architected scalable backend pipelines for simultaneous multi-tenant usage. Selected as one of 10 startups for Creativa AI Labs and spoke at Cairo ICT 2025.
+Key_Achievements: Founded GenAI CRM startup, Secured Saudi Arabia B2B contract Month 1, Deployed to 3 hospitality venues, Architected multi-tenant backend, Selected for Creativa AI Labs, Speaker at Cairo ICT 2025
+
+JOB_2
+Position: GenAI Engineer Trainee
+Company: Information Technology Institute (ITI) and NVIDIA
+Duration: September 2025
+Employment_Type: Internship
+Location: Remote
+Summary: Designed autonomous AI agents including personal assistant digital twin. Implemented Retrieval-Augmented Generation to augment LLMs with proprietary data. Architected end-to-end LLM applications using advanced prompt engineering. Mastered building context-aware outputs for domain-specific queries.
+Key_Achievements: Designed autonomous AI agents, Implemented RAG systems, Architected LLM applications, Built context-aware outputs
+
+JOB_3
+Position: Computer Vision Trainee
+Company: National Telecommunication Institute (NTI)
+Duration: July 2025 to August 2025
+Employment_Type: Internship
+Location: Remote
+Summary: Engineered scalable waste detection pipeline using YOLOv8-v11. Achieved 94 percent mAP50 accuracy on 24000 image custom dataset. Optimized neural network architectures reducing inference latency by 15 percent. Authored technical documentation improving team onboarding by 20 percent.
+Key_Achievements: 94 percent mAP50 waste detection accuracy, 24000 image dataset, 15 percent latency reduction, Improved onboarding by 20 percent
+
+JOB_4
+Position: AI and Data Science Trainee
+Company: Digital Egypt Pioneers Initiative (DEPI)
+Duration: October 2024 to June 2025
+Employment_Type: Internship
+Location: Hybrid
+Summary: Developed end-to-end CNN model with over 90 percent accuracy for satellite image classification. Spearheaded project planning for 5-person technical team. Owned full ML workflow from EDA and preprocessing to final deployment.
+Key_Achievements: Over 90 percent CNN accuracy on satellite imagery, Led 5-person team project planning, Full ML workflow ownership
+
+JOB_5
+Position: AI Model Trainer
+Company: Outlier
+Duration: September 2024 to November 2024
+Employment_Type: Contract
+Location: Remote
+Summary: Trained large language models for complex mathematical problem-solving. High accuracy in model training and optimization.
+Key_Achievements: Trained LLMs for mathematical reasoning, High accuracy model optimization
+
+
+FEATURED PROJECTS
+
+PROJECT_1
+Title: CRM Agent for Hospitality
+Subtitle: Autonomous AI for Cafes and Restaurants
+Role: Architect and Lead Developer
+Tech_Stack: LLMs, NLU, Database Integration, Backend API, Python
+Description: Autonomous conversational AI that engages customers, answers inquiries, and provides personalized menu recommendations. Automates order processing and customer support. Captures user intent and automatically commits transactions to backend databases. Deployed in live production environments in Egypt and Saudi Arabia.
+Status: Production
+Deployment_Regions: Egypt, Saudi Arabia
+
+PROJECT_2
+Title: Social Media Agent
+Subtitle: Autonomous Content Creation Pipeline
+Role: Developer
+Tech_Stack: Generative AI, Content Pipelines, Python
+Description: Autonomous agent capable of crafting high-engagement brand-aligned social media content. Implemented automated scheduling pipelines for time-specific posts. Optimized content delivery for maximum audience reach.
+Status: Active
+
+PROJECT_3
+Title: Personal AI Assistant and Portfolio Integrator
+Subtitle: AI Digital Twin for Professional Inquiries
+Role: Developer
+Tech_Stack: RAG, LLM, Web Integration, Python
+Description: Context-aware AI agent acting as digital twin to automate responses to professional inquiries regarding skills and experience. Embedded into live web portfolio for 24/7 interactive user experience. Showcases technical expertise and increases visitor engagement.
+Status: Production
+Deployment: Live web portfolio
+
+
+COMPUTER VISION AND DEEP LEARNING PROJECTS
+
+CV_PROJECT_1
+Title: Waste Detection using YOLO
+Subtitle: Scalable Computer Vision Pipeline
+Technologies: YOLOv8, YOLOv11, Python, Streamlit
+Achievement: 94 percent mAP50 accuracy
+Dataset_Size: 24000 images
+Description: Scalable pipeline for waste detection and classification. Custom trained dataset achieving state-of-the-art accuracy.
+Link: https://trash--detector.streamlit.app/
+
+CV_PROJECT_2
+Title: Land Type Classification
+Subtitle: Satellite Image Analysis for Urban Planning
+Technologies: CNN, TensorFlow, Remote Sensing
+Achievement: 94 percent accuracy on satellite imagery
+Dataset: EuroSAT
+Description: End-to-end classification model for urban planning applications using satellite imagery analysis.
+Link: https://github.com/ahmed-hazem-1/DEPI-Project--Land-Type-Classification.git
+
+CV_PROJECT_3
+Title: Air Delay Prediction
+Subtitle: Time Series Analysis for Flight Delays
+Technologies: TensorFlow, Keras, Time Series Analysis
+Achievement: 99.9 percent accuracy
+Focus: Weather-caused flight delays prediction
+Description: Advanced time series model for predicting flight delays based on weather conditions and historical data.
+Link: https://colab.research.google.com/drive/1_TZxoqVbBwWezRDTmLzZzw6-DMKfmxo1
+
+CV_PROJECT_4
+Title: COVID-19 X-ray Detection
+Subtitle: Medical Image Classification
+Technologies: CNN, Medical Imaging, TensorFlow
+Achievement: 95 percent accuracy
+Description: Convolutional neural network for detecting COVID-19 from X-ray medical images.
+Link: https://covid-19-xray-detection.streamlit.app/
+
+
+EDUCATION
+
+School: Benha Faculty of Computer Science and Artificial Intelligence
+Degree: Bachelor of Science in Computer Science
+Status: Currently Enrolled
+Expected_Graduation: June 2027
+GPA: 3.6 out of 4.0
+Major_Focus: Computer Science, Artificial Intelligence, Data Science
+
+
+TECHNICAL SKILLS
+
+Generative_AI_Expertise:
+- Retrieval-Augmented Generation (RAG)
+- LangChain and Agentic Workflows
+- Prompt Engineering and Context Management
+- LLM Fine-tuning and Deployment
+- Autonomous Agents for Marketing, CRM, Social Media
+
+Deep_Learning_Expertise:
+- TensorFlow, Keras, PyTorch
+- YOLO v8 v11 Object Detection
+- Convolutional Neural Networks and Transfer Learning
+- Image Segmentation and Processing
+
+Programming_Languages:
+- Python (Advanced proficiency)
+- SQL
+
+Data_Science_Libraries:
+- Pandas, NumPy, Scikit-Learn
+- XGBoost, MLFlow
+- Streamlit, Dash, Vercel
+
+Backend_and_DevOps:
+- Multi-tenant systems design
+- Backend pipeline engineering
+- API development
+- Database integration
+
+
+VOLUNTEER EXPERIENCE
+
+VOLUNTEER_1
+Organization: GDG On Campus BU SB
+Position: Vice Head AI
+Duration: September 2025 to Present
+Responsibilities: Co-led AI committee and delivered hands-on AI and ML training sessions
+
+VOLUNTEER_2
+Organization: NASA Space Apps Benha
+Position: Vice Head Researcher and Mentor
+Duration: June 2025 to Present
+Responsibilities: Research mentoring and guidance for NASA Space Apps challenges
+
+VOLUNTEER_3
+Organization: Career Explorers
+Position: Organization Team Member
+Duration: September 2025
+Responsibilities: Career development and exploration initiatives
+
+VOLUNTEER_4
+Organization: Codeavour 5.0 Egypt
+Position: Event Organizer
+Duration: March 2024
+Responsibilities: Event organization and coordination
+
+
+PROFESSIONAL CERTIFICATIONS
+
+CERT_1
+Title: Generative AI and Prompt Engineering
+Issuer: NVIDIA
+Status: Completed
+Focus: Generative AI fundamentals and advanced prompt engineering techniques
+
+CERT_2
+Title: Deep Learning Fundamentals
+Issuer: NVIDIA
+Status: Completed
+Focus: Deep learning core concepts and implementation
+
+CERT_3
+Title: Innovation and Entrepreneurship
+Issuer: ITIDA
+Status: Completed
+Focus: Startup development and business innovation
+
+CERT_4
+Title: AI and Data Science Trainee Program
+Issuer: Digital Egypt Pioneers Initiative (DEPI)
+Status: Completed
+Focus: Comprehensive AI and data science training
+
+
+AWARDS AND ACHIEVEMENTS
+
+Achievement_1: Startup Founder - Mogeeb.ai launched with immediate market traction
+Achievement_2: Saudi Arabia B2B Contract secured within Month 1 of operations
+Achievement_3: Creativa AI Labs - Selected as one of 10 startups in accelerator program
+Achievement_4: Cairo ICT 2025 - Featured speaker at major tech conference
+Achievement_5: Waste Detection - 94 percent mAP50 accuracy on computer vision model
+Achievement_6: Air Delay Prediction - 99.9 percent accuracy using time series analysis
+Achievement_7: Team Leadership - Led 5-person technical team at DEPI
+Achievement_8: Mentorship - Provided research guidance at NASA Space Apps Benha
+Achievement_9: Hospitality Expansion - Deployed AI solution to 3 venues in Egypt within 60 days
+Achievement_10: GDG Leadership - Vice Head AI at Google Developer Group campus chapter
+
+KEYWORDS_FOR_SEARCH
+Generative AI specialist, AI founder, LLM expert, RAG implementation, Autonomous agents, Computer vision, YOLO object detection, CNN deep learning, CRM agent, Hospitality technology, Startup founder, Cairo tech, Egypt AI, AI agent architecture, Multi-tenant backend, AI deployment, Streamlit developer, TensorFlow expert, PyTorch proficient, Data science, Machine learning engineer, AI trainer, Product architecture, Full-stack AI, Prompt engineering, LangChain expert, Business process automation
