@@ -7,6 +7,13 @@ const __dirname = path.dirname(__filename);
 const ROOT = __dirname;
 
 const app = express();
+
+// Add logging middleware first
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.url}`);
+  next();
+});
+
 app.use(express.json());
 
 // Basic CORS for local dev
@@ -23,6 +30,7 @@ const CHATBOT_WEBHOOK_URL = 'https://mogeeb.shop/webhook/28b35f92-fc58-462e-9772
 
 // API routes BEFORE static files
 app.post('/api/chat', async (req, res) => {
+  console.log('=== POST /api/chat received ===');
   console.log('Chat API called:', { 
     message: req.body.message?.substring(0, 50),
     sessionId: req.body.sessionId,
@@ -100,7 +108,7 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(ROOT, 'index.html'));
 });
 
-const PORT = process.env.PORT || 5501;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Server running at http://127.0.0.1:${PORT}`);
 });

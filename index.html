@@ -946,6 +946,7 @@
       inputEl.value = '';
       setLoading(true);
       updateSendState();
+      inputEl.focus(); // Return focus to input field
       
       const typing = document.createElement('div');
       typing.className = 'msg bot typing';
@@ -967,6 +968,7 @@
       }finally{
         setLoading(false);
         updateSendState();
+        inputEl.focus(); // Return focus to input field after response
       }
     });
   </script>
