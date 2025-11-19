@@ -847,15 +847,20 @@
     }
 
     async function callChatAPI(message, history){
-      // Using local server API with webhook integration
-      const API_BASE = window.location.origin; // Use current domain (localhost or deployed)
-      const isFirst = messagesEl.children.length <= 1;
-      const resp = await fetch(`${API_BASE}/api/chat`, {
+      // Call n8n webhook directly
+      const WEBHOOK_URL = 'https://mogeeb.shop/webhook/28b35f92-fc58-462e-9772-b7f56b5dc87b';
+      
+      const resp = await fetch(WEBHOOK_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message, history, isFirst, sessionId })
+        body: JSON.stringify({ 
+          message, 
+          history: history || [],
+          sessionId: sessionId || '',
+          timestamp: new Date().toISOString()
+        })
       });
-      if (!resp.ok) throw new Error('API error '+resp.status);
+      if (!resp.ok) throw new Error('Webhook error '+resp.status);
       const data = await resp.json();
       // Update sessionId if server returns a new one
       if (data.sessionId) {
