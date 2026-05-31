@@ -226,7 +226,7 @@ export default function Hero() {
                 }`}
               >
                 <img
-                  src="/photo-pro.jpg"
+                  src={`${import.meta.env.BASE_URL}photo-pro.jpg`}
                   alt="Ahmed Hazem Elabady"
                   className="rounded-2xl w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 object-cover"
                 />
