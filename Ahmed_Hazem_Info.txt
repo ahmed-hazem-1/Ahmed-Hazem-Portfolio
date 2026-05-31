@@ -1,80 +1,159 @@
 PROFILE: Ahmed Hazem Elabady
 
+==============================================================================
 CONTACT INFORMATION
-Name: Ahmed Hazem Elabady
-Title: Generative AI Specialist and Founder
+==============================================================================
+Full Name: Ahmed Hazem Elabady
+Full Legal Name: Ahmed Hazem Abdelalim Elabady
+Title: Generative AI Specialist & Founder
+LinkedIn_Headline: Muslim | Founder of Mogeeb.ai | AI & Automation Engineer | NVIDIA Certified
 Location: Cairo, Egypt
-Email: ahmed.hazem.elabady@gmail.com
+Email_Primary: ahmed.hazem.elabady@gmail.com
+Email_Secondary: ahmedelabady206@gmail.com
 Phone: +20 127 5012 177
+Portfolio URL: https://ahmed-hazem-1.github.io
+Resume PDF: https://drive.google.com/file/d/14Z2ZxAimzsgGeOcPO5YtJi-Aj659dJIu/view?usp=sharing
+Identity: Muslim
 
+==============================================================================
 SOCIAL PROFILES
+==============================================================================
 LinkedIn: http://www.linkedin.com/in/ahmed-hazem-elabady-9a904924b
 GitHub: https://github.com/ahmed-hazem-1
 Kaggle: https://www.kaggle.com/ahmedhazemelabady
 Upwork: https://www.upwork.com/freelancers/~01b3e08df9c50aadb7
+Freelancer: https://www.freelancer.com/u/AhmedHazem1111
 Portfolio: https://ahmed-hazem-1.github.io
 
-
+==============================================================================
 PROFESSIONAL SUMMARY
-Generative AI Specialist and Founder with proven track record developing and deploying high-impact AI solutions. Expert in architecting autonomous Marketing, Social, and CRM Agents that optimize business processes. Recently launched production-grade GenAI CRM for hospitality sector, securing international B2B contracts in Saudi Arabia. Selected for Creativa AI Labs program and featured as speaker at Cairo ICT 2025. Combines strong technical expertise in LLMs, RAG, and Computer Vision with entrepreneurial execution.
+==============================================================================
+English:
+Generative AI Specialist and Founder with a proven track record of developing and deploying high-impact AI solutions. Expert in architecting autonomous Marketing, Social, and CRM Agents that optimize business processes. Recently launched a production-grade GenAI CRM for the hospitality sector, securing international B2B contracts in Saudi Arabia. Selected for "Creativa AI Labs" and featured as a speaker at Cairo ICT 2025. Combines strong technical expertise in LLMs, RAG, and Computer Vision with entrepreneurial execution.
 
+Arabic (LinkedIn):
+عندي إيمان إن أكتر حاجة بتميز الإنسان هي رغبته في التجربة واستكشاف كل ما هو جديد ومفيد طالما بيرضي ربنا وفي إطار شرعي. طول رحلتي بحاول أثبت إن فكرة 'قيود الطالب' دي مجرد وهم؛ الشغف ملوش سن، وبناء الحلول الذكية مبيستناش شهادة. التكنولوجيا بالنسبة ليا اداة عشان أترجم بيها أفكاري لواقع، سواء من خلال دراستي أو شغلي وتأسيسي لشركتي. أنا هنا عشان أجرب، أتعلم، وأسيب أثر حقيقي.
+
+Translation: I believe that what most distinguishes a person is their desire to experiment and explore everything new and beneficial, as long as it pleases God and stays within lawful bounds. Throughout my journey, I try to prove that the idea of 'student constraints' is just an illusion; passion has no age limit, and building smart solutions doesn't wait for a degree. Technology for me is a tool to translate my ideas into reality, whether through my studies, my work, or founding my company. I am here to experiment, learn, and leave a real impact.
+
+==============================================================================
 CORE COMPETENCIES
+==============================================================================
 Generative AI: LangChain, RAG, Prompt Engineering, LLM Fine-tuning, Autonomous Agents
 Product Architecture: Full-Stack AI Deployment, Multi-tenant Systems, Backend Pipelines
 Deep Learning: TensorFlow, Keras, PyTorch, YOLO v8-v11 Object Detection, CNNs
 Startup Leadership: Go-to-Market Strategy, Team Management, Product Launch
 Technical Skills: Python, SQL, Pandas, NumPy, Scikit-Learn, XGBoost, MLFlow, Streamlit, Dash
 
+LinkedIn_Top_Skills: Tech Entrepreneurship, Entrepreneur, Prompt Engineering
+NVIDIA_Certified: Yes
 
+==============================================================================
 WORK EXPERIENCE
+==============================================================================
 
 JOB_1
-Position: Founder and AI Engineer
-Company: Mogeeb.ai
-Duration: October 2025 to Present
+Position: Founder & AI Engineer
+LinkedIn_Position: Founder
+Company: Mogeeb.ai (مجيب)
+Duration: October 2025 to Present (8 months)
 Employment_Type: Self-employed
 Location: Remote
-Summary: Founded and launched production-grade GenAI CRM for hospitality sector. Secured first B2B enterprise project in Saudi Arabia within 30 days. Deployed AI solution to 3 premier restaurants and cafés in Egypt within 60 days. Architected scalable backend pipelines for simultaneous multi-tenant usage. Selected as one of 10 startups for Creativa AI Labs and spoke at Cairo ICT 2025.
-Key_Achievements: Founded GenAI CRM startup, Secured Saudi Arabia B2B contract Month 1, Deployed to 3 hospitality venues, Architected multi-tenant backend, Selected for Creativa AI Labs, Speaker at Cairo ICT 2025
+Summary: Founded and launched production-grade GenAI CRM for hospitality sector. Secured first B2B enterprise project in Saudi Arabia within 30 days. Deployed AI solution to 3 premier restaurants and cafés in Egypt within 60 days. Architected scalable backend pipelines for simultaneous multi-tenant usage. Selected as one of 10 startups for "Creativa AI Labs" and spoke at Cairo ICT 2025.
+Key_Achievements:
+- Founded GenAI CRM startup
+- Secured Saudi Arabia B2B contract within Month 1
+- Deployed to 3 hospitality venues in Egypt within 60 days
+- Architected multi-tenant backend pipelines
+- Selected for Creativa AI Labs accelerator
+- Speaker at Cairo ICT 2025
 
 JOB_2
-Position: GenAI Engineer Trainee
-Company: Information Technology Institute (ITI) and NVIDIA
-Duration: September 2025
-Employment_Type: Internship
-Location: Remote
-Summary: Designed autonomous AI agents including personal assistant digital twin. Implemented Retrieval-Augmented Generation to augment LLMs with proprietary data. Architected end-to-end LLM applications using advanced prompt engineering. Mastered building context-aware outputs for domain-specific queries.
-Key_Achievements: Designed autonomous AI agents, Implemented RAG systems, Architected LLM applications, Built context-aware outputs
+Position: Talent Acquisition Specialist
+Company: TAMOOH
+Duration: September 2025 to January 2026 (5 months)
+Employment_Type: Full-time
+Location: Giza, Egypt
+Summary: Talent acquisition and recruitment specialist role at TAMOOH.
+Note: NEW role discovered from LinkedIn, not on portfolio site — needs detailed description
 
 JOB_3
-Position: Computer Vision Trainee
-Company: National Telecommunication Institute (NTI)
-Duration: July 2025 to August 2025
+Position: GenAI Engineer
+LinkedIn_Position: GenAI Engineer
+Portfolio_Position: GenAI Engineer Trainee
+Company: Information Technology Institute (ITI) & NVIDIA
+Duration: August 2025 to September 2025 (2 months)
 Employment_Type: Internship
-Location: Remote
-Summary: Engineered scalable waste detection pipeline using YOLOv8-v11. Achieved 94 percent mAP50 accuracy on 24000 image custom dataset. Optimized neural network architectures reducing inference latency by 15 percent. Authored technical documentation improving team onboarding by 20 percent.
-Key_Achievements: 94 percent mAP50 waste detection accuracy, 24000 image dataset, 15 percent latency reduction, Improved onboarding by 20 percent
+Location: Egypt
+Summary: Completed NVIDIA's AI for All and Generative AI Explained courses, earning certificates in foundational and generative AI concepts. Mastered Building LLM Applications with Prompt Engineering, developing skills in optimizing large language models. Advancing expertise in Augmenting LLMs Using RAG, applying retrieval-augmented generation techniques through hands-on instructor-led sessions.
+Key_Achievements:
+- Designed autonomous AI agents including personal assistant digital twin
+- Implemented RAG systems to augment LLMs with proprietary data
+- Architected end-to-end LLM applications using advanced prompt engineering
+- Built context-aware outputs for domain-specific queries
 
 JOB_4
-Position: AI and Data Science Trainee
-Company: Digital Egypt Pioneers Initiative (DEPI)
-Duration: October 2024 to June 2025
+Position: Computer Vision Engineer
+LinkedIn_Position: Computer Vision Engineer
+Portfolio_Position: Computer Vision Trainee
+Company: National Telecommunication Institute (NTI)
+Duration: July 2025 to August 2025 (2 months)
 Employment_Type: Internship
-Location: Hybrid
-Summary: Developed end-to-end CNN model with over 90 percent accuracy for satellite image classification. Spearheaded project planning for 5-person technical team. Owned full ML workflow from EDA and preprocessing to final deployment.
-Key_Achievements: Over 90 percent CNN accuracy on satellite imagery, Led 5-person team project planning, Full ML workflow ownership
+Location: Remote (Hybrid per LinkedIn)
+NTI_Program_Score: 96%
+NTI_Training_Hours: 120+ hours
+NTI_Mentors: Eng Kholoud Khaled, Eng Mohamed Hasouna
+Summary: Designed scalable computer vision workflows using YOLOv8-v11 for waste detection, achieving 94% mAP50 accuracy on a 24,000-image dataset. Optimized neural network architectures, reducing inference latency by 15% through hyperparameter tuning and data augmentation. Authored technical documentation for model deployment, improving team onboarding efficiency by 20%. Completed NTI Summer Training Program in Computer Vision with 96% score. Internship focused on deep learning, exploring neural networks, CNNs, image processing, transfer learning, and hands-on projects. Gained practical experience in image classification, object detection, segmentation, and face recognition technologies.
+Key_Achievements:
+- 96% score on NTI Summer Training Program
+- 94% mAP50 waste detection accuracy on 24,000-image dataset
+- 15% latency reduction through hyperparameter tuning
+- Improved team onboarding efficiency by 20%
+- 120+ hours of intensive training
 
 JOB_5
+Position: AI and Data Scientist
+LinkedIn_Position: AI and Data Scientist
+Portfolio_Position: AI & Data Science Trainee
+Company: Digital Egypt Pioneers Initiative (DEPI)
+Duration: October 2024 to May 2025 (8 months)
+Employment_Type: Internship
+Location: Benha, Al Qalyubiyah, Egypt (Hybrid)
+Summary: Acquired in-depth knowledge of Data Science principles and methodologies through hands-on training and real-world applications. Applied a variety of Machine Learning techniques, including supervised and unsupervised learning, to solve complex data-driven problems. Contributed to multiple projects, developing and implementing data models, algorithms, and visualizations to derive actionable insights. Enhanced technical proficiency in tools such as Python, TensorFlow, and Pandas, while strengthening analytical and problem-solving skills. Collaborated with teams to design and optimize data pipelines, ensuring data integrity and efficient processing for project deliverables. Developed and deployed an end-to-end CNN model (>90% accuracy) for satellite image classification. Spearheaded project planning and execution for a 5-person team.
+Key_Achievements:
+- Over 90% CNN accuracy on satellite imagery (EuroSAT)
+- Led 5-person team project planning and execution
+- Full ML workflow ownership from EDA to deployment
+- Hands-on training in supervised and unsupervised learning
+- Data pipeline design and optimization
+
+JOB_6
 Position: AI Model Trainer
 Company: Outlier
 Duration: September 2024 to November 2024
 Employment_Type: Contract
 Location: Remote
-Summary: Trained large language models for complex mathematical problem-solving. High accuracy in model training and optimization.
-Key_Achievements: Trained LLMs for mathematical reasoning, High accuracy model optimization
+Note: Listed on portfolio site but NOT on LinkedIn profile — may have been removed/omitted
+Summary: Trained large language models (LLMs) to solve complex mathematical problems with high accuracy.
+Key_Achievements:
+- Trained LLMs for mathematical reasoning
+- High accuracy model optimization
 
+JOB_7
+Position: Information Technology Trainee
+Company: Egyptian Natural Gas Holding Company (EGAS)
+Duration: July 2024 (1 month)
+Employment_Type: Internship
+Location: On-site
+Summary: Gained expertise in diagnosing and resolving real-world IT issues through practical experience. Collaborated with team members to troubleshoot and address technical challenges effectively. Developed problem-solving skills by implementing solutions for complex IT system issues.
+Key_Achievements:
+- Real-world IT troubleshooting experience
+- Collaborative technical problem solving
+- IT system issue resolution
 
-FEATURED PROJECTS
+==============================================================================
+FEATURED PROJECTS (GENAI / AGENTS)
+==============================================================================
 
 PROJECT_1
 Title: CRM Agent for Hospitality
@@ -94,160 +173,490 @@ Description: Autonomous agent capable of crafting high-engagement brand-aligned 
 Status: Active
 
 PROJECT_3
-Title: Personal AI Assistant and Portfolio Integrator
+Title: Personal AI Assistant & Portfolio Integrator
 Subtitle: AI Digital Twin for Professional Inquiries
 Role: Developer
 Tech_Stack: RAG, LLM, Web Integration, Python
 Description: Context-aware AI agent acting as digital twin to automate responses to professional inquiries regarding skills and experience. Embedded into live web portfolio for 24/7 interactive user experience. Showcases technical expertise and increases visitor engagement.
 Status: Production
-Deployment: Live web portfolio
+Deployment: Live web portfolio (https://ahmed-hazem-1.github.io)
+Chatbot_Webhook: https://mogeeb.shop/webhook/28b35f92-fc58-462e-9772-b7f56b5dc87b
 
-
-COMPUTER VISION AND DEEP LEARNING PROJECTS
+==============================================================================
+DEEP LEARNING & COMPUTER VISION PROJECTS
+==============================================================================
 
 CV_PROJECT_1
-Title: Waste Detection using YOLO
+Title: Waste Detection using YOLO (v8-v11)
 Subtitle: Scalable Computer Vision Pipeline
+Category: Deep Learning · Object Detection
 Technologies: YOLOv8, YOLOv11, Python, Streamlit
-Achievement: 94 percent mAP50 accuracy
-Dataset_Size: 24000 images
-Description: Scalable pipeline for waste detection and classification. Custom trained dataset achieving state-of-the-art accuracy.
-Link: https://trash--detector.streamlit.app/
+Achievement: 94% mAP50 accuracy on 24,000 images, 22 waste types
+Description: Developed advanced waste detection system using YOLOv8-v11 to identify 22 waste material types including cans and plastic bottles. Achieved 94% mAP50 accuracy through strategic data preprocessing, augmentation, and model optimization techniques. Trained on large-scale dataset of 24,000 images from Roboflow.
+Live_App: https://trash--detector.streamlit.app/
+Code: https://github.com/ahmed-hazem-1/Trash_Detector
 
 CV_PROJECT_2
-Title: Land Type Classification
+Title: Land Type Classification (EuroSAT)
 Subtitle: Satellite Image Analysis for Urban Planning
-Technologies: CNN, TensorFlow, Remote Sensing
-Achievement: 94 percent accuracy on satellite imagery
-Dataset: EuroSAT
-Description: End-to-end classification model for urban planning applications using satellite imagery analysis.
-Link: https://github.com/ahmed-hazem-1/DEPI-Project--Land-Type-Classification.git
+Category: Deep Learning · Remote Sensing
+Technologies: CNN, TensorFlow, Remote Sensing, EuroSAT
+Achievement: 94% accuracy on Sentinel-2 satellite data, 10 land types
+Description: Developed a deep neural network model to classify land types from Sentinel-2 satellite images using the EuroSAT dataset, achieving 94% accuracy. Enabled applications in urban planning and environmental monitoring by identifying agriculture, urban, water, desert, roads, and forest areas.
+Code: https://github.com/ahmed-hazem-1/DEPI-Project--Land-Type-Classification.git
 
 CV_PROJECT_3
-Title: Air Delay Prediction
-Subtitle: Time Series Analysis for Flight Delays
-Technologies: TensorFlow, Keras, Time Series Analysis
-Achievement: 99.9 percent accuracy
-Focus: Weather-caused flight delays prediction
-Description: Advanced time series model for predicting flight delays based on weather conditions and historical data.
-Link: https://colab.research.google.com/drive/1_TZxoqVbBwWezRDTmLzZzw6-DMKfmxo1
-
-CV_PROJECT_4
 Title: COVID-19 X-ray Detection
 Subtitle: Medical Image Classification
+Category: CNN · Medical Imaging
 Technologies: CNN, Medical Imaging, TensorFlow
-Achievement: 95 percent accuracy
-Description: Convolutional neural network for detecting COVID-19 from X-ray medical images.
-Link: https://covid-19-xray-detection.streamlit.app/
+Achievement: 95%+ accuracy, real-time prediction, 60% faster diagnosis potential
+Description: Developed a CNN-based system using deep learning for COVID-19 detection from chest X-rays with real-time prediction and confidence visualization. Implemented multiple convolutional layers with max pooling and dropout, achieving over 95% accuracy. Can enable potential 60% acceleration in clinical diagnosis.
+Live_App: https://covid-19-xray-detection.streamlit.app/
+Code: https://github.com/ahmed-hazem-1/COVID-19-Xray-Detection.git
 
+CV_PROJECT_4
+Title: Cat vs. Dog Image Classifier
+Subtitle: Binary Image Classification
+Category: CNN
+Technologies: CNN, Deep Learning
+Description: Binary image classifier trained on cats vs dogs with strong generalization.
+Live_App: https://cats-or-dogs.streamlit.app/
+Code: https://github.com/ahmed-hazem-1/Cats_VS_Dogs
 
+CV_PROJECT_5
+Title: Air Delay Prediction
+Subtitle: Time Series Analysis for Flight Delays
+Category: TensorFlow · Keras
+Technologies: TensorFlow, Keras, Time Series Analysis
+Achievement: 99.9% accuracy, weather-based prediction, early stopping optimization
+Description: Predicts weather-caused flight delays; tuned with early stopping for 99.9% accuracy.
+Code: https://colab.research.google.com/drive/1_TZxoqVbBwWezRDTmLzZzw6-DMKfmxo1
+
+==============================================================================
+MACHINE LEARNING PROJECTS
+==============================================================================
+
+ML_PROJECT_1
+Title: Customer Churn Prediction
+Category: XGBoost · RF · SVC · KNN
+Technologies: XGBoost, Random Forest, SVC, KNN, GridSearchCV
+Achievement: 92% accuracy, 4 ML algorithms, 25% churn reduction potential
+Description: Developed a churn prediction system using XGBoost, Random Forest, SVC, and KNN, optimized with GridSearchCV, achieving 92% accuracy. Enabled proactive customer retention strategies, potentially reducing churn by 25% with XGBoost model.
+Code: https://colab.research.google.com/drive/1HGWa_N0SFB6dJCkHtCHCiBSvhbwMMfRj
+
+ML_PROJECT_2
+Title: Indicators of Heart Disease
+Category: LR · SVC · KNN · Random Forest
+Technologies: Logistic Regression, SVC, KNN, Random Forest
+Achievement: Best KNN at 90% vs LR/SVC/RF baselines
+Description: Pipeline on 319,795 records; best KNN (90%) vs LR/SVC/RF baselines.
+Code: https://colab.research.google.com/drive/16nMS2nUjRVy0dFuPgACu51i0Of4lUrIy
+
+ML_PROJECT_3
+Title: Student Performance (Linear Regression Model)
+Category: Linear Regression
+Technologies: Linear Regression, Scikit-Learn
+Achievement: R²=0.989, MSE=4.083 on held-out data
+Description: Predicts student scores; R²=0.989 and MSE=4.083 on held-out data.
+Code: https://www.kaggle.com/code/ahmedhazemelabady/student-performance-linear-regression-model
+
+ML_PROJECT_4
+Title: Predict NBA 2K20 Player Salaries
+Category: Linear Regression
+Technologies: Linear Regression
+Description: Salary prediction from performance metrics using a linear model.
+Code: https://colab.research.google.com/drive/1n79WKl_ReM-EWaFlLyu-QbYGjohy9fvS
+
+==============================================================================
+WEB SCRAPING PROJECTS
+==============================================================================
+
+WS_PROJECT_1
+Title: Wuzzuf Jobs – 8,000+ Jobs
+Category: Web Scraping
+Achievement: 8K+ job listings, Egypt market, public Kaggle dataset
+Description: Scraped 8k+ listings from Wuzzuf for analytics and predictive modeling.
+Dataset: https://www.kaggle.com/datasets/ahmedhazemelabady/wuzzuf-job-listings-dataset-egypt-january-2025
+
+WS_PROJECT_2
+Title: Top Ranked Anime – 20,000+ Rows
+Category: Web Scraping
+Achievement: 20K+ anime entries, ranking analysis, trend insights
+Description: Collected 20k anime entries enabling ranking, trend analysis, and EDA.
+Dataset: https://www.kaggle.com/datasets/ahmedhazemelabady/top-ranked-animes-in-2024
+
+WS_PROJECT_3
+Title: Indeed Jobs – 2,000+ Rows
+Category: Web Scraping
+Achievement: 2K+ job postings with skill and salary trends
+Description: Scraped postings to capture skill and salary trends across roles.
+Data: https://docs.google.com/spreadsheets/d/1cBvnq2neeA6MXwm78BDZuSd8YXa4gqO_/edit
+
+==============================================================================
+DATA ANALYSIS PROJECTS
+==============================================================================
+
+DA_PROJECT_1
+Title: Exploratory Data Analysis on Wuzzuf Jobs
+Category: Data Analysis
+Description: Explores market trends and skill demand across the scraped Wuzzuf dataset.
+Code: https://colab.research.google.com/drive/1JDoMhh_pkKgGjcf8O2Ka5SF9zNfOI_yo
+
+DA_PROJECT_2
+Title: Titanic Data Analysis
+Category: Data Analysis
+Description: Survival patterns by gender, class, and other features with clear visuals.
+Code: https://colab.research.google.com/github/ahmed-hazem-1/DEPI-Tasks/blob/main/FullTitanicPloting.ipynb
+
+DA_PROJECT_3
+Title: Indeed Jobs Analysis
+Category: Data Analysis
+Description: Insights on popular roles, in-demand skills, and salary bands from Indeed data.
+Analysis: https://drive.google.com/file/d/1XPGHg7FEpPuFfHUHSM03XcF2-sgKKRMi/view
+
+==============================================================================
 EDUCATION
-
-School: Benha Faculty of Computer Science and Artificial Intelligence
-Degree: Bachelor of Science in Computer Science
+==============================================================================
+University: Benha University
+Faculty: Benha Faculty of Computer Science and Artificial Intelligence
+Degree: Bachelor of Applied Science - BASc, Computer Science and Artificial Intelligence
+LinkedIn_Degree: Bachelor of Applied Science - BASc
+Portfolio_Degree: Bachelor of Science in Computer Science
+Start_Date: October 2023
+Expected_Graduation: April 2027
 Status: Currently Enrolled
-Expected_Graduation: June 2027
 GPA: 3.6 out of 4.0
 Major_Focus: Computer Science, Artificial Intelligence, Data Science
 
-
+==============================================================================
 TECHNICAL SKILLS
+==============================================================================
 
-Generative_AI_Expertise:
-- Retrieval-Augmented Generation (RAG)
-- LangChain and Agentic Workflows
-- Prompt Engineering and Context Management
-- LLM Fine-tuning and Deployment
-- Autonomous Agents for Marketing, CRM, Social Media
-
-Deep_Learning_Expertise:
-- TensorFlow, Keras, PyTorch
-- YOLO v8 v11 Object Detection
-- Convolutional Neural Networks and Transfer Learning
-- Image Segmentation and Processing
-
-Programming_Languages:
+Programming_and_Tools:
 - Python (Advanced proficiency)
 - SQL
+- MySQL
+- Git
+- GitHub
+- Jupyter Notebook
+- Google Colab
 
-Data_Science_Libraries:
-- Pandas, NumPy, Scikit-Learn
-- XGBoost, MLFlow
-- Streamlit, Dash, Vercel
+Machine_Learning:
+- Scikit-Learn
+- XGBoost
+- GridSearchCV
+- Feature Engineering
+- MLFlow
+- Image Preprocessing
+
+Deep_Learning:
+- TensorFlow
+- Keras
+- PyTorch
+- CNN (Convolutional Neural Networks)
+- Neural Networks
+- Computer Vision
+- YOLO (v8-v11)
+- Object Detection
+- Semantic Segmentation
+
+Generative_AI_and_LLMs:
+- Retrieval-Augmented Generation (RAG)
+- LangChain & Agentic Workflows
+- Prompt Engineering & Context Management
+- LLM Fine-tuning & Deployment
+- Autonomous Agents (Marketing, CRM, Social Media)
+
+Data_Analysis_and_Visualization:
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Plotly
+- Data Preprocessing
+- Data Visualization
+- Web Scraping
+- BeautifulSoup
+- Selenium
+- Streamlit
+- Dash
 
 Backend_and_DevOps:
 - Multi-tenant systems design
 - Backend pipeline engineering
 - API development
 - Database integration
+- Vercel deployment
+- Netlify deployment
+- Express.js (server)
 
+==============================================================================
+SOFT SKILLS
+==============================================================================
+- Teamwork
+- Communication
+- Problem-Solving
+- Project Management
+- Organization
 
+==============================================================================
+LANGUAGES
+==============================================================================
+- Arabic (Native)
+- English (B2)
+
+==============================================================================
 VOLUNTEER EXPERIENCE
+==============================================================================
 
 VOLUNTEER_1
 Organization: GDG On Campus BU SB
 Position: Vice Head AI
 Duration: September 2025 to Present
-Responsibilities: Co-led AI committee and delivered hands-on AI and ML training sessions
+Responsibilities:
+- Co-led AI committee and delivered hands-on AI/ML training sessions
+- Mentored students on AI technologies and career development in tech
 
 VOLUNTEER_2
 Organization: NASA Space Apps Benha
-Position: Vice Head Researcher and Mentor
+Position: Vice Head Researcher & Mentor
 Duration: June 2025 to Present
-Responsibilities: Research mentoring and guidance for NASA Space Apps challenges
+Responsibilities:
+- Contributed to global challenges via NASA Space Apps Benha mentorship, guiding interdisciplinary teams on science and technology projects with real-world applications in exploration, fostering innovation in a collaborative, international context
 
 VOLUNTEER_3
 Organization: Career Explorers
-Position: Organization Team Member
+Position: Organization Team Member (Speaker Coordination)
 Duration: September 2025
-Responsibilities: Career development and exploration initiatives
+Responsibilities:
+- Collaborated with the organization team for the 1% Event 2025, a premier career exploration summit focused on empowering young professionals in tech and entrepreneurship
+- Managed speaker outreach, scheduling, and logistics for 20+ industry experts
 
 VOLUNTEER_4
 Organization: Codeavour 5.0 Egypt
 Position: Event Organizer
 Duration: March 2024
-Responsibilities: Event organization and coordination
+Responsibilities:
+- Assisted in organizing a countrywide AI and Robotics programming competition with a capacity of 5,000, including 1,500 participants and 3,500 parents/spectators
+- Contributed to bringing together passionate individuals to celebrate innovation and creativity in coding
+- Worked alongside talented team of organizers to support and empower aspiring developers
 
-
+==============================================================================
 PROFESSIONAL CERTIFICATIONS
+==============================================================================
 
 CERT_1
-Title: Generative AI and Prompt Engineering
+Title: Deep Learning Fundamentals
+LinkedIn_Title: Fundamentals of Deep Learning
 Issuer: NVIDIA
+Date: April 2025
 Status: Completed
-Focus: Generative AI fundamentals and advanced prompt engineering techniques
+Focus: Foundational deep learning concepts and practical implementation techniques for neural networks and machine learning models
+Certificate_Link: https://www.linkedin.com/in/ahmed-hazem-elabady-9a904924b/overlay/1744716991852/single-media-viewer?type=DOCUMENT&profileId=ACoAAD3DtlEBjrg2pVZ_Vw2neyi64i93FzUZoCo
 
 CERT_2
-Title: Deep Learning Fundamentals
+Title: Getting Started with Deep Learning
 Issuer: NVIDIA
+Date: August 2025
+Credential_ID: M0S7oiZMQcO9R966P9O6-Q
 Status: Completed
-Focus: Deep learning core concepts and implementation
+Focus: Comprehensive course covering deep learning fundamentals, computer vision, and neural network architectures with practical implementations
+Certificate_Link: ./certifications/Getting started with deep learning - NVIDIA - Cetificate.pdf
 
 CERT_3
-Title: Innovation and Entrepreneurship
-Issuer: ITIDA
+Title: Building LLM Applications With Prompt Engineering
+Issuer: NVIDIA (ITI program)
+Date: August-September 2025
 Status: Completed
-Focus: Startup development and business innovation
+Focus: Developing skills in optimizing large language models, building LLM applications with prompt engineering techniques
+Note: NEW — discovered from LinkedIn certifications section
 
 CERT_4
+Title: Computer Vision Training
+Issuer: National Telecommunication Institute (NTI)
+Date: July-August 2025
+Score: 96%
+Training_Hours: 120+
+Status: Completed
+Focus: Intensive training in computer vision, CNNs, transfer learning, classification, detection, segmentation, and face recognition
+Certificate_Link: ./certifications/NTI - Certificate - Ahmed Hazem Abdelalim Elabady.pdf
+
+CERT_5
+Title: Innovation and Entrepreneurship (InnovEgypt)
+Issuer: ITIDA
+Date: July 2024
+Status: Completed
+Focus: Innovation and entrepreneurship program focusing on business development, startup strategies, and technological innovation
+Certificate_Link: https://www.linkedin.com/in/ahmed-hazem-elabady-9a904924b/overlay/1728331601681/single-media-viewer?type=DOCUMENT&profileId=ACoAAD3DtlEBjrg2pVZ_Vw2neyi64i93FzUZoCo
+Local_File: ./certifications/Ahmed Hazem Elabady - InnovEgypt.pdf
+
+CERT_6
 Title: AI and Data Science Trainee Program
 Issuer: Digital Egypt Pioneers Initiative (DEPI)
+Date: 2024-2025
 Status: Completed
-Focus: Comprehensive AI and data science training
+Focus: Comprehensive training program in artificial intelligence and data science, covering machine learning, deep learning, and data analysis techniques
 
+CERT_7
+Title: Python Programming Basics
+LinkedIn_Title: Python programming Basics
+Issuer: MaharaTech - ITIMooca
+Date: June 2024
+Status: Completed
+Focus: Comprehensive Python programming course covering fundamentals, data structures, and programming best practices
+Certificate_Link: https://maharatech.gov.eg/mod/customcert/view.php?id=1737&downloadown=1
 
-AWARDS AND ACHIEVEMENTS
+==============================================================================
+AWARDS AND KEY ACHIEVEMENTS
+==============================================================================
 
 Achievement_1: Startup Founder - Mogeeb.ai launched with immediate market traction
 Achievement_2: Saudi Arabia B2B Contract secured within Month 1 of operations
 Achievement_3: Creativa AI Labs - Selected as one of 10 startups in accelerator program
 Achievement_4: Cairo ICT 2025 - Featured speaker at major tech conference
-Achievement_5: Waste Detection - 94 percent mAP50 accuracy on computer vision model
-Achievement_6: Air Delay Prediction - 99.9 percent accuracy using time series analysis
+Achievement_5: Waste Detection - 94% mAP50 accuracy on computer vision model
+Achievement_6: Air Delay Prediction - 99.9% accuracy using time series analysis
 Achievement_7: Team Leadership - Led 5-person technical team at DEPI
 Achievement_8: Mentorship - Provided research guidance at NASA Space Apps Benha
 Achievement_9: Hospitality Expansion - Deployed AI solution to 3 venues in Egypt within 60 days
 Achievement_10: GDG Leadership - Vice Head AI at Google Developer Group campus chapter
+Achievement_11: Project Diversity - 15+ projects spanning web scraping, ML pipelines, deep learning, and computer vision
+Achievement_12: Career Growth - 7 roles since 2024 (including TAMOOH), from IT troubleshooting at EGAS to GenAI at ITI and talent acquisition at TAMOOH
+Achievement_13: End-to-End Delivery - Spearheaded 5-person team for complete land classification solution (>90% accuracy)
+Achievement_14: NTI Excellence - 96% score on Computer Vision Summer Training Program (120+ hours)
+Achievement_15: NVIDIA Certified - Earned multiple NVIDIA certifications in Deep Learning and Generative AI
 
+==============================================================================
+PORTFOLIO ASSETS AND MEDIA
+==============================================================================
+Profile_Photo: ./assets/images/photo pro.png
+Avatar: ./assets/images/my-avatar.png
+Favicon: ./assets/images/portfolio.ico
+Resume_PDF: ./assets/pdf/resume.pdf
+Resume_Link: https://drive.google.com/file/d/14Z2ZxAimzsgGeOcPO5YtJi-Aj659dJIu/view?usp=sharing
+CSS: ./assets/css/style.css
+JS: ./assets/js/script.js
+
+Project_Images:
+- Waste Detection: ./assets/images/5f4161bd-952e-46fd-bac1-98412634feed.jpg
+- Land Type: ./assets/images/land_type.png
+- COVID X-ray: ./assets/images/covid-xray.png
+- Cat vs Dog: ./assets/images/cats-vs-dogs-thumbnail.jpg
+- Air Delay: ./assets/images/Air Delay Prediction.jpg
+- Customer Churn: ./assets/images/Customer Churn.png
+- Heart Disease: ./assets/images/heart disease.png
+- Student Performance: ./assets/images/Student Performance (Linear Regression Model).png
+- NBA: ./assets/images/NBA.jpg
+- Wuzzuf Cover: ./assets/images/Wuzzuf cover img.png
+- Wuzzuf EDA: ./assets/images/Untitled design.png
+- Titanic: ./assets/images/Untitled design ww.png
+- Anime: ./assets/images/Coding Vs Output.png
+- Indeed Scraping: ./assets/images/indeed scraping.png
+- Indeed Analysis: ./assets/images/indeed analysis.png
+
+Social_Icons:
+- GitHub: ./assets/images/github.png
+- LinkedIn: ./assets/images/linkedin.png
+- Kaggle: ./assets/images/kaggle.png
+- Upwork: ./assets/images/pngwing.com.png
+- Freelancer: ./assets/images/freelancer-1.svg
+
+==============================================================================
+PORTFOLIO SITE CONFIGURATION
+==============================================================================
+Site_Title: Ahmed Hazem – Generative AI Specialist Portfolio
+Meta_Description: Ahmed Hazem Elabady – Generative AI Specialist & Founder from Cairo, Egypt. GenAI CRM, autonomous agents, LLMs, and AI solutions. Portfolio, projects, resume, and contact.
+Meta_Keywords: Ahmed Hazem, Generative AI, LLM, RAG, AI Agents, CRM, Machine Learning, Computer Vision, Portfolio
+OG_Title: Ahmed Hazem's Portfolio
+OG_Description: Generative AI Specialist and Founder from Cairo, Egypt.
+OG_Image: ./assets/images/photo pro.png
+OG_URL: https://ahmed-hazem-1.github.io
+OG_Image_Width: 1200
+OG_Image_Height: 630
+Font: Poppins (300, 400, 500, 600, 700)
+Icon_Library: Ionicons v5.5.2
+Contact_Form: Formspree.io (https://formspree.io/f/xjkgapwy)
+Chatbot_Webhook: https://mogeeb.shop/webhook/28b35f92-fc58-462e-9772-b7f56b5dc87b
+
+Deployment_Platforms:
+- GitHub Pages: https://ahmed-hazem-1.github.io
+- Netlify: netlify.toml configured (publish from root)
+- Vercel: vercel.json configured
+- Local Dev: node server.mjs (Express)
+
+Package_Dependencies: express, node-fetch, dotenv
+
+==============================================================================
+PORTFOLIO NAVIGATION SECTIONS
+==============================================================================
+Sections:
+1. About (hero section with photo, summary, social links, CTA buttons)
+2. Experience (7 roles in timeline — portfolio shows 6, LinkedIn shows 7 including TAMOOH)
+3. Education (Benha University B.Sc.)
+4. Volunteering (4 organizations)
+5. Projects (15 projects with filter: All, Machine Learning, Deep Learning, Web Scraping, Data Analysis)
+6. Skills & Technologies (7 skill categories)
+7. Achievements (3 key achievements)
+8. Certificates & Licenses (6 certificates)
+9. Contact (email, phone, location, Formspree form)
+
+==============================================================================
+BLOG / LINKEDIN POSTS (Commented Out in Portfolio)
+==============================================================================
+Post_1: Arabic - "ازاي تبدأ Data Science من الصفر؟" (How to start Data Science from zero) - LinkedIn UGC: urn:li:ugcPost:7302446689544499200
+Post_2: English - "Importance of Web Scraping and Analysis" - LinkedIn Share: urn:li:share:7282546533550505984
+Post_3: English - "Who Survived the Titanic?" - LinkedIn Share: urn:li:share:7276968189878501376
+Post_4: English - "Importance of a Portfolio" - LinkedIn Share: urn:li:share:7278173803715715072
+
+==============================================================================
+CHATBOT FEATURES
+==============================================================================
+Chatbot_Name: Ahmed's Assistant
+Chatbot_Description: Ask about skills, projects, and contact
+Chatbot_Welcome_Message: Hi! I'm Ahmed's assistant. How can I help you today?
+Chatbot_Technology: Webhook-based (n8n webhook via mogeeb.shop)
+Chatbot_Features: Session tracking, chat history, markdown parsing, RTL/LTR support, typing indicator
+Chatbot_Markdown_Support: Headers, bold, italic, code blocks, inline code, lists, line breaks
+
+==============================================================================
+SCHEMA / SEO (JSON-LD)
+==============================================================================
+Schema_Type: Person
+Schema_Name: Ahmed Hazem Elabady
+Schema_URL: https://ahmed-hazem-1.github.io
+Schema_JobTitle: Generative AI Specialist & Founder
+Schema_WorksFor: Mogeeb.ai
+Schema_Description: Generative AI Specialist and Founder specializing in GenAI CRM, LLMs, RAG, and autonomous agents
+Schema_Image: ./assets/images/photo pro.png
+Schema_SameAs:
+- https://github.com/ahmed-hazem-1
+- http://www.linkedin.com/in/ahmed-hazem-elabady-9a904924b
+- https://www.kaggle.com/ahmedhazemelabady
+Schema_AlumniOf: Benha Faculty of Computer Science and Artificial Intelligence
+
+==============================================================================
 KEYWORDS_FOR_SEARCH
-Generative AI specialist, AI founder, LLM expert, RAG implementation, Autonomous agents, Computer vision, YOLO object detection, CNN deep learning, CRM agent, Hospitality technology, Startup founder, Cairo tech, Egypt AI, AI agent architecture, Multi-tenant backend, AI deployment, Streamlit developer, TensorFlow expert, PyTorch proficient, Data science, Machine learning engineer, AI trainer, Product architecture, Full-stack AI, Prompt engineering, LangChain expert, Business process automation
+==============================================================================
+Generative AI specialist, AI founder, LLM expert, RAG implementation, Autonomous agents, Computer vision, YOLO object detection, CNN deep learning, CRM agent, Hospitality technology, Startup founder, Cairo tech, Egypt AI, AI agent architecture, Multi-tenant backend, AI deployment, Streamlit developer, TensorFlow expert, PyTorch proficient, Data science, Machine learning engineer, AI trainer, Product architecture, Full-stack AI, Prompt engineering, LangChain expert, Business process automation, Web scraping, Data analysis, XGBoost, Customer churn prediction, Medical imaging, Satellite image classification, Talent acquisition, TAMOOH, NVIDIA Certified
+
+==============================================================================
+FULL NAME (for legal / formal contexts)
+==============================================================================
+Ahmed Hazem Abdelalim Elabady
+
+==============================================================================
+LINKEDIN vs PORTFIALIO DISCREPANCIES (for reconciliation when building new portfolio)
+==============================================================================
+1. TAMOOH job (Talent Acquisition Specialist, Sep 2025-Jan 2026) — on LinkedIn but NOT on portfolio
+2. ITI title: LinkedIn says "GenAI Engineer", portfolio says "GenAI Engineer Trainee"
+3. NTI title: LinkedIn says "Computer Vision Engineer", portfolio says "Computer Vision Trainee"
+4. DEPI title: LinkedIn says "AI and Data Scientist", portfolio says "AI & Data Science Trainee"
+5. ITI duration: LinkedIn says Aug-Sep 2025 (2 months), portfolio says Sep 2025 (1 month)
+6. DEPI duration: LinkedIn says Oct 2024-May 2025 (8 months), portfolio says Oct 2024-Jun 2025 (9 months)
+7. Education degree: LinkedIn says BASc, portfolio says B.Sc.
+8. Graduation date: LinkedIn says April 2027, portfolio says June 2027
+9. Outlier job: on portfolio but NOT on LinkedIn — may have been removed
+10. Cert "Fundamentals of Deep Learning" vs "Deep Learning Fundamentals" — same cert with different name on LinkedIn vs portfolio
+11. NTI location: LinkedIn implies hybrid, portfolio says remote
+12. Mogeeb.ai Arabic name: مجيب (shown on LinkedIn)

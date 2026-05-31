@@ -49,6 +49,7 @@ figure{margin:0}
 .site-header{
   position:sticky;top:0;z-index:50;
   background:rgba(13,17,27,.75);
+  -webkit-backdrop-filter:saturate(1.2) blur(8px);
   backdrop-filter:saturate(1.2) blur(8px);
   border-bottom:1px solid var(--line);
   display:flex;align-items:center;justify-content:space-between;
@@ -264,6 +265,14 @@ figure{margin:0}
 .linkedin-logo{width:24px;height:24px;opacity:.9}
 .linkedin-embed-placeholder{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px}
 .linkedin-embed{width:100%;min-height:420px;border:0;border-radius:10px;background:#0b1020}
+
+.lead-cta{margin-top:16px;font-size:0.95em;color:var(--brand-2)}
+.detail-list{margin:10px 0;padding-left:20px;list-style-type:disc}
+.volunteer-detail{margin-left:20px;border-left:2px solid var(--line);padding-left:15px}
+.volunteer-entry{margin-bottom:15px}
+.volunteer-title{margin:0 0 5px 0;font-weight:600}
+.volunteer-period{margin:0 0 8px 0;font-size:0.9em;color:var(--muted)}
+.volunteer-list{margin:5px 0;padding-left:20px;list-style-type:disc}
 
 /* Timeline */
 .timeline{margin:18px 0}
