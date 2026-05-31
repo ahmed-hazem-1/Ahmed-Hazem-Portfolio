@@ -30,8 +30,8 @@ body {
 
 .glass-hero {
   background: rgba(11, 25, 44, 0.15);
-  backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   background-clip: padding-box;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -41,8 +41,8 @@ body {
 
 .glass-navbar {
   background: rgba(255, 255, 255, 0.45);
-  backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.5);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
   background-clip: padding-box;
@@ -60,8 +60,8 @@ body {
 
 .glass-card {
   background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.5);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
   background-clip: padding-box;
@@ -73,8 +73,8 @@ body {
 
 .glass-card-dark {
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
   background-clip: padding-box;
@@ -184,8 +184,8 @@ body {
 
 [data-theme="dark"] .glass-card {
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
   background-clip: padding-box;
@@ -205,4 +205,129 @@ body {
 
 [data-theme="dark"] ::selection {
   color: #FFFFFF;
+}
+
+/* Custom utility for cursor blink animation */
+.animate-cursor-blink {
+  animation: cursor-blink 0.75s step-end infinite;
+}
+
+/* Light theme background fluid-blobs classes */
+.light-blob-yellow-1 {
+  width: 40rem;
+  height: 40rem;
+  filter: blur(90px);
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.25) 0%, rgba(217, 119, 6, 0.1) 40%, transparent 70%);
+  animation: blob1 15s ease-in-out infinite;
+}
+
+.light-blob-yellow-1-hero {
+  width: 40rem;
+  height: 40rem;
+  filter: blur(90px);
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.3) 0%, rgba(217, 119, 6, 0.12) 40%, transparent 70%);
+  animation: blob1 15s ease-in-out infinite;
+}
+
+.light-blob-yellow-1-reverse {
+  width: 40rem;
+  height: 40rem;
+  filter: blur(90px);
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.25) 0%, rgba(217, 119, 6, 0.1) 40%, transparent 70%);
+  animation: blob1 16s ease-in-out infinite reverse;
+}
+
+.light-blob-yellow-3 {
+  width: 40rem;
+  height: 40rem;
+  filter: blur(90px);
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.25) 0%, rgba(217, 119, 6, 0.1) 40%, transparent 70%);
+  animation: blob3 13s ease-in-out infinite;
+}
+
+.light-blob-navy-2 {
+  width: 35rem;
+  height: 35rem;
+  filter: blur(80px);
+  background: radial-gradient(circle, rgba(14, 116, 144, 0.2) 0%, rgba(11, 25, 44, 0.08) 50%, transparent 70%);
+  animation: blob2 17s ease-in-out infinite;
+}
+
+.light-blob-navy-2-hero {
+  width: 35rem;
+  height: 35rem;
+  filter: blur(80px);
+  background: radial-gradient(circle, rgba(14, 116, 144, 0.25) 0%, rgba(11, 25, 44, 0.08) 50%, transparent 70%);
+  animation: blob2 17s ease-in-out infinite;
+}
+
+.light-blob-navy-2-reverse {
+  width: 35rem;
+  height: 35rem;
+  filter: blur(80px);
+  background: radial-gradient(circle, rgba(14, 116, 144, 0.2) 0%, rgba(11, 25, 44, 0.08) 50%, transparent 70%);
+  animation: blob2 14s ease-in-out infinite reverse;
+}
+
+.light-blob-navy-4 {
+  width: 35rem;
+  height: 35rem;
+  filter: blur(80px);
+  background: radial-gradient(circle, rgba(14, 116, 144, 0.2) 0%, rgba(11, 25, 44, 0.08) 50%, transparent 70%);
+  animation: blob4 18s ease-in-out infinite;
+}
+
+/* Dark theme background fluid-blobs classes for Hero */
+.dark-blob-1 {
+  width: 60%;
+  height: 70%;
+  top: -10%;
+  left: -10%;
+  background: radial-gradient(circle, #d97706 0%, #b45309 40%, transparent 70%);
+  animation: blob1 15s ease-in-out infinite;
+}
+
+.dark-blob-2 {
+  width: 50%;
+  height: 60%;
+  bottom: -15%;
+  right: -5%;
+  background: radial-gradient(circle, #fbbf24 0%, #d97706 35%, transparent 70%);
+  animation: blob2 17s ease-in-out infinite;
+}
+
+.dark-blob-3 {
+  width: 45%;
+  height: 55%;
+  top: 20%;
+  right: 15%;
+  background: radial-gradient(circle, #0c4a6e 0%, #0b3142 50%, transparent 70%);
+  animation: blob3 13s ease-in-out infinite;
+}
+
+.dark-blob-4 {
+  width: 55%;
+  height: 50%;
+  bottom: 5%;
+  left: 20%;
+  background: radial-gradient(circle, #164e63 0%, #083344 45%, transparent 70%);
+  animation: blob4 18s ease-in-out infinite;
+}
+
+.dark-blob-5 {
+  width: 35%;
+  height: 40%;
+  top: 40%;
+  left: 5%;
+  background: radial-gradient(circle, #f59e0b 0%, #92400e 40%, transparent 70%);
+  animation: blob2 14s ease-in-out infinite reverse;
+}
+
+.dark-blob-6 {
+  width: 40%;
+  height: 45%;
+  top: 5%;
+  right: 30%;
+  background: radial-gradient(circle, #0e7490 0%, #155e75 45%, transparent 70%);
+  animation: blob1 16s ease-in-out infinite reverse;
 }

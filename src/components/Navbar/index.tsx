@@ -45,8 +45,7 @@ export default function Navbar() {
             >
               {text}
               <span
-                className="inline-block w-[2px] h-[1em] bg-brand-yellow ml-0.5"
-                style={{ animation: "cursor-blink 0.75s step-end infinite" }}
+                className="inline-block w-[2px] h-[1em] bg-brand-yellow ml-0.5 animate-cursor-blink"
               />
             </span>
           </a>
@@ -118,7 +117,7 @@ export default function Navbar() {
                   : "text-brand-navy hover:text-brand-yellow"
               }`}
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
-              aria-expanded={mobileOpen}
+              {...(mobileOpen ? { "aria-expanded": "true" } : { "aria-expanded": "false" })}
             >
               {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>

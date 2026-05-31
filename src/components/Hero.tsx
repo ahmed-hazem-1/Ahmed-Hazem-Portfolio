@@ -2,74 +2,6 @@ import { motion } from "motion/react";
 import { Github, Mail, Download } from "lucide-react";
 import { useTheme } from "../contexts/ThemeContext";
 
-interface Blob {
-  width: string;
-  height: string;
-  top?: string;
-  bottom?: string;
-  left?: string;
-  right?: string;
-  background: string;
-  animation: string;
-}
-
-const BLOBS: Blob[] = [
-  {
-    width: "60%",
-    height: "70%",
-    top: "-10%",
-    left: "-10%",
-    background:
-      "radial-gradient(circle, #d97706 0%, #b45309 40%, transparent 70%)",
-    animation: "blob1 15s ease-in-out infinite",
-  },
-  {
-    width: "50%",
-    height: "60%",
-    bottom: "-15%",
-    right: "-5%",
-    background:
-      "radial-gradient(circle, #fbbf24 0%, #d97706 35%, transparent 70%)",
-    animation: "blob2 17s ease-in-out infinite",
-  },
-  {
-    width: "45%",
-    height: "55%",
-    top: "20%",
-    right: "15%",
-    background:
-      "radial-gradient(circle, #0c4a6e 0%, #0b3142 50%, transparent 70%)",
-    animation: "blob3 13s ease-in-out infinite",
-  },
-  {
-    width: "55%",
-    height: "50%",
-    bottom: "5%",
-    left: "20%",
-    background:
-      "radial-gradient(circle, #164e63 0%, #083344 45%, transparent 70%)",
-    animation: "blob4 18s ease-in-out infinite",
-  },
-  {
-    width: "35%",
-    height: "40%",
-    top: "40%",
-    left: "5%",
-    background:
-      "radial-gradient(circle, #f59e0b 0%, #92400e 40%, transparent 70%)",
-    animation: "blob2 14s ease-in-out infinite reverse",
-  },
-  {
-    width: "40%",
-    height: "45%",
-    top: "5%",
-    right: "30%",
-    background:
-      "radial-gradient(circle, #0e7490 0%, #155e75 45%, transparent 70%)",
-    animation: "blob1 16s ease-in-out infinite reverse",
-  },
-];
-
 function LinkedInIcon({ className }: { className?: string }) {
   return (
     <svg
@@ -130,20 +62,16 @@ export default function Hero() {
         isDark ? "fluid-bg-container" : "gradient-light"
       }`}
     >
-      {isDark &&
-        BLOBS.map((blob, i) => {
-          const style: React.CSSProperties = {
-            width: blob.width,
-            height: blob.height,
-            background: blob.background,
-            animation: blob.animation,
-          };
-          if (blob.top) style.top = blob.top;
-          if (blob.bottom) style.bottom = blob.bottom;
-          if (blob.left) style.left = blob.left;
-          if (blob.right) style.right = blob.right;
-          return <div key={i} className="fluid-blob" style={style} />;
-        })}
+      {isDark && (
+        <>
+          <div className="fluid-blob dark-blob-1 pointer-events-none" />
+          <div className="fluid-blob dark-blob-2 pointer-events-none" />
+          <div className="fluid-blob dark-blob-3 pointer-events-none" />
+          <div className="fluid-blob dark-blob-4 pointer-events-none" />
+          <div className="fluid-blob dark-blob-5 pointer-events-none" />
+          <div className="fluid-blob dark-blob-6 pointer-events-none" />
+        </>
+      )}
 
       {isDark && (
         <div className="absolute inset-0 glass-hero z-5 pointer-events-none" />
@@ -152,29 +80,11 @@ export default function Hero() {
       {!isDark && (
         <>
           <div
-            className="fluid-blob pointer-events-none z-0"
-            style={{
-              width: "40rem",
-              height: "40rem",
-              top: "-15%",
-              right: "-15%",
-              background: "radial-gradient(circle, rgba(251, 191, 36, 0.3) 0%, rgba(217, 119, 6, 0.12) 40%, transparent 70%)",
-              animation: "blob1 15s ease-in-out infinite",
-              filter: "blur(90px)"
-            }}
+            className="fluid-blob light-blob-yellow-1-hero absolute -top-[15%] -right-[15%] pointer-events-none z-0"
             aria-hidden="true"
           />
           <div
-            className="fluid-blob pointer-events-none z-0"
-            style={{
-              width: "35rem",
-              height: "35rem",
-              bottom: "-15%",
-              left: "-15%",
-              background: "radial-gradient(circle, rgba(14, 116, 144, 0.25) 0%, rgba(11, 25, 44, 0.08) 50%, transparent 70%)",
-              animation: "blob2 17s ease-in-out infinite",
-              filter: "blur(80px)"
-            }}
+            className="fluid-blob light-blob-navy-2-hero absolute -bottom-[15%] -left-[15%] pointer-events-none z-0"
             aria-hidden="true"
           />
         </>

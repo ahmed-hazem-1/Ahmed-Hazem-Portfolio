@@ -137,29 +137,11 @@ export default function Experience() {
       {!isDark && (
         <>
           <div
-            className="fluid-blob pointer-events-none z-0"
-            style={{
-              width: "40rem",
-              height: "40rem",
-              top: "-15%",
-              left: "-15%",
-              background: "radial-gradient(circle, rgba(251, 191, 36, 0.25) 0%, rgba(217, 119, 6, 0.1) 40%, transparent 70%)",
-              animation: "blob3 13s ease-in-out infinite",
-              filter: "blur(90px)"
-            }}
+            className="fluid-blob light-blob-yellow-3 absolute -top-[15%] -left-[15%] pointer-events-none z-0"
             aria-hidden="true"
           />
           <div
-            className="fluid-blob pointer-events-none z-0"
-            style={{
-              width: "35rem",
-              height: "35rem",
-              bottom: "-15%",
-              right: "-15%",
-              background: "radial-gradient(circle, rgba(14, 116, 144, 0.2) 0%, rgba(11, 25, 44, 0.08) 50%, transparent 70%)",
-              animation: "blob4 18s ease-in-out infinite",
-              filter: "blur(80px)"
-            }}
+            className="fluid-blob light-blob-navy-4 absolute -bottom-[15%] -right-[15%] pointer-events-none z-0"
             aria-hidden="true"
           />
         </>
