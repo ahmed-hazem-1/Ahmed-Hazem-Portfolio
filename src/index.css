@@ -40,11 +40,11 @@ body {
 }
 
 .glass-navbar {
-  background: rgba(11, 25, 44, 0.6);
+  background: rgba(255, 255, 255, 0.45);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
   background-clip: padding-box;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -55,6 +55,7 @@ body {
 [data-theme="dark"] .glass-navbar {
   background: rgba(11, 25, 44, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
 }
 
 .glass-card {

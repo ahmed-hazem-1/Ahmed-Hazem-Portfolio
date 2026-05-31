@@ -38,7 +38,9 @@ export default function Navbar() {
               className={`text-base font-bold leading-tight truncate ${
                 isQuestion
                   ? "text-brand-yellow text-sm font-bold"
-                  : "text-white"
+                  : theme === "dark"
+                  ? "text-white"
+                  : "text-brand-navy"
               }`}
             >
               {text}
@@ -58,7 +60,11 @@ export default function Navbar() {
                   e.preventDefault();
                   scrollToSection(item.id);
                 }}
-                className="text-sm font-medium text-white/80 hover:text-brand-yellow transition-colors"
+                className={`text-sm font-medium transition-colors ${
+                  theme === "dark"
+                    ? "text-white/80 hover:text-brand-yellow"
+                    : "text-brand-navy/80 hover:text-brand-yellow"
+                }`}
               >
                 {item.label}
               </a>
@@ -66,7 +72,11 @@ export default function Navbar() {
             <motion.button
               onClick={toggleTheme}
               whileTap={{ scale: 0.9 }}
-              className="text-white/80 hover:text-brand-yellow transition-colors focus:ring-2 focus:ring-brand-yellow focus:ring-offset-2 rounded-lg p-1"
+              className={`transition-colors focus:ring-2 focus:ring-brand-yellow focus:ring-offset-2 rounded-lg p-1 ${
+                theme === "dark"
+                  ? "text-white/80 hover:text-brand-yellow"
+                  : "text-brand-navy/80 hover:text-brand-yellow"
+              }`}
               aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
             >
               <motion.div
@@ -84,7 +94,11 @@ export default function Navbar() {
             <motion.button
               onClick={toggleTheme}
               whileTap={{ scale: 0.9 }}
-              className="text-white/80 hover:text-brand-yellow transition-colors focus:ring-2 focus:ring-brand-yellow focus:ring-offset-2 rounded-lg p-1"
+              className={`transition-colors focus:ring-2 focus:ring-brand-yellow focus:ring-offset-2 rounded-lg p-1 ${
+                theme === "dark"
+                  ? "text-white/80 hover:text-brand-yellow"
+                  : "text-brand-navy/80 hover:text-brand-yellow"
+              }`}
               aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
             >
               <motion.div
@@ -98,7 +112,11 @@ export default function Navbar() {
             </motion.button>
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="text-white hover:text-brand-yellow transition-colors focus:ring-2 focus:ring-brand-yellow focus:ring-offset-2 rounded-lg p-1"
+              className={`transition-colors focus:ring-2 focus:ring-brand-yellow focus:ring-offset-2 rounded-lg p-1 ${
+                theme === "dark"
+                  ? "text-white hover:text-brand-yellow"
+                  : "text-brand-navy hover:text-brand-yellow"
+              }`}
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileOpen}
             >
@@ -116,7 +134,13 @@ export default function Navbar() {
               transition={{ duration: 0.2 }}
               className="overflow-hidden md:hidden mt-2"
             >
-              <div className="bg-brand-navy/95 backdrop-blur-md border-t border-white/10 rounded-2xl px-6 py-6 flex flex-col gap-4">
+              <div
+                className={`backdrop-blur-md border rounded-2xl px-6 py-6 flex flex-col gap-4 ${
+                  theme === "dark"
+                    ? "bg-brand-navy/95 border-white/10"
+                    : "bg-white/95 border-brand-navy/10 shadow-lg"
+                }`}
+              >
                 {MENU_ITEMS.map((item) => (
                   <a
                     key={item.id}
@@ -125,7 +149,11 @@ export default function Navbar() {
                       e.preventDefault();
                       scrollToSection(item.id);
                     }}
-                    className="text-base font-medium text-white/80 hover:text-brand-yellow transition-colors"
+                    className={`text-base font-medium transition-colors ${
+                      theme === "dark"
+                        ? "text-white/80 hover:text-brand-yellow"
+                        : "text-brand-navy/80 hover:text-brand-yellow"
+                    }`}
                   >
                     {item.label}
                   </a>
