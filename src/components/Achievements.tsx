@@ -72,11 +72,29 @@ export default function Achievements() {
       {!isDark && (
         <>
           <div
-            className="absolute -top-24 -left-24 w-[40rem] h-[40rem] rounded-full bg-brand-yellow/15 blur-[140px] pointer-events-none"
+            className="fluid-blob pointer-events-none z-0"
+            style={{
+              width: "40rem",
+              height: "40rem",
+              top: "-15%",
+              left: "-15%",
+              background: "radial-gradient(circle, rgba(251, 191, 36, 0.25) 0%, rgba(217, 119, 6, 0.1) 40%, transparent 70%)",
+              animation: "blob1 15s ease-in-out infinite",
+              filter: "blur(90px)"
+            }}
             aria-hidden="true"
           />
           <div
-            className="absolute -bottom-20 -right-20 w-[35rem] h-[35rem] rounded-full bg-brand-navy/10 blur-[120px] pointer-events-none"
+            className="fluid-blob pointer-events-none z-0"
+            style={{
+              width: "35rem",
+              height: "35rem",
+              bottom: "-15%",
+              right: "-15%",
+              background: "radial-gradient(circle, rgba(14, 116, 144, 0.2) 0%, rgba(11, 25, 44, 0.08) 50%, transparent 70%)",
+              animation: "blob2 17s ease-in-out infinite",
+              filter: "blur(80px)"
+            }}
             aria-hidden="true"
           />
         </>
