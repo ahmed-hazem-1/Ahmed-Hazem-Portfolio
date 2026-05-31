@@ -22,7 +22,7 @@ export default function Navbar() {
     <motion.nav
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      className="fixed top-4 left-4 right-4 z-[100]"
+      className="fixed top-4 left-4 right-4 z-[9999]"
     >
       <div className="max-w-7xl mx-auto">
         <div className="glass-navbar rounded-[2rem] h-14 shadow-lg flex items-center justify-between px-6">

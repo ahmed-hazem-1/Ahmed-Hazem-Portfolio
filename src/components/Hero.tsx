@@ -152,11 +152,11 @@ export default function Hero() {
       {!isDark && (
         <>
           <div
-            className="absolute top-10 right-10 w-96 h-96 rounded-full bg-brand-yellow/10 blur-[100px] pointer-events-none z-0"
+            className="absolute -top-24 -right-24 w-[40rem] h-[40rem] rounded-full bg-brand-yellow/25 blur-[140px] pointer-events-none z-0"
             aria-hidden="true"
           />
           <div
-            className="absolute bottom-10 left-10 w-[500px] h-[500px] rounded-full bg-brand-navy/5 blur-[120px] pointer-events-none z-0"
+            className="absolute -bottom-20 -left-20 w-[35rem] h-[35rem] rounded-full bg-brand-navy/10 blur-[120px] pointer-events-none z-0"
             aria-hidden="true"
           />
         </>
@@ -168,13 +168,13 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="lg:pl-8"
+            className="lg:pl-8 order-2 lg:order-1 text-center lg:text-left"
           >
             <motion.span
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0 }}
-              className={`inline-block px-3 py-1 md:px-4 md:py-1.5 rounded-full text-xs md:text-sm font-medium mb-4 md:mb-6 ${
+              className={`inline-block px-3 py-1 md:px-4 md:py-1.5 rounded-full text-[10px] sm:text-xs md:text-sm font-bold tracking-wider uppercase mb-4 md:mb-6 ${
                 isDark
                   ? "bg-white/10 text-white/90 border border-white/20 backdrop-blur-sm"
                   : "bg-brand-yellow/10 text-brand-navy border border-brand-yellow/20 backdrop-blur-sm"
@@ -187,7 +187,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className={`text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight mb-3 md:mb-4 ${
+              className={`text-3xl sm:text-4xl lg:text-6xl font-extrabold leading-tight mb-3 md:mb-4 ${
                 isDark ? "text-white" : "text-brand-navy"
               }`}
             >
@@ -198,8 +198,8 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className={`text-base md:text-lg mb-3 md:mb-4 ${
-                isDark ? "text-white/90" : "text-brand-gray"
+              className={`text-lg sm:text-xl lg:text-2xl font-semibold mb-3 md:mb-4 ${
+                isDark ? "text-brand-yellow" : "text-brand-gray"
               }`}
             >
               Founder of Mogeeb.ai · AI & Automation Engineer
@@ -209,7 +209,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className={`text-base md:text-lg leading-relaxed mb-6 md:mb-8 ${
+              className={`text-sm sm:text-base lg:text-lg leading-relaxed mb-6 md:mb-8 max-w-2xl mx-auto lg:mx-0 ${
                 isDark ? "text-white/80" : "text-brand-gray"
               }`}
             >
@@ -225,7 +225,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="flex flex-wrap gap-3 md:gap-4 mb-6 md:mb-8"
+              className="flex flex-wrap justify-center lg:justify-start gap-3 md:gap-4 mb-6 md:mb-8"
             >
               <motion.a
                 href="https://drive.google.com/file/d/14Z2ZxAimzsgGeOcPO5YtJi-Aj659dJIu/view"
@@ -260,7 +260,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
-              className="flex items-center gap-3 md:gap-4"
+              className="flex items-center justify-center lg:justify-start gap-3 md:gap-4"
             >
               {SOCIAL_LINKS.map(({ href, label, Icon }) => (
                 <a
@@ -285,7 +285,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="flex justify-center lg:justify-center"
+            className="flex justify-center lg:justify-center order-1 lg:order-2"
           >
             <div className="relative rounded-[2rem] overflow-hidden p-[2px] border-glow-wrapper">
               <div

@@ -32,6 +32,11 @@ body {
   background: rgba(11, 25, 44, 0.15);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  background-clip: padding-box;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+  isolation: isolate;
 }
 
 .glass-navbar {
@@ -40,6 +45,11 @@ body {
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  background-clip: padding-box;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+  isolation: isolate;
 }
 
 [data-theme="dark"] .glass-navbar {
@@ -53,6 +63,11 @@ body {
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.5);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+  background-clip: padding-box;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+  isolation: isolate;
 }
 
 .glass-card-dark {
@@ -61,6 +76,11 @@ body {
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+  background-clip: padding-box;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+  isolation: isolate;
 }
 
 .fluid-bg-container {
@@ -79,8 +99,8 @@ body {
 
 .gradient-light {
   background:
-    radial-gradient(ellipse 80% 60% at 10% 90%, rgba(217, 119, 6, 0.18) 0%, transparent 70%),
-    radial-gradient(ellipse 60% 50% at 90% 20%, rgba(11, 25, 44, 0.25) 0%, transparent 70%),
+    radial-gradient(ellipse 80% 60% at 90% 10%, rgba(217, 119, 6, 0.25) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 10% 90%, rgba(11, 25, 44, 0.15) 0%, transparent 70%),
     linear-gradient(180deg, #f5f5f0 0%, #fafaf7 50%, #f5f5f0 100%);
 }
 
@@ -167,6 +187,11 @@ body {
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+  background-clip: padding-box;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+  isolation: isolate;
 }
 
 [data-theme="dark"] .text-brand-navy {
